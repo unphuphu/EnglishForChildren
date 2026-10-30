@@ -2,6 +2,10 @@ import { isMastered } from './srs.js'
 
 export const XP = { correct: 10, perfectSession: 20, goalReached: 30 }
 
+// Sizes of one daily lesson: exercises (6 from the current part, the rest from earlier parts)
+// and the word-review step (10 to 20 questions).
+export const LESSON = { SENTENCES: 8, CURRENT_PART: 6, MIN_SENTENCES: 4, REVIEW_MIN: 10, REVIEW_MAX: 20 }
+
 const masteredCount = (state) => Object.values(state.cards).filter(isMastered).length
 
 export const BADGES = [
