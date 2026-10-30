@@ -1,15 +1,20 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 
 export default function Header() {
   const { currentProfile, switchProfile, storage } = useApp()
   const navigate = useNavigate()
+  const { pathname } = useLocation()
   if (!currentProfile) return null
 
   return (
     <>
       <header className="app-header">
-        <Link to="/" className="brand">English For Children</Link>
+        {pathname !== '/' ? (
+          <Link to="/" className="back-link">← Trang chủ</Link>
+        ) : (
+          <Link to="/" className="brand">English For Children</Link>
+        )}
         <button
           type="button"
           className="header-avatar"

@@ -4,6 +4,9 @@ import { useApp } from '../context/AppContext.jsx'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
 import { currentStreak, dailyCount, levelForXp, xpForLevel } from '../core/progress.js'
 import { todayISO } from '../core/date.js'
+import { MODE_LABELS } from './modes.js'
+
+const GAME_ICONS = { flashcard: '🗂️', quiz: '❓', listen: '🎧', scramble: '🔤', match: '🃏' }
 
 export default function Home() {
   const { currentProfile, progress } = useApp()
@@ -40,6 +43,16 @@ export default function Home() {
         <span className="goal-count">{count}/{goal}</span>
       </div>
       <Link to="/play/daily" className="primary big">Học hôm nay</Link>
+      <h2>Chơi game</h2>
+      <div className="game-grid">
+        {Object.entries(MODE_LABELS).map(([mode, label]) => (
+          <Link key={mode} to={`/games/${mode}`} className="topic-card">
+            <span className="game-icon" aria-hidden="true">{GAME_ICONS[mode]}</span>
+            <br />
+            {label}
+          </Link>
+        ))}
+      </div>
       <nav className="home-links">
         <Link to="/topics">Chủ đề</Link>
         <Link to="/profile">Hồ sơ &amp; huy hiệu</Link>

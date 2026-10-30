@@ -29,6 +29,10 @@ function PlayRound({ mode, topic, onAgain }) {
   const [session] = useState(() => {
     const all = vocab.all()
     if (mode === 'daily') return buildDailySession({ vocab: all, progress, today })
+    if (topic === 'all') {
+      const mixed = buildDailySession({ vocab: all, progress, today })
+      return { ...mixed, steps: [{ mode, words: mixed.words }] }
+    }
     const built = buildTopicSession({ vocab: all, topic, progress, today })
     return { ...built, steps: built.steps.filter((s) => s.mode === mode) }
   })

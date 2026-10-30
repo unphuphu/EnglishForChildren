@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { AVATARS, DEFAULT_DAILY_GOAL } from '../core/profiles.js'
 
@@ -35,6 +35,7 @@ export default function AddProfile() {
 
   return (
     <main className="add-profile">
+      <Link to="/" className="back-link">← Quay lại</Link>
       <h1>Hồ sơ mới</h1>
       <form onSubmit={submit}>
         <label className="field">

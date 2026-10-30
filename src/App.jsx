@@ -7,6 +7,7 @@ import AddProfile from './ui/AddProfile.jsx'
 import Topics from './ui/Topics.jsx'
 import ModePicker from './ui/ModePicker.jsx'
 import Play from './ui/Play.jsx'
+import GameTopics from './ui/GameTopics.jsx'
 import ProfileScreen from './ui/ProfileScreen.jsx'
 import Settings from './ui/Settings.jsx'
 import Recovery from './ui/Recovery.jsx'
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/add-profile" element={<AddProfile />} />
         <Route path="/topics" element={signedIn(<Topics />)} />
         <Route path="/topics/:topic" element={signedIn(<ModePicker />)} />
+        <Route path="/games/:mode" element={signedIn(<GameTopics />)} />
         <Route path="/play/:mode" element={signedIn(<Play />)} />
         <Route path="/profile" element={signedIn(<ProfileScreen />)} />
         <Route path="/settings" element={signedIn(<Settings />)} />
