@@ -6,8 +6,11 @@ const MAX_BOX = INTERVALS.length
 
 export const newCard = () => ({ box: 0, correct: 0, wrong: 0, due: null })
 
+// A correct answer given before the card is due is counted but does not move the card up:
+// the spaced intervals only advance when a review is actually due.
 export function review(card, correct, today) {
   if (!correct) return { ...card, box: 0, wrong: card.wrong + 1, due: today }
+  if (card.due != null && card.due > today) return { ...card, correct: card.correct + 1 }
   const box = Math.min(card.box + 1, MAX_BOX)
   return { ...card, box, correct: card.correct + 1, due: addDays(today, INTERVALS[box - 1]) }
 }

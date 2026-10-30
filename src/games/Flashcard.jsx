@@ -11,7 +11,7 @@ export default function Flashcard({ words, onFinish, speechRate = 1 }) {
   if (!word) return null
 
   function answer(correct) {
-    const next = [...results, { wordId: word.id, correct }]
+    const next = [...results, { wordId: word.id, correct, selfReported: true }]
     if (index === words.length - 1) {
       onFinish(next)
       return

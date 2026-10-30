@@ -1,11 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { buildMatchBoard, MAX_MATCH_WORDS } from './matchLogic.js'
+import { buildMatchBoard } from './matchLogic.js'
 
 const MISMATCH_DELAY_MS = 800
 
 export default function Match({ words, onFinish, rng = Math.random }) {
   const board = useMemo(() => buildMatchBoard(words, rng), [words, rng])
-  const wordIds = useMemo(() => words.slice(0, MAX_MATCH_WORDS).map((w) => w.id), [words])
+  const wordIds = useMemo(() => {
+    const onBoard = new Set(board.map((c) => c.wordId))
+    return words.filter((w) => onBoard.has(w.id)).map((w) => w.id)
+  }, [words, board])
   const [flipped, setFlipped] = useState([])
   const [matched, setMatched] = useState([])
   const [mistakes, setMistakes] = useState([])

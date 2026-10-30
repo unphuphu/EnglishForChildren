@@ -47,8 +47,8 @@ test('marking remembered then forgotten finishes with both results', async () =>
   await user.click(screen.getByRole('button', { name: /chưa nhớ/i }))
   expect(onFinish).toHaveBeenCalledTimes(1)
   expect(onFinish).toHaveBeenCalledWith([
-    { wordId: 'a-001', correct: true },
-    { wordId: 'a-002', correct: false },
+    { wordId: 'a-001', correct: true, selfReported: true },
+    { wordId: 'a-002', correct: false, selfReported: true },
   ])
 })
 

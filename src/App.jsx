@@ -9,9 +9,18 @@ import ModePicker from './ui/ModePicker.jsx'
 import Play from './ui/Play.jsx'
 import ProfileScreen from './ui/ProfileScreen.jsx'
 import Settings from './ui/Settings.jsx'
+import Recovery from './ui/Recovery.jsx'
 
 export default function App() {
-  const { currentProfile } = useApp()
+  const { currentProfile, progressProblem } = useApp()
+  if (currentProfile && progressProblem) {
+    return (
+      <>
+        <Header />
+        <Recovery />
+      </>
+    )
+  }
   const signedIn = (element) => (currentProfile ? element : <Navigate to="/" replace />)
   return (
     <>

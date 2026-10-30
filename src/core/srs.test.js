@@ -1,4 +1,5 @@
 import { newCard, review, isMastered, pickWords, INTERVALS, MASTERED_BOX } from './srs.js'
+import { addDays } from './date.js'
 
 const TODAY = '2026-10-30'
 const w = (id, level = 1) => ({ id, word: id, level })
@@ -15,16 +16,21 @@ test('a new card starts empty', () => {
 test('three correct answers move through boxes 1-3 with due +1, +3, +7 days', () => {
   let c = review(newCard(), true, TODAY)
   expect([c.box, c.due]).toEqual([1, '2026-10-31'])
-  c = review(c, true, TODAY)
-  expect([c.box, c.due]).toEqual([2, '2026-11-02'])
-  c = review(c, true, TODAY)
-  expect([c.box, c.due, c.correct]).toEqual([3, '2026-11-06', 3])
+  c = review(c, true, '2026-10-31')
+  expect([c.box, c.due]).toEqual([2, '2026-11-03'])
+  c = review(c, true, '2026-11-03')
+  expect([c.box, c.due, c.correct]).toEqual([3, '2026-11-10', 3])
 })
 
 test('box never exceeds 4 and the top interval is 14 days', () => {
   let c = newCard()
-  for (let i = 0; i < 6; i++) c = review(c, true, TODAY)
-  expect([c.box, c.due]).toEqual([4, '2026-11-13'])
+  let day = TODAY
+  for (let i = 0; i < 6; i++) {
+    c = review(c, true, day)
+    if (i < 5) day = c.due
+  }
+  expect(c.box).toBe(4)
+  expect(c.due).toBe(addDays(day, 14))
 })
 
 test('a wrong answer resets to box 0, due today, and counts the miss', () => {

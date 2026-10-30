@@ -4,6 +4,12 @@ import { isMastered, newCard, review } from './srs.js'
 import { migrateData } from './migrate.js'
 
 const VERSION = 1
+const DATE = /^\d{4}-\d{2}-\d{2}$/
+const invalid = () => new Error('INVALID_PROGRESS')
+const isObject = (v) => v !== null && typeof v === 'object' && !Array.isArray(v)
+const isCount = (v) => typeof v === 'number' && Number.isFinite(v) && v >= 0
+const isDateOrNull = (v) => v === null || (typeof v === 'string' && DATE.test(v))
+const isStringList = (v) => Array.isArray(v) && v.every((s) => typeof s === 'string')
 
 export const emptyProgress = () => ({
   version: VERSION,
@@ -14,6 +20,43 @@ export const emptyProgress = () => ({
   perfectSessions: 0,
   daily: { date: null, correctIds: [], goalAwarded: false },
 })
+
+// Validates data read from storage or an imported file and fills missing optional sections.
+// Throws Error('INVALID_PROGRESS') for anything the app could not safely use.
+export function normalizeProgress(data) {
+  if (!isObject(data) || !Number.isInteger(data.version) || data.version < 1) throw invalid()
+  let migrated
+  try {
+    migrated = migrateData(data, {}, VERSION)
+  } catch {
+    throw invalid()
+  }
+  const defaults = emptyProgress()
+  const { xp, cards } = migrated
+  const streak = migrated.streak ?? defaults.streak
+  const daily = migrated.daily ?? defaults.daily
+  const badges = migrated.badges ?? defaults.badges
+  const perfectSessions = migrated.perfectSessions ?? defaults.perfectSessions
+
+  if (!isCount(xp) || !isObject(cards)) throw invalid()
+  for (const card of Object.values(cards)) {
+    if (!isObject(card) || !Number.isInteger(card.box) || card.box < 0 || card.box > 4
+      || !isCount(card.correct) || !isCount(card.wrong) || !isDateOrNull(card.due)) throw invalid()
+  }
+  if (!isObject(streak) || !isCount(streak.count) || !isDateOrNull(streak.lastDate)) throw invalid()
+  if (!isObject(daily) || !isDateOrNull(daily.date) || !isStringList(daily.correctIds)) throw invalid()
+  if (!isStringList(badges) || !isCount(perfectSessions)) throw invalid()
+
+  return {
+    version: VERSION,
+    xp,
+    streak: { count: streak.count, lastDate: streak.lastDate },
+    cards,
+    badges,
+    perfectSessions,
+    daily: { date: daily.date, correctIds: daily.correctIds, goalAwarded: daily.goalAwarded === true },
+  }
+}
 
 export const levelForXp = (xp) => Math.floor(Math.sqrt(xp / 50)) + 1
 export const xpForLevel = (level) => 50 * (level - 1) ** 2
@@ -44,6 +87,8 @@ function advanceStreak(streak, today) {
   return { count, lastDate: today }
 }
 
+// Results flagged selfReported (flashcard "I remember") schedule cards but earn no XP,
+// no daily-goal progress and no perfect bonus: only answered questions score.
 export function finishSession(state, { results, goal, today, vocab }) {
   const cards = { ...state.cards }
   const outcomes = new Map()
@@ -54,7 +99,8 @@ export function finishSession(state, { results, goal, today, vocab }) {
     cards[wordId] = review(cards[wordId] ?? newCard(), correct, today)
   }
 
-  const correctResults = results.filter((r) => r.correct)
+  const scored = results.filter((r) => !r.selfReported)
+  const correctResults = scored.filter((r) => r.correct)
   const sameDay = state.daily.date === today
   const daily = {
     date: today,
@@ -63,7 +109,7 @@ export function finishSession(state, { results, goal, today, vocab }) {
   }
 
   let xpGained = correctResults.length * XP.correct
-  const perfect = results.length > 0 && correctResults.length === results.length
+  const perfect = scored.length > 0 && correctResults.length === scored.length
   if (perfect) xpGained += XP.perfectSession
 
   let streak = state.streak
@@ -89,13 +135,29 @@ export function finishSession(state, { results, goal, today, vocab }) {
 
 export function createProgressStore(storage, profileId) {
   const key = `progress:${profileId}`
+  const backupKey = `${key}:bak`
+
+  function usable(slot) {
+    const { status, value } = storage.getStatus(slot)
+    if (status !== 'ok') return { status }
+    try {
+      return { status: 'ok', state: normalizeProgress(value) }
+    } catch {
+      return { status: 'corrupt' }
+    }
+  }
+
   return {
-    load() {
-      const data = storage.get(key)
-      return data ? migrateData(data, {}, VERSION) : emptyProgress()
+    check: () => usable(key).status,
+    load: () => usable(key).state ?? emptyProgress(),
+    save: (state) => storage.set(key, state),
+    hasBackup: () => usable(backupKey).status === 'ok',
+    restoreBackup() {
+      const backup = usable(backupKey)
+      if (backup.status !== 'ok') return false
+      storage.set(key, backup.state)
+      return true
     },
-    save(state) {
-      storage.set(key, state)
-    },
+    reset: () => storage.set(key, emptyProgress()),
   }
 }

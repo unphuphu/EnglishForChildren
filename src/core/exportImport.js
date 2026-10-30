@@ -1,6 +1,5 @@
 import { AVATARS, createProfiles, DEFAULT_DAILY_GOAL, MIN_DAILY_GOAL } from './profiles.js'
-import { createProgressStore, emptyProgress } from './progress.js'
-import { migrateData } from './migrate.js'
+import { createProgressStore, normalizeProgress } from './progress.js'
 
 const APP = 'english-for-children'
 const FILE_VERSION = 1
@@ -24,14 +23,11 @@ function parseFile(json) {
   if (data?.app !== APP || data.version !== FILE_VERSION || !profile || typeof progress !== 'object' || progress === null) {
     throw invalid()
   }
-  let migrated
   try {
-    migrated = migrateData(progress, {}, emptyProgress().version)
+    return { profile, progress: normalizeProgress(progress) }
   } catch {
     throw invalid()
   }
-  if (typeof migrated.xp !== 'number' || typeof migrated.cards !== 'object' || migrated.cards === null) throw invalid()
-  return { profile, progress: migrated }
 }
 
 export function importProfile(storage, json) {

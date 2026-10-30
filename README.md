@@ -10,6 +10,10 @@
 
 ## Chạy ứng dụng
 
+Trên Windows, bấm đúp **`start.bat`**: file tự cài thư viện lần đầu, chạy ứng dụng và mở trình duyệt (giữ cửa sổ đen mở trong lúc học).
+
+Hoặc chạy bằng lệnh:
+
 ```bash
 npm install
 npm run dev      # mở địa chỉ hiển thị trong terminal (thường là http://localhost:5173)
@@ -34,6 +38,13 @@ Từ vựng nằm trong `src/data/vocab/`, mỗi chủ đề một file JSON. M�
 
 > **Lưu ý:** nghĩa tiếng Việt, phiên âm (`ipa`) và câu ví dụ do AI soạn, chưa được người kiểm tra.
 > Phụ huynh nên đọc lướt qua một số từ trước khi cho bé dùng và sửa trực tiếp trong file JSON nếu thấy sai.
+
+## Cách tính điểm
+
+- Chỉ câu **trả lời** (trắc nghiệm, nghe chọn, ghép chữ, ghép cặp) mới được XP và tính vào mục tiêu ngày.
+  Flashcard chỉ để học từ mới và lên lịch ôn, tự bấm "Đã nhớ" không cộng điểm.
+- Lịch ôn (1, 3, 7, 14 ngày) chỉ nhích lên khi từ đã đến hạn ôn, nên chơi lặp lại trong cùng một ngày không làm từ "thuộc" nhanh hơn.
+- Nếu dữ liệu của một hồ sơ bị hỏng, ứng dụng hiện màn hình khôi phục (dùng bản sao lưu gần nhất hoặc bắt đầu lại) thay vì tự xóa.
 
 ## Sao lưu tiến độ
 

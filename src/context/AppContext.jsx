@@ -18,11 +18,14 @@ export function AppProvider({ storage: storageProp, words = defaultWords, childr
   const currentId = profiles.getCurrentId()
   const currentProfile = profileList.find((p) => p.id === currentId) ?? null
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const progress = useMemo(
-    () => (currentId ? createProgressStore(storage, currentId).load() : emptyProgress()),
-    [storage, currentId, version],
-  )
+  // Reload from storage whenever the profile changes or something was saved (version bump).
+  const loaded = useMemo(() => {
+    if (!currentId) return { progress: emptyProgress(), problem: false, hasBackup: false }
+    const store = createProgressStore(storage, currentId)
+    const problem = store.check() === 'corrupt'
+    return { progress: store.load(), problem, hasBackup: problem && store.hasBackup() }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [storage, currentId, version])
 
   const saveProgress = useCallback(
     (state) => {
@@ -31,6 +34,17 @@ export function AppProvider({ storage: storageProp, words = defaultWords, childr
     },
     [storage, currentId, refresh],
   )
+
+  const recoverProgress = useCallback(() => {
+    const ok = currentId ? createProgressStore(storage, currentId).restoreBackup() : false
+    refresh()
+    return ok
+  }, [storage, currentId, refresh])
+
+  const resetProgress = useCallback(() => {
+    if (currentId) createProgressStore(storage, currentId).reset()
+    refresh()
+  }, [storage, currentId, refresh])
 
   const switchProfile = useCallback(
     (id) => {
@@ -41,7 +55,19 @@ export function AppProvider({ storage: storageProp, words = defaultWords, childr
   )
 
   const value = {
-    storage, profiles, profileList, vocab, currentProfile, progress, saveProgress, switchProfile, refresh,
+    storage,
+    profiles,
+    profileList,
+    vocab,
+    currentProfile,
+    progress: loaded.progress,
+    progressProblem: loaded.problem,
+    hasBackup: loaded.hasBackup,
+    saveProgress,
+    recoverProgress,
+    resetProgress,
+    switchProfile,
+    refresh,
   }
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }

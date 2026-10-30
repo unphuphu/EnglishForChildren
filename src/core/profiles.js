@@ -11,7 +11,12 @@ const LIST_KEY = 'profiles'
 const CURRENT_KEY = 'currentProfile'
 
 export function createProfiles(storage) {
-  const read = () => storage.get(LIST_KEY)?.items ?? []
+  const isProfile = (p) => p !== null && typeof p === 'object' && typeof p.id === 'string'
+    && typeof p.name === 'string' && typeof p.avatar === 'string' && Number.isInteger(p.dailyGoal)
+  const read = () => {
+    const items = storage.get(LIST_KEY)?.items
+    return Array.isArray(items) ? items.filter(isProfile) : []
+  }
   const write = (items) => storage.set(LIST_KEY, { version: 1, items })
 
   function validate(fields, others) {

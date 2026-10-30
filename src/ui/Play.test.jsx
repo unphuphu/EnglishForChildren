@@ -24,12 +24,12 @@ async function remember(user, times, answer = /đã nhớ/i) {
 
 afterEach(() => vi.useRealTimers())
 
-test('a flashcard run with 3 remembered words shows +50 XP and saves 3 cards at box 1', async () => {
+test('a flashcard run with 3 remembered words earns no XP but schedules 3 cards at box 1', async () => {
   const user = userEvent.setup()
   const { storage, profile } = seededStorage()
   renderApp(<App />, { route: '/play/flashcard?topic=animals', storage, words: three })
   await remember(user, 3)
-  expect(screen.getByText('+50 XP')).toBeInTheDocument()
+  expect(screen.getByText('+0 XP')).toBeInTheDocument()
   const saved = savedProgress(storage, profile.id)
   expect(Object.values(saved.cards).map((c) => c.box)).toEqual([1, 1, 1])
 })

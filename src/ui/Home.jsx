@@ -24,6 +24,9 @@ export default function Home() {
           <button type="button" onClick={() => setNoteDismissed(true)}>Đóng</button>
         </p>
       )}
+      {progress.streak.count > 0 && currentStreak(progress, today) === 0 && (
+        <p className="notice">Chuỗi ngày đã bị ngắt. Hôm nay bắt đầu lại nào! 💪</p>
+      )}
       <h1>Xin chào, {currentProfile.name}!</h1>
       <div className="stats">
         <span className="streak" aria-label="Chuỗi ngày">🔥 {currentStreak(progress, today)}</span>
