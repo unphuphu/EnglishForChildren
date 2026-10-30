@@ -69,6 +69,7 @@ export default function Home() {
       <nav className="home-links">
         <Link to="/topics">Chủ đề</Link>
         <Link to="/grammar">Ngữ pháp</Link>
+        <Link to="/test">Kiểm tra</Link>
         <Link to="/profile">Hồ sơ &amp; huy hiệu</Link>
         <Link to="/settings">Cài đặt</Link>
       </nav>

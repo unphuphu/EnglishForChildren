@@ -5,6 +5,9 @@ import { prettyTopic } from './modes.js'
 export function badgeInfo(id) {
   const known = BADGES.find((b) => b.id === id)
   if (known) return { title: known.title, emoji: known.emoji }
+  if (id.startsWith('grammar-group-')) {
+    return { title: `Đạt kiểm tra nhóm ${id.slice('grammar-group-'.length)}`, emoji: '🎓' }
+  }
   if (id.startsWith('topic-complete:')) {
     return { title: `Hoàn thành chủ đề ${prettyTopic(id.slice('topic-complete:'.length))}`, emoji: '🏆' }
   }

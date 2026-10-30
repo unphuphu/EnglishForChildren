@@ -13,6 +13,8 @@ import ChangeTopic from './ui/ChangeTopic.jsx'
 import GrammarList from './ui/GrammarList.jsx'
 import GrammarLesson from './ui/GrammarLesson.jsx'
 import GrammarPractice from './ui/GrammarPractice.jsx'
+import Checkpoint from './ui/Checkpoint.jsx'
+import GeneralTest from './ui/GeneralTest.jsx'
 import ProfileScreen from './ui/ProfileScreen.jsx'
 import Settings from './ui/Settings.jsx'
 import Recovery from './ui/Recovery.jsx'
@@ -37,6 +39,8 @@ export default function App() {
         <Route path="/topics" element={signedIn(<Topics />)} />
         <Route path="/topics/:topic" element={signedIn(<ModePicker />)} />
         <Route path="/grammar" element={signedIn(<GrammarList />)} />
+        <Route path="/grammar/checkpoint/:group" element={signedIn(<Checkpoint />)} />
+        <Route path="/test" element={signedIn(<GeneralTest />)} />
         <Route path="/grammar/:lessonId" element={signedIn(<GrammarLesson />)} />
         <Route path="/grammar/:lessonId/practice" element={signedIn(<GrammarPractice />)} />
         <Route path="/lesson" element={signedIn(<Lesson />)} />

@@ -26,7 +26,7 @@ export const fixtureWords = Array.from({ length: 12 }, (_, i) => ({
   level: 1,
 }))
 
-const fixtureSentence = (id, session, wordIndex) => ({
+export const fixtureSentence = (id, session, wordIndex) => ({
   id,
   en: `She sees word${wordIndex} now.`,
   vi: `Cô ấy thấy word${wordIndex} bây giờ.`,
