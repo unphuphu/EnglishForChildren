@@ -12,7 +12,7 @@ Người dùng, thiết bị và công nghệ giữ nguyên như bản 1: bé 9�
 - Bé mở app, thấy ngay buổi học hôm nay, bấm một nút là học hết 4 bước không cần người lớn hướng dẫn.
 - Mọi câu trong bài tập chỉ chứa từ vựng bé đã học (hoặc từ chức năng như *the, I, is*).
 - Phụ huynh thêm bài ngữ pháp mới chỉ bằng cách thêm file nội dung.
-- Tiến độ bản 1 của các hồ sơ hiện có vẫn dùng được, không mất.
+- Dữ liệu bản 1 được bỏ theo yêu cầu của phụ huynh: lần đầu mở bản 2, hồ sơ và tiến độ cũ bị xóa một lần và bé tạo hồ sơ mới.
 
 ## 2. Phạm vi
 
@@ -119,9 +119,11 @@ Tổng 12 buổi. Mỗi buổi trong một bài khó dùng một nhóm câu riê
 
 ## 7. Lưu trữ tiến độ
 
-Giữ `version: 1`; các phần mới là tùy chọn và được `normalizeProgress` điền giá trị mặc định, nên tiến độ bản 1 vẫn hợp lệ:
+Tiến độ chuyển sang `version: 2` và **không có bước chuyển đổi từ bản 1** (dữ liệu bản 1 bị bỏ, xem bên dưới). Hai phần mới là bắt buộc và có giá trị khởi tạo:
 - `plan: { step }` (mặc định 0);
 - `grammar: { lessons: { [id]: { partsDone, correct, wrong } }, sentences: { [id]: { seen, wrong } }, checkpoints: { [n]: { best, total } }, tests: [ { date, score, total } ] }` (giữ 10 kết quả kiểm tra gần nhất).
+
+**Bỏ dữ liệu bản 1 (quyết định của phụ huynh):** app lưu một dấu `appDataVersion`. Khi mở app mà dấu này chưa phải 2, app xóa đúng một lần toàn bộ khóa của bản 1 (danh sách hồ sơ, hồ sơ đang chọn, tiến độ từng hồ sơ và các bản sao lưu của chúng), rồi ghi dấu 2 và hiện màn chọn hồ sơ trống. Việc này chỉ xảy ra một lần. Tệp xuất tiến độ của bản 1 (`version: 1`) bị từ chối khi nhập ("Tệp không hợp lệ"), vì tệp xuất của bản 2 mang `version: 2`.
 
 Xuất/nhập tiến độ và màn khôi phục dữ liệu hỏng áp dụng cho các phần mới. Quy tắc `finishSession` thay đổi: đạt mục tiêu và nối chuỗi chỉ xảy ra khi kết thúc một buổi học hoàn chỉnh.
 
@@ -136,7 +138,7 @@ Xuất/nhập tiến độ và màn khôi phục dữ liệu hỏng áp dụng c
 ## 9. Kiểm thử
 
 - **Kiểm tra dữ liệu** `validate:grammar` (mục 3) chạy cả trong vitest.
-- **Logic thuần (`core`):** chọn câu hợp lệ, không lặp, ưu tiên từ đến hạn, thiếu câu; gán 4 dạng bài; chấm điểm và cập nhật từ vựng; bước lộ trình tiến/không tiến; chọn chủ đề thay thế; đủ 10–20 câu ôn từ; tính điểm, nhận xét và phần còn yếu; điều kiện nhận huy hiệu; chuẩn hóa tiến độ bản 1 thành bản 2.
+- **Logic thuần (`core`):** chọn câu hợp lệ, không lặp, ưu tiên từ đến hạn, thiếu câu; gán 4 dạng bài; chấm điểm và cập nhật từ vựng; bước lộ trình tiến/không tiến; chọn chủ đề thay thế; đủ 10–20 câu ôn từ; tính điểm, nhận xét và phần còn yếu; điều kiện nhận huy hiệu; dọn dữ liệu bản 1 đúng một lần (kể cả sao lưu) và từ chối tệp xuất của bản 1.
 - **Giao diện:** 4 dạng bài, buổi học đủ 4 bước và bỏ giữa chừng, thẻ hôm nay trên trang chủ và đổi chủ đề, màn Ngữ pháp, hai bài kiểm tra.
 - **Thử tay** trên Chrome và Edge trước khi giao cho bé.
 
