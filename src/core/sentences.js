@@ -55,8 +55,13 @@ export function pickSentences({
   if (part === null) return rank(all).slice(0, count)
 
   const current = rank(all.filter((i) => i.sentence.session === part))
-  const earlier = rank(all.filter((i) => i.sentence.session < part))
-  const wantCurrent = part === 1 ? count : Math.min(LESSON.CURRENT_PART, count)
+  // Part 1 reviews the lessons finished before this one; later parts review this lesson's earlier parts.
+  const earlier = part === 1
+    ? rank(lessons
+      .filter((l) => l.order < lesson.order && (progress.grammar.lessons[l.id]?.partsDone ?? 0) >= 1)
+      .flatMap(candidates))
+    : rank(all.filter((i) => i.sentence.session < part))
+  const wantCurrent = earlier.length === 0 ? count : Math.min(LESSON.CURRENT_PART, count)
   const chosenCurrent = current.slice(0, wantCurrent)
   const result = [...chosenCurrent, ...earlier.slice(0, count - chosenCurrent.length)]
   if (result.length < count) {
