@@ -1,0 +1,14 @@
+[
+  { "topic": "family", "lesson": "to-be", "part": 1 },
+  { "topic": "feelings", "lesson": "to-be", "part": 2 },
+  { "topic": "animals", "lesson": "this-that", "part": 1 },
+  { "topic": "home", "lesson": "there-is-are", "part": 1 },
+  { "topic": "school", "lesson": "there-is-are", "part": 2 },
+  { "topic": "food", "lesson": "have-has", "part": 1 },
+  { "topic": "hobbies", "lesson": "can", "part": 1 },
+  { "topic": "jobs", "lesson": "present-simple", "part": 1 },
+  { "topic": "drinks", "lesson": "present-simple", "part": 2 },
+  { "topic": "furniture", "lesson": "present-continuous", "part": 1 },
+  { "topic": "vegetables", "lesson": "present-continuous", "part": 2 },
+  { "topic": "town", "lesson": "wh-questions", "part": 1 }
+]

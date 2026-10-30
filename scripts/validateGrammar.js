@@ -2,6 +2,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { validateGrammar } from '../src/core/grammarSchema.js'
+import { roadmapCoverageErrors } from '../src/core/plan.js'
 
 const read = (path) => JSON.parse(readFileSync(path, 'utf8'))
 const dir = (relative) => fileURLToPath(new URL(relative, import.meta.url))
@@ -21,7 +22,10 @@ if (lessons.length === 0) {
   process.exit(0)
 }
 
-const errors = validateGrammar({ lessons, roadmap, vocab, freeWords })
+const errors = [
+  ...validateGrammar({ lessons, roadmap, vocab, freeWords }),
+  ...roadmapCoverageErrors({ roadmap, lessons, vocab }),
+]
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exit(1)
