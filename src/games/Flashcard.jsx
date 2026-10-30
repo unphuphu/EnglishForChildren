@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { speak } from '../core/speech.js'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
 
-export default function Flashcard({ words, onFinish, speechRate = 1 }) {
+export default function Flashcard({ words, onFinish, speechRate = 1, voiceName }) {
   const [index, setIndex] = useState(0)
   const [flipped, setFlipped] = useState(false)
   const [results, setResults] = useState([])
@@ -28,7 +28,7 @@ export default function Flashcard({ words, onFinish, speechRate = 1 }) {
         {word.emoji && <span className="emoji" aria-hidden="true">{word.emoji}</span>}
         <h2 className="card-word">{word.word}</h2>
         {available && (
-          <button type="button" className="speaker" aria-label="Nghe phát âm" onClick={() => speak(word.word, { rate: speechRate })}>
+          <button type="button" className="speaker" aria-label="Nghe phát âm" onClick={() => speak(word.word, { rate: speechRate, voice: voiceName })}>
             🔊
           </button>
         )}

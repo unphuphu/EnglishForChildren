@@ -47,7 +47,10 @@ export function importProfile(storage, json) {
   } catch (e) {
     throw e.message === 'MAX_PROFILES' ? e : invalid()
   }
-  if (typeof profile.speechRate === 'number') created = profiles.update(created.id, { speechRate: profile.speechRate })
+  const extras = {}
+  if (typeof profile.speechRate === 'number') extras.speechRate = profile.speechRate
+  if (typeof profile.voice === 'string') extras.voice = profile.voice
+  if (Object.keys(extras).length) created = profiles.update(created.id, extras)
   createProgressStore(storage, created.id).save(progress)
   return created
 }

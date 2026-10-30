@@ -5,7 +5,7 @@ import { assemble, lettersOf, scramble } from './scrambleLogic.js'
 
 const MAX_ATTEMPTS = 2
 
-export default function Scramble({ words, onFinish, rng = Math.random, speechRate = 1 }) {
+export default function Scramble({ words, onFinish, rng = Math.random, speechRate = 1, voiceName }) {
   const [index, setIndex] = useState(0)
   const [chosen, setChosen] = useState([])
   const [attempts, setAttempts] = useState(0)
@@ -75,7 +75,7 @@ export default function Scramble({ words, onFinish, rng = Math.random, speechRat
         {word.emoji && <span className="emoji" aria-hidden="true">{word.emoji}</span>}
         <span className="prompt-text">{word.vi}</span>
         {available && (
-          <button type="button" className="speaker" aria-label="Nghe phát âm" onClick={() => speak(word.word, { rate: speechRate })}>
+          <button type="button" className="speaker" aria-label="Nghe phát âm" onClick={() => speak(word.word, { rate: speechRate, voice: voiceName })}>
             🔊
           </button>
         )}

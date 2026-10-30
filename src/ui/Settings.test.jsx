@@ -2,7 +2,7 @@ import { fireEvent, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { vi } from 'vitest'
 
-vi.mock('../core/speech.js', () => ({ speak: vi.fn(), isSpeechAvailable: () => true }))
+vi.mock('../core/speech.js', () => ({ speak: vi.fn(), isSpeechAvailable: () => true, listEnglishVoices: () => [] }))
 vi.mock('../core/useSpeechAvailable.js', () => ({ useSpeechAvailable: () => true }))
 
 import App from '../App.jsx'

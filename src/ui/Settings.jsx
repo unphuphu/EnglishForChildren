@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { speak } from '../core/speech.js'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
+import { useEnglishVoices } from '../core/useEnglishVoices.js'
 import { AVATARS } from '../core/profiles.js'
 import { exportProfile, importProfile } from '../core/exportImport.js'
 import { GOAL_OPTIONS } from './AddProfile.jsx'
@@ -23,6 +24,8 @@ export default function Settings() {
   const [nameError, setNameError] = useState(null)
   const takenByOthers = new Set(profileList.filter((p) => p.id !== currentProfile.id).map((p) => p.avatar))
   const rate = currentProfile.speechRate ?? 1
+  const englishVoices = useEnglishVoices()
+  const voice = englishVoices.some((v) => v.name === currentProfile.voice) ? currentProfile.voice : ''
 
   function update(patch) {
     profiles.update(currentProfile.id, patch)
@@ -99,7 +102,20 @@ export default function Settings() {
             <input type="range" min="0.6" max="1.2" step="0.1" value={rate}
               onChange={(e) => update({ speechRate: Number(e.target.value) })} />
           </label>
-          <button type="button" className="primary" onClick={() => speak('Hello', { rate })}>Thử nghe</button>
+          {englishVoices.length > 0 && (
+            <label className="field">
+              Giọng đọc
+              <select value={voice} onChange={(e) => update({ voice: e.target.value || null })}>
+                <option value="">Tự động</option>
+                {englishVoices.map((v) => (
+                  <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>
+                ))}
+              </select>
+            </label>
+          )}
+          <button type="button" className="primary" onClick={() => speak('Hello', { rate, voice: voice || undefined })}>
+            Thử nghe
+          </button>
         </section>
       )}
 

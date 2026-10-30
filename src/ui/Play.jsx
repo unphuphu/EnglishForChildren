@@ -81,6 +81,7 @@ function PlayRound({ mode, topic, onAgain }) {
         pool={vocab.all()}
         onFinish={handleStepDone}
         speechRate={currentProfile.speechRate ?? 1}
+        voiceName={currentProfile.voice ?? undefined}
       />
     </main>
   )
