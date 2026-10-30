@@ -66,7 +66,8 @@ export function pickSentences({
 }
 
 const supports = {
-  order: (s) => s.en.split(' ').length >= 3,
+  // two sentences in one text (a question and its answer) could be put together in another order
+  order: (s) => s.en.split(' ').length >= 3 && !/[.?!]\s+\S/.test(s.en),
   blank: (s) => Array.isArray(s.blank?.options) && s.blank.options.length >= 2,
   choose: (s) => Array.isArray(s.wrong) && s.wrong.length >= 2,
   translate: () => true,

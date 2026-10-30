@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { buildLesson } from '../core/lesson.js'
@@ -34,8 +34,11 @@ function LessonRound({ topic, onAgain }) {
     return lesson.reviewWords.length > 0
   })
   const [position, setPosition] = useState(0)
-  const [collected, setCollected] = useState({ words: [], sentences: [] })
   const [summary, setSummary] = useState(null)
+  // Every finished step is saved at once, so leaving half way keeps it; only the last step also
+  // completes the lesson (goal bonus, streak, grammar part, next roadmap step).
+  const saved = useRef(progress)
+  const earned = useRef({ xp: 0, badges: [], wrongWordIds: new Set() })
 
   if (summary) return <Results summary={summary} onAgain={onAgain} />
   if (stages.length === 0) {
@@ -47,27 +50,34 @@ function LessonRound({ topic, onAgain }) {
     )
   }
 
-  function complete(next) {
-    if (position < stages.length - 1) {
-      setCollected(next)
+  const isLast = position === stages.length - 1
+
+  function commit(results, sentenceResults) {
+    const out = finishSession(saved.current, {
+      results,
+      sentenceResults,
+      today,
+      vocab: vocab.all(),
+      completesLesson: isLast,
+      grammarRef: isLast
+        ? { lessonId: lesson.lesson?.id ?? null, part: lesson.lesson?.part ?? null, advancePlan: lesson.lesson !== null }
+        : null,
+    })
+    saved.current = out.state
+    saveProgress(out.state)
+    earned.current.xp += out.xpGained
+    earned.current.badges.push(...out.newBadges.filter((id) => !earned.current.badges.includes(id)))
+    for (const r of results) if (!r.correct) earned.current.wrongWordIds.add(r.wordId)
+
+    if (!isLast) {
       setPosition(position + 1)
       return
     }
-    const out = finishSession(progress, {
-      results: next.words,
-      sentenceResults: next.sentences,
-      today,
-      vocab: vocab.all(),
-      completesLesson: true,
-      grammarRef: { lessonId: lesson.lesson?.id ?? null, part: lesson.lesson?.part ?? null, advancePlan: lesson.lesson !== null },
-    })
-    saveProgress(out.state)
-    const wrongIds = new Set(next.words.filter((r) => !r.correct).map((r) => r.wordId))
     setSummary({
-      xpGained: out.xpGained,
-      newBadges: out.newBadges,
+      xpGained: earned.current.xp,
+      newBadges: earned.current.badges,
       lessonDone: true,
-      reviewWords: [...wrongIds].map((id) => vocab.get(id)).filter(Boolean),
+      reviewWords: [...earned.current.wrongWordIds].map((id) => vocab.get(id)).filter(Boolean),
     })
   }
 
@@ -75,41 +85,21 @@ function LessonRound({ topic, onAgain }) {
   const speech = { speechRate: currentProfile.speechRate ?? 1, voiceName: currentProfile.voice ?? undefined }
   let body
   if (stage === 'new') {
-    body = (
-      <Flashcard
-        words={lesson.newWords}
-        pool={vocab.all()}
-        onFinish={(res) => complete({ ...collected, words: [...collected.words, ...res] })}
-        {...speech}
-      />
-    )
+    body = <Flashcard words={lesson.newWords} pool={vocab.all()} onFinish={(res) => commit(res, [])} {...speech} />
   } else if (stage === 'explain') {
-    body = (
-      <GrammarExplain lesson={grammar} short={lesson.lesson.short} autoRead onDone={() => complete(collected)} {...speech} />
-    )
+    body = <GrammarExplain lesson={grammar} short={lesson.lesson.short} autoRead onDone={() => commit([], [])} {...speech} />
   } else if (stage === 'exercises') {
     body = lesson.exercises.length > 0 ? (
-      <SentenceExercises
-        exercises={lesson.exercises}
-        onFinish={(res) => complete({ ...collected, sentences: res })}
-        {...speech}
-      />
+      <SentenceExercises exercises={lesson.exercises} onFinish={(res) => commit([], res)} {...speech} />
     ) : (
       <section className="game">
         <p className="notice">{lesson.notice}</p>
         <p>Hôm nay chưa đủ câu để luyện tập. Bạn học thêm từ rồi mình luyện câu nhé!</p>
-        <button type="button" className="primary" onClick={() => complete(collected)}>Tiếp tục</button>
+        <button type="button" className="primary" onClick={() => commit([], [])}>Tiếp tục</button>
       </section>
     )
   } else {
-    body = (
-      <Quiz
-        words={lesson.reviewWords}
-        pool={vocab.all()}
-        onFinish={(res) => complete({ ...collected, words: [...collected.words, ...res] })}
-        {...speech}
-      />
-    )
+    body = <Quiz words={lesson.reviewWords} pool={vocab.all()} onFinish={(res) => commit(res, [])} {...speech} />
   }
 
   return (

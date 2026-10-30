@@ -1,5 +1,7 @@
 const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 const isText = (v) => typeof v === 'string' && v.trim() !== ''
+// Distractor tiles that could turn the sentence into a different but also correct sentence.
+const BANNED_EXTRA = new Set(['no', 'not', 'and', 'or'])
 
 export function tokenize(en) {
   return en.toLowerCase().match(/[a-z]+(?:'[a-z]+)?/g) ?? []
@@ -74,6 +76,14 @@ function sentenceErrors(sentence, sessions, { vocabWords, freeWords }) {
   }
 
   if (!Array.isArray(sentence.extra) || !sentence.extra.every(isText)) fail('extra must be a list of words')
+  else {
+    for (const tile of sentence.extra) {
+      if (BANNED_EXTRA.has(tile.toLowerCase())) fail(`extra tile "${tile}" can build another correct sentence`)
+    }
+  }
+  if (isText(sentence.en) && /\b(and|or)\b/i.test(sentence.en)) {
+    fail('coordination (and/or) lets the parts swap places, so the word order is ambiguous: write it without and/or')
+  }
   return errors
 }
 
@@ -105,6 +115,34 @@ export function validateLesson(lesson, context) {
     errors.push(...sentenceErrors(sentence, lesson.sessions, context))
   }
   return errors
+}
+
+// Used when the app starts: a lesson file that is broken (wrong shape, unknown words...) is left
+// out instead of crashing the whole app. `rejected` lists why, so it can be reported.
+export function filterValidLessons(lessons, context) {
+  const valid = []
+  const rejected = []
+  const ids = new Set()
+  for (const entry of lessons) {
+    const id = entry !== null && typeof entry === 'object' && !Array.isArray(entry) ? entry.id ?? null : null
+    try {
+      if (id === null && !(entry && typeof entry === 'object' && !Array.isArray(entry))) {
+        rejected.push({ id, errors: ['not a lesson object'] })
+        continue
+      }
+      const errors = validateLesson(entry, context)
+      if (ids.has(id)) errors.push(`${id}: duplicate lesson id`)
+      if (errors.length > 0) {
+        rejected.push({ id, errors })
+        continue
+      }
+      ids.add(id)
+      valid.push(entry)
+    } catch (error) {
+      rejected.push({ id, errors: [`unreadable lesson: ${error.message}`] })
+    }
+  }
+  return { valid, rejected }
 }
 
 export function validateGrammar({ lessons, roadmap, vocab, freeWords }) {

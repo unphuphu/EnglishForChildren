@@ -7,47 +7,65 @@
     {
       "vi": "Can nghĩa là \"có thể / biết (làm gì)\". Sau can ta dùng động từ nguyên mẫu: không thêm s, không thêm ing, không thêm to. Can giữ nguyên với mọi chủ ngữ.",
       "examples": [
-        { "en": "I can sing.", "vi": "Tôi biết hát." },
-        { "en": "She can dance.", "vi": "Cô ấy biết nhảy." }
+        {
+          "en": "I can sing.",
+          "vi": "Tôi biết hát."
+        },
+        {
+          "en": "She can dance.",
+          "vi": "Cô ấy biết nhảy."
+        }
       ]
     },
     {
       "vi": "Để nói \"không thể\", ta dùng can't (hoặc cannot) rồi vẫn dùng động từ nguyên mẫu.",
       "examples": [
-        { "en": "The baby can't dance.", "vi": "Em bé chưa biết nhảy." },
-        { "en": "He can't paint a cat.", "vi": "Anh ấy không vẽ được con mèo." }
+        {
+          "en": "The baby can't dance.",
+          "vi": "Em bé chưa biết nhảy."
+        },
+        {
+          "en": "He can't paint a cat.",
+          "vi": "Anh ấy không vẽ được con mèo."
+        }
       ]
     },
     {
       "vi": "Để hỏi, ta đưa can lên đầu câu: Can + chủ ngữ + động từ? Trả lời ngắn: Yes, I can. / No, I can't.",
       "examples": [
-        { "en": "Can you sing a song?", "vi": "Bạn có hát được một bài hát không?" },
-        { "en": "Can the cat paint?", "vi": "Con mèo có vẽ được không?" }
+        {
+          "en": "Can you sing a song?",
+          "vi": "Bạn có hát được một bài hát không?"
+        },
+        {
+          "en": "Can the cat paint?",
+          "vi": "Con mèo có vẽ được không?"
+        }
       ]
     }
   ],
   "sentences": [
-    { "id": "can-001", "en": "I can sing.", "vi": "Tôi biết hát.", "uses": ["sing"], "blank": { "answer": "sing", "options": ["sing", "sings", "singing"] }, "wrong": ["I can sings.", "I can singing."], "extra": ["to", "cans"], "session": 1 },
-    { "id": "can-002", "en": "She can dance.", "vi": "Cô ấy biết nhảy.", "uses": ["dance"], "blank": { "answer": "dance", "options": ["dance", "dances", "dancing"] }, "wrong": ["She can dances.", "She can dancing."], "extra": ["to", "cans"], "session": 1 },
-    { "id": "can-003", "en": "He can paint.", "vi": "Anh ấy biết vẽ.", "uses": ["paint"], "blank": { "answer": "paint", "options": ["paint", "paints", "painting"] }, "wrong": ["He can paints.", "He can painting."], "extra": ["to", "cans"], "session": 1 },
-    { "id": "can-004", "en": "My mother can sing a song.", "vi": "Mẹ tôi hát được một bài hát.", "uses": ["mother", "sing", "song"], "blank": { "answer": "can", "options": ["can", "cans", "is"] }, "wrong": ["My mother cans sing a song.", "My mother can sings a song."], "extra": ["to", "sings"], "session": 1 },
-    { "id": "can-005", "en": "My father can sing and dance.", "vi": "Bố tôi biết hát và nhảy.", "uses": ["father", "sing", "dance"], "blank": { "answer": "can", "options": ["can", "cans", "is"] }, "wrong": ["My father cans sing and dance.", "My father can to sing and dance."], "extra": ["to", "dances"], "session": 1 },
-    { "id": "can-006", "en": "The baby can't dance.", "vi": "Em bé chưa biết nhảy.", "uses": ["baby", "dance"], "blank": { "answer": "dance", "options": ["dance", "dances", "dancing"] }, "wrong": ["The baby can't dances.", "The baby can't to dance."], "extra": ["to", "can"], "session": 1 },
-    { "id": "can-007", "en": "The bird can sing.", "vi": "Con chim biết hót.", "uses": ["bird", "sing"], "blank": { "answer": "can", "options": ["can", "cans", "is"] }, "wrong": ["The bird cans sing.", "The bird can sings."], "extra": ["to", "sings"], "session": 1 },
-    { "id": "can-008", "en": "The dog can't sing.", "vi": "Con chó không biết hát.", "uses": ["dog", "sing"], "blank": { "answer": "sing", "options": ["sing", "sings", "singing"] }, "wrong": ["The dog can't sings.", "The dog can't to sing."], "extra": ["to", "can"], "session": 1 },
-    { "id": "can-009", "en": "Can you sing a song?", "vi": "Bạn có hát được một bài hát không?", "uses": ["sing", "song"], "blank": { "answer": "Can", "options": ["Can", "Is", "Are"] }, "wrong": ["Is you sing a song?", "Can you to sing a song?"], "extra": ["to", "Are"], "session": 1 },
-    { "id": "can-010", "en": "Can your sister dance?", "vi": "Chị gái bạn có nhảy được không?", "uses": ["sister", "dance"], "blank": { "answer": "dance", "options": ["dance", "dances", "dancing"] }, "wrong": ["Can your sister dances?", "Can your sister dancing?"], "extra": ["to", "Is"], "session": 1 },
-    { "id": "can-011", "en": "Can the cat paint?", "vi": "Con mèo có vẽ được không?", "uses": ["cat", "paint"], "blank": { "answer": "Can", "options": ["Can", "Is", "Are"] }, "wrong": ["Is the cat paint?", "Can the cat to paint?"], "extra": ["to", "Are"], "session": 1 },
-    { "id": "can-012", "en": "I can paint a dog.", "vi": "Tôi vẽ được một con chó.", "uses": ["paint", "dog"], "blank": { "answer": "paint", "options": ["paint", "paints", "painting"] }, "wrong": ["I can paints a dog.", "I can painting a dog."], "extra": ["to", "cans"], "session": 1 },
-    { "id": "can-013", "en": "She can paint a house.", "vi": "Cô ấy vẽ được một ngôi nhà.", "uses": ["paint", "house"], "blank": { "answer": "can", "options": ["can", "cans", "is"] }, "wrong": ["She cans paint a house.", "She can paints a house."], "extra": ["to", "paints"], "session": 1 },
-    { "id": "can-014", "en": "He can't paint a cat.", "vi": "Anh ấy không vẽ được con mèo.", "uses": ["paint", "cat"], "blank": { "answer": "paint", "options": ["paint", "paints", "painting"] }, "wrong": ["He can't paints a cat.", "He can't painting a cat."], "extra": ["to", "can"], "session": 1 },
-    { "id": "can-015", "en": "We can sing and dance.", "vi": "Chúng tôi biết hát và nhảy.", "uses": ["sing", "dance"], "blank": { "answer": "can", "options": ["can", "cans", "is"] }, "wrong": ["We cans sing and dance.", "We can sings and dance."], "extra": ["to", "sings"], "session": 1 },
-    { "id": "can-016", "en": "They can't paint the door.", "vi": "Họ không sơn được cánh cửa.", "uses": ["paint", "door"], "blank": { "answer": "paint", "options": ["paint", "paints", "painting"] }, "wrong": ["They can't paints the door.", "They can't to paint the door."], "extra": ["to", "can"], "session": 1 },
-    { "id": "can-017", "en": "My grandmother can sing a song.", "vi": "Bà tôi hát được một bài hát.", "uses": ["grandmother", "sing", "song"], "blank": { "answer": "sing", "options": ["sing", "sings", "singing"] }, "wrong": ["My grandmother can sings a song.", "My grandmother cans sing a song."], "extra": ["to", "cans"], "session": 1 },
-    { "id": "can-018", "en": "The teacher can sing.", "vi": "Cô giáo biết hát.", "uses": ["teacher", "sing"], "blank": { "answer": "can", "options": ["can", "cans", "is"] }, "wrong": ["The teacher cans sing.", "The teacher can sings."], "extra": ["to", "sings"], "session": 1 },
-    { "id": "can-019", "en": "Can the teacher dance?", "vi": "Cô giáo có nhảy được không?", "uses": ["teacher", "dance"], "blank": { "answer": "Can", "options": ["Can", "Is", "Are"] }, "wrong": ["Is the teacher dance?", "Can the teacher dances?"], "extra": ["to", "Are"], "session": 1 },
-    { "id": "can-020", "en": "I can sing a song with my sister.", "vi": "Tôi hát được một bài hát cùng chị gái.", "uses": ["sing", "song", "sister"], "blank": { "answer": "sing", "options": ["sing", "sings", "singing"] }, "wrong": ["I can sings a song with my sister.", "I can to sing a song with my sister."], "extra": ["to", "cans"], "session": 1 },
-    { "id": "can-021", "en": "He can dance with the baby.", "vi": "Anh ấy nhảy được cùng em bé.", "uses": ["dance", "baby"], "blank": { "answer": "dance", "options": ["dance", "dances", "dancing"] }, "wrong": ["He can dances with the baby.", "He can dancing with the baby."], "extra": ["to", "cans"], "session": 1 },
-    { "id": "can-022", "en": "Can you paint a bird?", "vi": "Bạn có vẽ được một con chim không?", "uses": ["paint", "bird"], "blank": { "answer": "Can", "options": ["Can", "Is", "Are"] }, "wrong": ["Is you paint a bird?", "Can you to paint a bird?"], "extra": ["to", "Are"], "session": 1 }
+    {"id":"can-001","en":"I can sing.","vi":"Tôi biết hát.","uses":["sing"],"blank":{"answer":"sing","options":["sing","sings","singing"]},"wrong":["I can sings.","I can singing."],"extra":["to","cans"],"session":1},
+    {"id":"can-002","en":"She can dance.","vi":"Cô ấy biết nhảy.","uses":["dance"],"blank":{"answer":"dance","options":["dance","dances","dancing"]},"wrong":["She can dances.","She can dancing."],"extra":["to","cans"],"session":1},
+    {"id":"can-003","en":"He can paint.","vi":"Anh ấy biết vẽ.","uses":["paint"],"blank":{"answer":"paint","options":["paint","paints","painting"]},"wrong":["He can paints.","He can painting."],"extra":["to","cans"],"session":1},
+    {"id":"can-004","en":"My mother can sing a song.","vi":"Mẹ tôi hát được một bài hát.","uses":["mother","sing","song"],"blank":{"answer":"can","options":["can","cans","is"]},"wrong":["My mother cans sing a song.","My mother can sings a song."],"extra":["to","sings"],"session":1},
+    {"id":"can-005","en":"My father can dance.","vi":"Bố tôi biết nhảy.","uses":["father","dance"],"blank":{"answer":"can","options":["can","cans","is"]},"wrong":["My father cans dance.","My father can to dance."],"extra":["to","dances"],"session":1},
+    {"id":"can-006","en":"The baby can't dance.","vi":"Em bé chưa biết nhảy.","uses":["baby","dance"],"blank":{"answer":"dance","options":["dance","dances","dancing"]},"wrong":["The baby can't dances.","The baby can't to dance."],"extra":["to","can"],"session":1},
+    {"id":"can-007","en":"The bird can sing.","vi":"Con chim biết hót.","uses":["bird","sing"],"blank":{"answer":"can","options":["can","cans","is"]},"wrong":["The bird cans sing.","The bird can sings."],"extra":["to","sings"],"session":1},
+    {"id":"can-008","en":"The dog can't sing.","vi":"Con chó không biết hát.","uses":["dog","sing"],"blank":{"answer":"sing","options":["sing","sings","singing"]},"wrong":["The dog can't sings.","The dog can't to sing."],"extra":["to","can"],"session":1},
+    {"id":"can-009","en":"Can you sing a song?","vi":"Bạn có hát được một bài hát không?","uses":["sing","song"],"blank":{"answer":"Can","options":["Can","Is","Are"]},"wrong":["Is you sing a song?","Can you to sing a song?"],"extra":["to","Are"],"session":1},
+    {"id":"can-010","en":"Can your sister dance?","vi":"Chị gái bạn có nhảy được không?","uses":["sister","dance"],"blank":{"answer":"dance","options":["dance","dances","dancing"]},"wrong":["Can your sister dances?","Can your sister dancing?"],"extra":["to","Is"],"session":1},
+    {"id":"can-011","en":"Can the cat paint?","vi":"Con mèo có vẽ được không?","uses":["cat","paint"],"blank":{"answer":"Can","options":["Can","Is","Are"]},"wrong":["Is the cat paint?","Can the cat to paint?"],"extra":["to","Are"],"session":1},
+    {"id":"can-012","en":"I can paint a dog.","vi":"Tôi vẽ được một con chó.","uses":["paint","dog"],"blank":{"answer":"paint","options":["paint","paints","painting"]},"wrong":["I can paints a dog.","I can painting a dog."],"extra":["to","cans"],"session":1},
+    {"id":"can-013","en":"She can paint a house.","vi":"Cô ấy vẽ được một ngôi nhà.","uses":["paint","house"],"blank":{"answer":"can","options":["can","cans","is"]},"wrong":["She cans paint a house.","She can paints a house."],"extra":["to","paints"],"session":1},
+    {"id":"can-014","en":"He can't paint a cat.","vi":"Anh ấy không vẽ được con mèo.","uses":["paint","cat"],"blank":{"answer":"paint","options":["paint","paints","painting"]},"wrong":["He can't paints a cat.","He can't painting a cat."],"extra":["to","can"],"session":1},
+    {"id":"can-015","en":"We can paint.","vi":"Chúng tôi biết vẽ.","uses":["paint"],"blank":{"answer":"can","options":["can","cans","is"]},"wrong":["We cans paint.","We can paints."],"extra":["to","paints"],"session":1},
+    {"id":"can-016","en":"They can't paint the door.","vi":"Họ không sơn được cánh cửa.","uses":["paint","door"],"blank":{"answer":"paint","options":["paint","paints","painting"]},"wrong":["They can't paints the door.","They can't to paint the door."],"extra":["to","can"],"session":1},
+    {"id":"can-017","en":"My grandmother can sing a song.","vi":"Bà tôi hát được một bài hát.","uses":["grandmother","sing","song"],"blank":{"answer":"sing","options":["sing","sings","singing"]},"wrong":["My grandmother can sings a song.","My grandmother cans sing a song."],"extra":["to","cans"],"session":1},
+    {"id":"can-018","en":"The teacher can sing.","vi":"Cô giáo biết hát.","uses":["teacher","sing"],"blank":{"answer":"can","options":["can","cans","is"]},"wrong":["The teacher cans sing.","The teacher can sings."],"extra":["to","sings"],"session":1},
+    {"id":"can-019","en":"Can the teacher dance?","vi":"Cô giáo có nhảy được không?","uses":["teacher","dance"],"blank":{"answer":"Can","options":["Can","Is","Are"]},"wrong":["Is the teacher dance?","Can the teacher dances?"],"extra":["to","Are"],"session":1},
+    {"id":"can-020","en":"I can sing a song with my sister.","vi":"Tôi hát được một bài hát cùng chị gái.","uses":["sing","song","sister"],"blank":{"answer":"sing","options":["sing","sings","singing"]},"wrong":["I can sings a song with my sister.","I can to sing a song with my sister."],"extra":["to","cans"],"session":1},
+    {"id":"can-021","en":"He can dance with the baby.","vi":"Anh ấy nhảy được cùng em bé.","uses":["dance","baby"],"blank":{"answer":"dance","options":["dance","dances","dancing"]},"wrong":["He can dances with the baby.","He can dancing with the baby."],"extra":["to","cans"],"session":1},
+    {"id":"can-022","en":"Can you paint a bird?","vi":"Bạn có vẽ được một con chim không?","uses":["paint","bird"],"blank":{"answer":"Can","options":["Can","Is","Are"]},"wrong":["Is you paint a bird?","Can you to paint a bird?"],"extra":["to","Are"],"session":1}
   ]
 }

@@ -109,6 +109,26 @@ describe('later days', () => {
     expect(idsOf(lesson.newWords)).toEqual(['t-easy1', 't-easy2', 't-easy3', 't-hard1'])
   })
 
+  test('a high XP level does not put harder words ahead of easy ones', () => {
+    const lesson = build({ progress: progressWith({}, { xp: 5000 }), goal: 6 })
+    expect(idsOf(lesson.newWords)).toEqual([
+      'family-mother', 'family-father', 'family-sister', 'family-brother', 'family-baby', 'family-grandmother',
+    ])
+  })
+
+  test('the words the grammar lesson needs are learned first, even late in the file and with a small goal', () => {
+    const jobs = ['doctor', 'nurse', 'teacher', 'farmer', 'work'].map((x) => w('jobs', x))
+    const verbLesson = {
+      id: 'verbs', title: 'Verbs', order: 1, sessions: 1, explain: [],
+      sentences: Array.from({ length: 8 }, (_, i) => sentence(`v${i}`, 1, ['work'])),
+    }
+    const lesson = build({
+      vocab: jobs, lessons: [verbLesson], roadmap: [{ topic: 'jobs', lesson: 'verbs', part: 1 }], goal: 2,
+    })
+    expect(idsOf(lesson.newWords)).toEqual(['jobs-work', 'jobs-doctor'])
+    expect(lesson.exercises.length).toBeGreaterThanOrEqual(4)
+  })
+
   test('new words are capped at the goal', () => {
     expect(build({ goal: 3 }).newWords).toHaveLength(3)
   })

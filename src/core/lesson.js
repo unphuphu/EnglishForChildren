@@ -1,28 +1,11 @@
 import { LESSON } from './config.js'
-import { levelForXp } from './progress.js'
 import { suggestToday } from './plan.js'
-import { playerLevelToWordLevel } from './session.js'
+import { pickNewWords } from './newWords.js'
 import { assignTypes, buildExercise, pickSentences } from './sentences.js'
 
 export const NOT_ENOUGH_WORDS_NOTICE = 'Học thêm từ nhé'
 
 const isDue = (card, today) => card.due != null && card.due <= today
-
-// New words: unlearned words of the topic in file order, words at the child's level first,
-// harder ones only if needed; a nearly finished topic is topped up with its due words.
-function pickNewWords({ vocab, cards, topic, goal, level, today }) {
-  const topicWords = vocab.filter((w) => w.topic === topic)
-  const unseen = topicWords.filter((w) => !cards[w.id])
-  const words = [...unseen.filter((w) => w.level <= level), ...unseen.filter((w) => w.level > level)].slice(0, goal)
-  if (words.length < goal) {
-    const taken = new Set(words.map((w) => w.id))
-    const due = topicWords
-      .filter((w) => cards[w.id] && isDue(cards[w.id], today) && !taken.has(w.id))
-      .sort((a, b) => cards[a.id].due.localeCompare(cards[b.id].due))
-    words.push(...due.slice(0, goal - words.length))
-  }
-  return words
-}
 
 const weakness = (cards) => (a, b) => {
   const ca = cards[a.id]
@@ -50,8 +33,12 @@ function pickReviewWords({ vocab, cards, today, excludeIds }) {
 export function buildLesson({ roadmap, lessons, vocab, progress, today, goal, topic = null, rng = Math.random }) {
   const suggestion = suggestToday({ roadmap, lessons, vocab, progress })
   const chosenTopic = topic ?? suggestion.topic
-  const level = playerLevelToWordLevel(levelForXp(progress.xp))
-  const newWords = chosenTopic ? pickNewWords({ vocab, cards: progress.cards, topic: chosenTopic, goal, level, today }) : []
+  const grammar = suggestion.lessonId ? lessons.find((l) => l.id === suggestion.lessonId) : null
+  const newWords = chosenTopic
+    ? pickNewWords({
+      vocab, cards: progress.cards, topic: chosenTopic, goal, today, lesson: grammar, part: suggestion.part,
+    })
+    : []
 
   const lesson = suggestion.lessonId
     ? {

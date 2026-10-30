@@ -3,6 +3,7 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { validateGrammar } from '../src/core/grammarSchema.js'
 import { roadmapCoverageErrors } from '../src/core/plan.js'
+import { LESSON } from '../src/core/config.js'
 
 const read = (path) => JSON.parse(readFileSync(path, 'utf8'))
 const dir = (relative) => fileURLToPath(new URL(relative, import.meta.url))
@@ -22,9 +23,12 @@ if (lessons.length === 0) {
   process.exit(0)
 }
 
+// Coverage is checked for a child with the default goal (8 sentences needed) and for the smallest
+// goal of 5 new words (at least the 4 sentences a lesson needs to show its exercises).
 const errors = [
   ...validateGrammar({ lessons, roadmap, vocab, freeWords }),
-  ...roadmapCoverageErrors({ roadmap, lessons, vocab }),
+  ...roadmapCoverageErrors({ roadmap, lessons, vocab, goal: 10, minSentences: 8 }),
+  ...roadmapCoverageErrors({ roadmap, lessons, vocab, goal: 5, minSentences: LESSON.MIN_SENTENCES }).map((e) => `${e} (goal 5)`),
 ]
 if (errors.length) {
   console.error(errors.join('\n'))

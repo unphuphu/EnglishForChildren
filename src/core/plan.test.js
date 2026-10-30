@@ -92,12 +92,23 @@ describe('roadmapCoverageErrors', () => {
     expect(run(l, [{ topic: 'family', lesson: 'to-be', part: 1 }]).join(' ')).toMatch(/step 1/)
   })
 
-  test('only the first N level-1 words of a topic are assumed learned', () => {
-    const l = [lesson('to-be', 1, 1, eight('a', 1, ['bird']))]
-    expect(run(l, [{ topic: 'animals', lesson: 'to-be', part: 1 }], { perTopic: 10 }).join(' ')).toMatch(/step 1/)
-    const l2 = [lesson('to-be', 1, 1, eight('a', 1, ['cat']))]
-    expect(run(l2, [{ topic: 'animals', lesson: 'to-be', part: 1 }], { perTopic: 1 }).join(' ')).toMatch(/step 1/)
-    expect(run(l2, [{ topic: 'animals', lesson: 'to-be', part: 1 }], { perTopic: 2 })).toEqual([])
+  test('only as many words as the daily goal are assumed learned per step', () => {
+    const step = [{ topic: 'animals', lesson: 'to-be', part: 1 }]
+    const needsBoth = [lesson('to-be', 1, 1, Array.from({ length: 8 }, (_, i) => sentence(`b${i}`, 1, ['dog', 'cat'])))]
+    expect(run(needsBoth, step, { goal: 1 }).join(' ')).toMatch(/step 1/)
+    expect(run(needsBoth, step, { goal: 2 })).toEqual([])
+  })
+
+  test('the words the lesson needs are learned first, even a harder one late in the file', () => {
+    const step = [{ topic: 'animals', lesson: 'to-be', part: 1 }]
+    const needsBird = [lesson('to-be', 1, 1, eight('a', 1, ['bird']))]
+    expect(run(needsBird, step, { goal: 1 })).toEqual([])
+  })
+
+  test('the simulation follows the real word choice, so an unreachable word is reported', () => {
+    const step = [{ topic: 'animals', lesson: 'to-be', part: 1 }]
+    const needsGhost = [lesson('to-be', 1, 1, eight('a', 1, ['ghost']))]
+    expect(run(needsGhost, step).join(' ')).toMatch(/step 1/)
   })
 
   test('earlier parts of the lesson count for a later part', () => {

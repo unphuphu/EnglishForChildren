@@ -7,47 +7,65 @@
     {
       "vi": "This (cái này) và that (cái kia) dùng cho MỘT người hoặc vật. This chỉ thứ ở gần, that chỉ thứ ở xa. Sau chúng ta dùng is.",
       "examples": [
-        { "en": "This is my dog.", "vi": "Đây là con chó của tôi." },
-        { "en": "That is my cat over there.", "vi": "Kia là con mèo của tôi ở đằng kia." }
+        {
+          "en": "This is my dog.",
+          "vi": "Đây là con chó của tôi."
+        },
+        {
+          "en": "That is my cat over there.",
+          "vi": "Kia là con mèo của tôi ở đằng kia."
+        }
       ]
     },
     {
       "vi": "These (những cái này) và those (những cái kia) dùng cho NHIỀU người hoặc vật. These chỉ thứ ở gần, those chỉ thứ ở xa. Sau chúng ta dùng are, và danh từ thêm s.",
       "examples": [
-        { "en": "These are my birds.", "vi": "Đây là những con chim của tôi." },
-        { "en": "Those are my fish over there.", "vi": "Kia là những con cá của tôi ở đằng kia." }
+        {
+          "en": "These are my birds.",
+          "vi": "Đây là những con chim của tôi."
+        },
+        {
+          "en": "Those are my fish over there.",
+          "vi": "Kia là những con cá của tôi ở đằng kia."
+        }
       ]
     },
     {
       "vi": "Để hỏi \"Đây là gì?\", ta nói What is this? và trả lời It is... Với nhiều vật, ta nói What are those? và trả lời They are...",
       "examples": [
-        { "en": "What is this? It is a cow.", "vi": "Đây là gì? Nó là một con bò." },
-        { "en": "What are those? They are pigs.", "vi": "Kia là gì? Chúng là những con heo." }
+        {
+          "en": "What is this? It is a cow.",
+          "vi": "Đây là gì? Nó là một con bò."
+        },
+        {
+          "en": "What are those? They are pigs.",
+          "vi": "Kia là gì? Chúng là những con heo."
+        }
       ]
     }
   ],
   "sentences": [
-    { "id": "this-that-001", "en": "This is my dog.", "vi": "Đây là con chó của tôi.", "uses": ["dog"], "blank": { "answer": "This", "options": ["This", "These", "Those"] }, "wrong": ["These is my dog.", "Those is my dog."], "extra": ["are", "that"], "session": 1 },
-    { "id": "this-that-002", "en": "That is my cat over there.", "vi": "Kia là con mèo của tôi ở đằng kia.", "uses": ["cat"], "blank": { "answer": "That", "options": ["That", "This", "These"] }, "wrong": ["Those is my cat over there.", "These is my cat over there."], "extra": ["are", "here"], "session": 1 },
-    { "id": "this-that-003", "en": "These are my birds.", "vi": "Đây là những con chim của tôi.", "uses": ["bird"], "blank": { "answer": "These", "options": ["These", "This", "That"] }, "wrong": ["This are my birds.", "That are my birds."], "extra": ["is", "those"], "session": 1 },
-    { "id": "this-that-004", "en": "Those are my fish over there.", "vi": "Kia là những con cá của tôi ở đằng kia.", "uses": ["fish"], "blank": { "answer": "Those", "options": ["Those", "These", "This"] }, "wrong": ["That are my fish over there.", "This are my fish over there."], "extra": ["is", "here"], "session": 1 },
-    { "id": "this-that-005", "en": "This is my mother.", "vi": "Đây là mẹ tôi.", "uses": ["mother"], "blank": { "answer": "This", "options": ["This", "These", "Those"] }, "wrong": ["These is my mother.", "Those is my mother."], "extra": ["are", "that"], "session": 1 },
-    { "id": "this-that-006", "en": "That is my father.", "vi": "Kia là bố tôi.", "uses": ["father"], "blank": { "answer": "That", "options": ["That", "These", "Those"] }, "wrong": ["Those is my father.", "These is my father."], "extra": ["are", "this"], "session": 1 },
-    { "id": "this-that-007", "en": "These are my sisters.", "vi": "Đây là những người chị em gái của tôi.", "uses": ["sister"], "blank": { "answer": "These", "options": ["These", "This", "That"] }, "wrong": ["This are my sisters.", "That are my sisters."], "extra": ["is", "those"], "session": 1 },
-    { "id": "this-that-008", "en": "Those are my brothers over there.", "vi": "Kia là những người anh em trai của tôi ở đằng kia.", "uses": ["brother"], "blank": { "answer": "Those", "options": ["Those", "These", "This"] }, "wrong": ["That are my brothers over there.", "This are my brothers over there."], "extra": ["is", "here"], "session": 1 },
-    { "id": "this-that-009", "en": "This is a happy baby.", "vi": "Đây là một em bé vui vẻ.", "uses": ["happy", "baby"], "blank": { "answer": "This", "options": ["This", "These", "Those"] }, "wrong": ["These is a happy baby.", "Those is a happy baby."], "extra": ["are", "that"], "session": 1 },
-    { "id": "this-that-010", "en": "That is a sleepy cat.", "vi": "Kia là một con mèo buồn ngủ.", "uses": ["sleepy", "cat"], "blank": { "answer": "That", "options": ["That", "These", "Those"] }, "wrong": ["Those is a sleepy cat.", "These is a sleepy cat."], "extra": ["are", "this"], "session": 1 },
-    { "id": "this-that-011", "en": "These are funny rabbits.", "vi": "Đây là những con thỏ ngộ nghĩnh.", "uses": ["funny", "rabbit"], "blank": { "answer": "These", "options": ["These", "This", "That"] }, "wrong": ["This are funny rabbits.", "That are funny rabbits."], "extra": ["is", "those"], "session": 1 },
-    { "id": "this-that-012", "en": "Those are kind horses over there.", "vi": "Kia là những con ngựa hiền ở đằng kia.", "uses": ["kind", "horse"], "blank": { "answer": "Those", "options": ["Those", "These", "This"] }, "wrong": ["That are kind horses over there.", "This are kind horses over there."], "extra": ["is", "here"], "session": 1 },
-    { "id": "this-that-013", "en": "Is this your dog?", "vi": "Đây có phải là con chó của bạn không?", "uses": ["dog"], "blank": { "answer": "this", "options": ["this", "these", "those"] }, "wrong": ["Is these your dog?", "Is those your dog?"], "extra": ["are", "that"], "session": 1 },
-    { "id": "this-that-014", "en": "Are these your birds?", "vi": "Đây có phải là những con chim của bạn không?", "uses": ["bird"], "blank": { "answer": "these", "options": ["these", "this", "that"] }, "wrong": ["Are this your birds?", "Are that your birds?"], "extra": ["is", "those"], "session": 1 },
-    { "id": "this-that-015", "en": "What is this? It is a cow.", "vi": "Đây là gì? Nó là một con bò.", "uses": ["cow"], "blank": { "answer": "this", "options": ["this", "these", "those"] }, "wrong": ["What is these? It is a cow.", "What is those? It is a cow."], "extra": ["are", "they"], "session": 1 },
-    { "id": "this-that-016", "en": "What are those? They are pigs.", "vi": "Kia là gì? Chúng là những con heo.", "uses": ["pig"], "blank": { "answer": "those", "options": ["those", "this", "that"] }, "wrong": ["What are that? They are pigs.", "What is those? It is pigs."], "extra": ["is", "it"], "session": 1 },
-    { "id": "this-that-017", "en": "This is not my sheep.", "vi": "Đây không phải là con cừu của tôi.", "uses": ["sheep"], "blank": { "answer": "This", "options": ["This", "These", "Those"] }, "wrong": ["These is not my sheep.", "Those is not my sheep."], "extra": ["are", "that"], "session": 1 },
-    { "id": "this-that-018", "en": "These are not my parents.", "vi": "Đây không phải là bố mẹ của tôi.", "uses": ["parent"], "blank": { "answer": "These", "options": ["These", "This", "That"] }, "wrong": ["This are not my parents.", "That are not my parents."], "extra": ["is", "those"], "session": 1 },
-    { "id": "this-that-019", "en": "That is not my grandmother.", "vi": "Kia không phải là bà của tôi.", "uses": ["grandmother"], "blank": { "answer": "That", "options": ["That", "These", "Those"] }, "wrong": ["Those is not my grandmother.", "These is not my grandmother."], "extra": ["are", "this"], "session": 1 },
-    { "id": "this-that-020", "en": "Those are not angry dogs.", "vi": "Kia không phải là những con chó đang giận dữ.", "uses": ["angry", "dog"], "blank": { "answer": "Those", "options": ["Those", "These", "That"] }, "wrong": ["That are not angry dogs.", "Those is not angry dogs."], "extra": ["is", "this"], "session": 1 },
-    { "id": "this-that-021", "en": "This baby is hungry.", "vi": "Em bé này đói.", "uses": ["baby", "hungry"], "blank": { "answer": "This", "options": ["This", "These", "Those"] }, "wrong": ["These baby is hungry.", "This babies is hungry."], "extra": ["are", "that"], "session": 1 },
-    { "id": "this-that-022", "en": "These babies are sleepy.", "vi": "Những em bé này buồn ngủ.", "uses": ["baby", "sleepy"], "blank": { "answer": "These", "options": ["These", "This", "That"] }, "wrong": ["This babies are sleepy.", "These baby are sleepy."], "extra": ["is", "those"], "session": 1 }
+    {"id":"this-that-001","en":"This is my dog.","vi":"Đây là con chó của tôi.","uses":["dog"],"blank":{"answer":"This","options":["This","These","Those"]},"wrong":["These is my dog.","Those is my dog."],"extra":["are","that"],"session":1},
+    {"id":"this-that-002","en":"That is my cat over there.","vi":"Kia là con mèo của tôi ở đằng kia.","uses":["cat"],"blank":{"answer":"That","options":["That","This","These"]},"wrong":["Those is my cat over there.","These is my cat over there."],"extra":["are","here"],"session":1},
+    {"id":"this-that-003","en":"These are my birds.","vi":"Đây là những con chim của tôi.","uses":["bird"],"blank":{"answer":"These","options":["These","This","That"]},"wrong":["This are my birds.","That are my birds."],"extra":["is","those"],"session":1},
+    {"id":"this-that-004","en":"Those are my fish over there.","vi":"Kia là những con cá của tôi ở đằng kia.","uses":["fish"],"blank":{"answer":"Those","options":["Those","These","This"]},"wrong":["That are my fish over there.","This are my fish over there."],"extra":["is","here"],"session":1},
+    {"id":"this-that-005","en":"This is my mother.","vi":"Đây là mẹ tôi.","uses":["mother"],"blank":{"answer":"This","options":["This","These","Those"]},"wrong":["These is my mother.","Those is my mother."],"extra":["are","that"],"session":1},
+    {"id":"this-that-006","en":"That is my father.","vi":"Kia là bố tôi.","uses":["father"],"blank":{"answer":"That","options":["That","These","Those"]},"wrong":["Those is my father.","These is my father."],"extra":["are","this"],"session":1},
+    {"id":"this-that-007","en":"These are my sisters.","vi":"Đây là những người chị em gái của tôi.","uses":["sister"],"blank":{"answer":"These","options":["These","This","That"]},"wrong":["This are my sisters.","That are my sisters."],"extra":["is","those"],"session":1},
+    {"id":"this-that-008","en":"Those are my brothers over there.","vi":"Kia là những người anh em trai của tôi ở đằng kia.","uses":["brother"],"blank":{"answer":"Those","options":["Those","These","This"]},"wrong":["That are my brothers over there.","This are my brothers over there."],"extra":["is","here"],"session":1},
+    {"id":"this-that-009","en":"This is a happy baby.","vi":"Đây là một em bé vui vẻ.","uses":["happy","baby"],"blank":{"answer":"This","options":["This","These","Those"]},"wrong":["These is a happy baby.","Those is a happy baby."],"extra":["are","that"],"session":1},
+    {"id":"this-that-010","en":"That is a sleepy cat.","vi":"Kia là một con mèo buồn ngủ.","uses":["sleepy","cat"],"blank":{"answer":"That","options":["That","These","Those"]},"wrong":["Those is a sleepy cat.","These is a sleepy cat."],"extra":["are","this"],"session":1},
+    {"id":"this-that-011","en":"These are funny rabbits.","vi":"Đây là những con thỏ ngộ nghĩnh.","uses":["funny","rabbit"],"blank":{"answer":"These","options":["These","This","That"]},"wrong":["This are funny rabbits.","That are funny rabbits."],"extra":["is","those"],"session":1},
+    {"id":"this-that-012","en":"Those are kind horses over there.","vi":"Kia là những con ngựa hiền ở đằng kia.","uses":["kind","horse"],"blank":{"answer":"Those","options":["Those","These","This"]},"wrong":["That are kind horses over there.","This are kind horses over there."],"extra":["is","here"],"session":1},
+    {"id":"this-that-013","en":"Is this your dog?","vi":"Đây có phải là con chó của bạn không?","uses":["dog"],"blank":{"answer":"this","options":["this","these","those"]},"wrong":["Is these your dog?","Is those your dog?"],"extra":["are","that"],"session":1},
+    {"id":"this-that-014","en":"Are these your birds?","vi":"Đây có phải là những con chim của bạn không?","uses":["bird"],"blank":{"answer":"these","options":["these","this","that"]},"wrong":["Are this your birds?","Are that your birds?"],"extra":["is","those"],"session":1},
+    {"id":"this-that-015","en":"What is this? It is a cow.","vi":"Đây là gì? Nó là một con bò.","uses":["cow"],"blank":{"answer":"this","options":["this","these","those"]},"wrong":["What is these? It is a cow.","What is those? It is a cow."],"extra":["are","they"],"session":1},
+    {"id":"this-that-016","en":"What are those? They are pigs.","vi":"Kia là gì? Chúng là những con heo.","uses":["pig"],"blank":{"answer":"those","options":["those","this","that"]},"wrong":["What are that? They are pigs.","What is those? It is pigs."],"extra":["is","it"],"session":1},
+    {"id":"this-that-017","en":"This is not my sheep.","vi":"Đây không phải là con cừu của tôi.","uses":["sheep"],"blank":{"answer":"This","options":["This","These","Those"]},"wrong":["These is not my sheep.","Those is not my sheep."],"extra":["are","that"],"session":1},
+    {"id":"this-that-018","en":"These are not my parents.","vi":"Đây không phải là bố mẹ của tôi.","uses":["parent"],"blank":{"answer":"These","options":["These","This","That"]},"wrong":["This are not my parents.","That are not my parents."],"extra":["is","those"],"session":1},
+    {"id":"this-that-019","en":"That is not my grandmother.","vi":"Kia không phải là bà của tôi.","uses":["grandmother"],"blank":{"answer":"That","options":["That","These","Those"]},"wrong":["Those is not my grandmother.","These is not my grandmother."],"extra":["are","this"],"session":1},
+    {"id":"this-that-020","en":"Those are not angry dogs over there.","vi":"Kia không phải là những con chó đang giận dữ ở đằng kia.","uses":["angry","dog"],"blank":{"answer":"Those","options":["Those","These","That"]},"wrong":["That are not angry dogs over there.","Those is not angry dogs over there."],"extra":["is","this"],"session":1},
+    {"id":"this-that-021","en":"This baby is hungry.","vi":"Em bé này đói.","uses":["baby","hungry"],"blank":{"answer":"This","options":["This","These","Those"]},"wrong":["These baby is hungry.","This babies is hungry."],"extra":["are","that"],"session":1},
+    {"id":"this-that-022","en":"These babies are sleepy.","vi":"Những em bé này buồn ngủ.","uses":["baby","sleepy"],"blank":{"answer":"These","options":["These","This","That"]},"wrong":["This babies are sleepy.","These baby are sleepy."],"extra":["is","those"],"session":1}
   ]
 }

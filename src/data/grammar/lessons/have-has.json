@@ -7,47 +7,65 @@
     {
       "vi": "Have và has nghĩa là \"có\" (sở hữu). Ta dùng have với I, you, we, they hoặc nhiều người. Ta dùng has với he, she, it hoặc một người/vật.",
       "examples": [
-        { "en": "I have a dog.", "vi": "Tôi có một con chó." },
-        { "en": "She has a cat.", "vi": "Cô ấy có một con mèo." }
+        {
+          "en": "I have a dog.",
+          "vi": "Tôi có một con chó."
+        },
+        {
+          "en": "She has a cat.",
+          "vi": "Cô ấy có một con mèo."
+        }
       ]
     },
     {
       "vi": "Để nói \"không có\", ta dùng don't have (với I, you, we, they) hoặc doesn't have (với he, she, it). Sau doesn't ta luôn dùng have, không dùng has.",
       "examples": [
-        { "en": "I don't have a rabbit.", "vi": "Tôi không có con thỏ nào." },
-        { "en": "She doesn't have a horse.", "vi": "Cô ấy không có con ngựa nào." }
+        {
+          "en": "I don't have a rabbit.",
+          "vi": "Tôi không có con thỏ nào."
+        },
+        {
+          "en": "She doesn't have a horse.",
+          "vi": "Cô ấy không có con ngựa nào."
+        }
       ]
     },
     {
       "vi": "Để hỏi, ta dùng Do ... have ...? (với I, you, we, they) hoặc Does ... have ...? (với he, she, it). Sau does ta cũng dùng have.",
       "examples": [
-        { "en": "Do you have a pencil?", "vi": "Bạn có cây bút chì không?" },
-        { "en": "Does she have a brother?", "vi": "Cô ấy có anh em trai không?" }
+        {
+          "en": "Do you have a pencil?",
+          "vi": "Bạn có cây bút chì không?"
+        },
+        {
+          "en": "Does she have a brother?",
+          "vi": "Cô ấy có anh em trai không?"
+        }
       ]
     }
   ],
   "sentences": [
-    { "id": "have-has-001", "en": "I have a dog.", "vi": "Tôi có một con chó.", "uses": ["dog"], "blank": { "answer": "have", "options": ["have", "has", "having"] }, "wrong": ["I has a dog.", "I having a dog."], "extra": ["has", "am"], "session": 1 },
-    { "id": "have-has-002", "en": "She has a cat.", "vi": "Cô ấy có một con mèo.", "uses": ["cat"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["She have a cat.", "She haves a cat."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-003", "en": "He has a sister.", "vi": "Anh ấy có một người chị em gái.", "uses": ["sister"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["He have a sister.", "He haves a sister."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-004", "en": "We have a house.", "vi": "Chúng tôi có một ngôi nhà.", "uses": ["house"], "blank": { "answer": "have", "options": ["have", "has", "having"] }, "wrong": ["We has a house.", "We having a house."], "extra": ["has", "are"], "session": 1 },
-    { "id": "have-has-005", "en": "They have a bedroom.", "vi": "Họ có một phòng ngủ.", "uses": ["bedroom"], "blank": { "answer": "have", "options": ["have", "has", "having"] }, "wrong": ["They has a bedroom.", "They having a bedroom."], "extra": ["has", "are"], "session": 1 },
-    { "id": "have-has-006", "en": "My mother has a key.", "vi": "Mẹ tôi có một chiếc chìa khóa.", "uses": ["mother", "key"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["My mother have a key.", "My mother haves a key."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-007", "en": "My father has a sandwich.", "vi": "Bố tôi có một cái bánh sandwich.", "uses": ["father", "sandwich"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["My father have a sandwich.", "My father haves a sandwich."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-008", "en": "I have an egg.", "vi": "Tôi có một quả trứng.", "uses": ["egg"], "blank": { "answer": "have", "options": ["have", "has", "having"] }, "wrong": ["I has an egg.", "I having an egg."], "extra": ["has", "am"], "session": 1 },
-    { "id": "have-has-009", "en": "The baby has a book.", "vi": "Em bé có một quyển sách.", "uses": ["baby", "book"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["The baby have a book.", "The baby haves a book."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-010", "en": "The students have pens.", "vi": "Các học sinh có bút mực.", "uses": ["student", "pen"], "blank": { "answer": "have", "options": ["have", "has", "having"] }, "wrong": ["The students has pens.", "The students having pens."], "extra": ["has", "are"], "session": 1 },
-    { "id": "have-has-011", "en": "The teacher has a pencil.", "vi": "Cô giáo có một cây bút chì.", "uses": ["teacher", "pencil"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["The teacher have a pencil.", "The teacher haves a pencil."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-012", "en": "You have rice and soup.", "vi": "Bạn có cơm và súp.", "uses": ["rice", "soup"], "blank": { "answer": "have", "options": ["have", "has", "having"] }, "wrong": ["You has rice and soup.", "You having rice and soup."], "extra": ["has", "are"], "session": 1 },
-    { "id": "have-has-013", "en": "The cat has a fish.", "vi": "Con mèo có một con cá.", "uses": ["cat", "fish"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["The cat have a fish.", "The cat haves a fish."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-014", "en": "My sister has bread and cheese.", "vi": "Chị gái tôi có bánh mì và phô mai.", "uses": ["sister", "bread", "cheese"], "blank": { "answer": "has", "options": ["has", "have", "having"] }, "wrong": ["My sister have bread and cheese.", "My sister haves bread and cheese."], "extra": ["have", "is"], "session": 1 },
-    { "id": "have-has-015", "en": "I don't have a rabbit.", "vi": "Tôi không có con thỏ nào.", "uses": ["rabbit"], "blank": { "answer": "don't", "options": ["don't", "doesn't", "not"] }, "wrong": ["I doesn't have a rabbit.", "I not have a rabbit."], "extra": ["has", "doesn't"], "session": 1 },
-    { "id": "have-has-016", "en": "She doesn't have a horse.", "vi": "Cô ấy không có con ngựa nào.", "uses": ["horse"], "blank": { "answer": "doesn't", "options": ["doesn't", "don't", "not"] }, "wrong": ["She don't have a horse.", "She not have a horse."], "extra": ["has", "don't"], "session": 1 },
-    { "id": "have-has-017", "en": "We don't have noodles.", "vi": "Chúng tôi không có mì.", "uses": ["noodles"], "blank": { "answer": "don't", "options": ["don't", "doesn't", "not"] }, "wrong": ["We doesn't have noodles.", "We not have noodles."], "extra": ["has", "doesn't"], "session": 1 },
-    { "id": "have-has-018", "en": "He doesn't have a pig.", "vi": "Anh ấy không có con heo nào.", "uses": ["pig"], "blank": { "answer": "doesn't", "options": ["doesn't", "don't", "not"] }, "wrong": ["He don't have a pig.", "He not have a pig."], "extra": ["has", "don't"], "session": 1 },
-    { "id": "have-has-019", "en": "Do you have a pencil?", "vi": "Bạn có cây bút chì không?", "uses": ["pencil"], "blank": { "answer": "Do", "options": ["Do", "Does", "Are"] }, "wrong": ["Does you have a pencil?", "Are you have a pencil?"], "extra": ["Does", "has"], "session": 1 },
-    { "id": "have-has-020", "en": "Does she have a brother?", "vi": "Cô ấy có anh em trai không?", "uses": ["brother"], "blank": { "answer": "Does", "options": ["Does", "Do", "Is"] }, "wrong": ["Do she have a brother?", "Is she have a brother?"], "extra": ["Do", "has"], "session": 1 },
-    { "id": "have-has-021", "en": "Does the baby have a pizza?", "vi": "Em bé có bánh pizza không?", "uses": ["baby", "pizza"], "blank": { "answer": "Does", "options": ["Does", "Do", "Is"] }, "wrong": ["Do the baby have a pizza?", "Is the baby have a pizza?"], "extra": ["Do", "has"], "session": 1 },
-    { "id": "have-has-022", "en": "Do they have a hamburger?", "vi": "Họ có bánh hamburger không?", "uses": ["hamburger"], "blank": { "answer": "Do", "options": ["Do", "Does", "Are"] }, "wrong": ["Does they have a hamburger?", "Are they have a hamburger?"], "extra": ["Does", "has"], "session": 1 }
+    {"id":"have-has-001","en":"I have a dog.","vi":"Tôi có một con chó.","uses":["dog"],"blank":{"answer":"have","options":["have","has","having"]},"wrong":["I has a dog.","I having a dog."],"extra":["has","am"],"session":1},
+    {"id":"have-has-002","en":"She has a cat.","vi":"Cô ấy có một con mèo.","uses":["cat"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["She have a cat.","She haves a cat."],"extra":["have","is"],"session":1},
+    {"id":"have-has-003","en":"He has a sister.","vi":"Anh ấy có một người chị em gái.","uses":["sister"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["He have a sister.","He haves a sister."],"extra":["have","is"],"session":1},
+    {"id":"have-has-004","en":"We have a house.","vi":"Chúng tôi có một ngôi nhà.","uses":["house"],"blank":{"answer":"have","options":["have","has","having"]},"wrong":["We has a house.","We having a house."],"extra":["has","are"],"session":1},
+    {"id":"have-has-005","en":"They have a bedroom.","vi":"Họ có một phòng ngủ.","uses":["bedroom"],"blank":{"answer":"have","options":["have","has","having"]},"wrong":["They has a bedroom.","They having a bedroom."],"extra":["has","are"],"session":1},
+    {"id":"have-has-006","en":"My mother has a key.","vi":"Mẹ tôi có một chiếc chìa khóa.","uses":["mother","key"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["My mother have a key.","My mother haves a key."],"extra":["have","is"],"session":1},
+    {"id":"have-has-007","en":"My father has a sandwich.","vi":"Bố tôi có một cái bánh sandwich.","uses":["father","sandwich"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["My father have a sandwich.","My father haves a sandwich."],"extra":["have","is"],"session":1},
+    {"id":"have-has-008","en":"I have an egg.","vi":"Tôi có một quả trứng.","uses":["egg"],"blank":{"answer":"have","options":["have","has","having"]},"wrong":["I has an egg.","I having an egg."],"extra":["has","am"],"session":1},
+    {"id":"have-has-009","en":"The baby has a book.","vi":"Em bé có một quyển sách.","uses":["baby","book"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["The baby have a book.","The baby haves a book."],"extra":["have","is"],"session":1},
+    {"id":"have-has-010","en":"The students have pens.","vi":"Các học sinh có bút mực.","uses":["student","pen"],"blank":{"answer":"have","options":["have","has","having"]},"wrong":["The students has pens.","The students having pens."],"extra":["has","are"],"session":1},
+    {"id":"have-has-011","en":"The teacher has a pencil.","vi":"Cô giáo có một cây bút chì.","uses":["teacher","pencil"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["The teacher have a pencil.","The teacher haves a pencil."],"extra":["have","is"],"session":1},
+    {"id":"have-has-012","en":"You have soup.","vi":"Bạn có súp.","uses":["soup"],"blank":{"answer":"have","options":["have","has","having"]},"wrong":["You has soup.","You having soup."],"extra":["has","are"],"session":1},
+    {"id":"have-has-013","en":"The cat has a fish.","vi":"Con mèo có một con cá.","uses":["cat","fish"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["The cat have a fish.","The cat haves a fish."],"extra":["have","is"],"session":1},
+    {"id":"have-has-014","en":"My sister has cheese.","vi":"Chị gái tôi có phô mai.","uses":["sister","cheese"],"blank":{"answer":"has","options":["has","have","having"]},"wrong":["My sister have cheese.","My sister haves cheese."],"extra":["have","is"],"session":1},
+    {"id":"have-has-015","en":"I don't have a rabbit.","vi":"Tôi không có con thỏ nào.","uses":["rabbit"],"blank":{"answer":"don't","options":["don't","doesn't","not"]},"wrong":["I doesn't have a rabbit.","I not have a rabbit."],"extra":["has","doesn't"],"session":1},
+    {"id":"have-has-016","en":"She doesn't have a horse.","vi":"Cô ấy không có con ngựa nào.","uses":["horse"],"blank":{"answer":"doesn't","options":["doesn't","don't","not"]},"wrong":["She don't have a horse.","She not have a horse."],"extra":["has","don't"],"session":1},
+    {"id":"have-has-017","en":"We don't have noodles.","vi":"Chúng tôi không có mì.","uses":["noodles"],"blank":{"answer":"don't","options":["don't","doesn't","not"]},"wrong":["We doesn't have noodles.","We not have noodles."],"extra":["has","doesn't"],"session":1},
+    {"id":"have-has-018","en":"He doesn't have a pig.","vi":"Anh ấy không có con heo nào.","uses":["pig"],"blank":{"answer":"doesn't","options":["doesn't","don't","not"]},"wrong":["He don't have a pig.","He not have a pig."],"extra":["has","don't"],"session":1},
+    {"id":"have-has-019","en":"Do you have a pencil?","vi":"Bạn có cây bút chì không?","uses":["pencil"],"blank":{"answer":"Do","options":["Do","Does","Are"]},"wrong":["Does you have a pencil?","Are you have a pencil?"],"extra":["Does","has"],"session":1},
+    {"id":"have-has-020","en":"Does she have a brother?","vi":"Cô ấy có anh em trai không?","uses":["brother"],"blank":{"answer":"Does","options":["Does","Do","Is"]},"wrong":["Do she have a brother?","Is she have a brother?"],"extra":["Do","has"],"session":1},
+    {"id":"have-has-021","en":"Does the baby have a pizza?","vi":"Em bé có bánh pizza không?","uses":["baby","pizza"],"blank":{"answer":"Does","options":["Does","Do","Is"]},"wrong":["Do the baby have a pizza?","Is the baby have a pizza?"],"extra":["Do","has"],"session":1},
+    {"id":"have-has-022","en":"Do they have a hamburger?","vi":"Họ có bánh hamburger không?","uses":["hamburger"],"blank":{"answer":"Do","options":["Do","Does","Are"]},"wrong":["Does they have a hamburger?","Are they have a hamburger?"],"extra":["Does","has"],"session":1}
   ]
 }

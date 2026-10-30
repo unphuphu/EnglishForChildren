@@ -1,6 +1,7 @@
 import { eligibleSentences } from './sentences.js'
+import { pickNewWords } from './newWords.js'
 
-const DEFAULT_PER_TOPIC = 10
+const DEFAULT_GOAL = 10
 const DEFAULT_MIN_SENTENCES = 8
 
 // Today's suggestion: the next roadmap step (topic + grammar lesson part). If that topic has no
@@ -27,20 +28,20 @@ export function suggestToday({ roadmap, lessons, vocab, progress, topicOrder }) 
   }
 }
 
-// For each roadmap step, assume the child learned the first `perTopic` level-1 words (file order,
-// which is the order new words are introduced) of every topic up to and including that step, and
-// check that the lesson part (plus its earlier parts) has enough sentences made only of those words.
-export function roadmapCoverageErrors({
-  roadmap, lessons, vocab, perTopic = DEFAULT_PER_TOPIC, minSentences = DEFAULT_MIN_SENTENCES,
-}) {
+// Plays the roadmap forward the way the app does: at every step the child learns `goal` new words
+// of that step's topic (chosen by the same rule as the real lesson), and the lesson part, together
+// with its earlier parts, must then have enough sentences made only of learned words.
+export function roadmapCoverageErrors({ roadmap, lessons, vocab, goal = DEFAULT_GOAL, minSentences = DEFAULT_MIN_SENTENCES }) {
   const errors = []
-  const learned = new Set()
+  const cards = {}
   roadmap.forEach((step, index) => {
-    vocab.filter((w) => w.topic === step.topic && w.level === 1).slice(0, perTopic).forEach((w) => learned.add(w.id))
-    const lesson = lessons.find((l) => l.id === step.lesson)
+    const lesson = lessons.find((l) => l.id === step.lesson) ?? null
+    const words = pickNewWords({
+      vocab, cards, topic: step.topic, goal, today: '2000-01-01', lesson, part: lesson ? step.part : null,
+    })
+    for (const word of words) cards[word.id] = {}
     if (!lesson) return
     const upToPart = { ...lesson, sentences: lesson.sentences.filter((s) => s.session <= step.part) }
-    const cards = Object.fromEntries([...learned].map((id) => [id, {}]))
     const count = eligibleSentences({ lesson: upToPart, vocab, cards }).length
     if (count < minSentences) {
       errors.push(`roadmap step ${index + 1} (${step.lesson} part ${step.part}): only ${count} eligible sentences, need ${minSentences}`)

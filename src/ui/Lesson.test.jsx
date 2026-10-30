@@ -10,6 +10,7 @@ import App from '../App.jsx'
 import { renderApp, seededStorage, savedProgress, fixtureWords, fixtureLessons } from '../test/utils.jsx'
 import { emptyProgress } from '../core/progress.js'
 import { speak } from '../core/speech.js'
+import { answerQuiz } from '../test/exerciseHelpers.js'
 
 const cardsFor = (ids) => Object.fromEntries(ids.map((id) => [id, { box: 1, correct: 1, wrong: 0, due: '2030-01-01' }]))
 const animalIds = (from, to) => fixtureWords.slice(from, to).map((w) => w.id)
@@ -117,6 +118,86 @@ describe('a full lesson', () => {
     const saved = savedProgress(storage, profile.id)
     expect(saved.cards).toEqual({})
     expect(saved.plan.step).toBe(0)
+  })
+})
+
+describe('leaving a lesson half way keeps what was finished', () => {
+  const learnedAll = () => ({
+    ...emptyProgress(),
+    plan: { step: 2 },
+    cards: cardsFor(animalIds(0, 12)),
+    grammar: { ...emptyProgress().grammar, lessons: { basics: { partsDone: 2, correct: 5, wrong: 1 } } },
+  })
+
+  test('finished flashcards are kept when the child leaves at the explanation', async () => {
+    const user = userEvent.setup()
+    const { storage, profile } = seededStorage({ dailyGoal: 5 })
+    const { unmount } = renderApp(<App />, { route: '/lesson', storage })
+    await rememberAll(user, 5)
+    expect(screen.getByText('Bước 2/4')).toBeInTheDocument()
+    unmount()
+    const saved = savedProgress(storage, profile.id)
+    expect(Object.keys(saved.cards)).toHaveLength(5)
+    expect(saved.plan.step).toBe(0)
+    expect(saved.daily.goalAwarded).toBe(false)
+    expect(saved.streak.count).toBe(0)
+    expect(saved.grammar.lessons).toEqual({})
+  })
+
+  test('the next start suggests the same lesson part again with new words', async () => {
+    const user = userEvent.setup()
+    const { storage } = seededStorage({ dailyGoal: 5 })
+    const first = renderApp(<App />, { route: '/lesson', storage })
+    await rememberAll(user, 5)
+    first.unmount()
+    renderApp(<App />, { route: '/lesson', storage })
+    expect(screen.getByText('word5')).toBeInTheDocument()
+    await rememberAll(user, 5)
+    expect(screen.getByText('Khối giải thích hai.')).toBeInTheDocument()
+  })
+
+  test('finished sentences and their XP are kept when the child leaves during the review', async () => {
+    const user = userEvent.setup()
+    const { storage, profile } = seededStorage({ dailyGoal: 5, progress: learnedAll() })
+    const { unmount } = renderApp(<App />, { route: '/lesson', storage })
+    await finishExercises(user, 8)
+    expect(screen.getByText('Bước 4/4')).toBeInTheDocument()
+    unmount()
+    const saved = savedProgress(storage, profile.id)
+    const seen = Object.values(saved.grammar.sentences).reduce((n, s) => n + s.seen, 0)
+    expect(seen).toBe(8)
+    expect(saved.xp).toBe(100)
+    expect(saved.plan.step).toBe(2)
+    expect(saved.daily.goalAwarded).toBe(false)
+    expect(saved.streak.count).toBe(0)
+  })
+
+  test('the result adds up the XP of every step and the goal bonus', async () => {
+    const user = userEvent.setup()
+    const { storage, profile } = seededStorage({ dailyGoal: 5, progress: learnedAll() })
+    renderApp(<App />, { route: '/lesson', storage })
+    await finishExercises(user, 8)
+    for (let i = 0; i < 10; i++) await answerQuiz(user, true)
+    expect(screen.getByText('+250 XP')).toBeInTheDocument()
+    const saved = savedProgress(storage, profile.id)
+    expect(saved.xp).toBe(250)
+    expect(saved.daily.goalAwarded).toBe(true)
+    expect(saved.streak.count).toBe(1)
+  })
+
+  test('the goal bonus and the streak come only from the last step', async () => {
+    const user = userEvent.setup()
+    const { storage, profile } = seededStorage({ dailyGoal: 5 })
+    const { unmount } = renderApp(<App />, { route: '/lesson', storage })
+    await rememberAll(user, 5)
+    await user.click(screen.getByRole('button', { name: /tiếp tục/i }))
+    await finishExercises(user, 8)
+    expect(screen.getByText(/buổi học hôm nay đã xong/i)).toBeInTheDocument()
+    unmount()
+    const saved = savedProgress(storage, profile.id)
+    expect(saved.plan.step).toBe(1)
+    expect(saved.grammar.lessons.basics.partsDone).toBe(1)
+    expect(saved.xp).toBe(130)
   })
 })
 
