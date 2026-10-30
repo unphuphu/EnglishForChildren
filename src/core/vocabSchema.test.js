@@ -40,3 +40,12 @@ test('flags duplicate ids across words', () => {
   const errors = validateVocab([dog, { ...dog, word: 'cat' }])
   expect(errors.join(' ')).toMatch(/duplicate/i)
 })
+
+test('accepts flag and keycap emoji', () => {
+  expect(validateWord({ ...dog, emoji: '🇻🇳' })).toEqual([])
+  expect(validateWord({ ...dog, emoji: '1️⃣' })).toEqual([])
+})
+
+test('rejects two separate emoji in one field', () => {
+  expect(validateWord({ ...dog, emoji: '🐶🐱' }).join(' ')).toMatch(/emoji/)
+})

@@ -1,7 +1,7 @@
 const REQUIRED = ['id', 'word', 'pos', 'vi', 'ipa', 'example', 'exampleVi', 'topic']
 
 function isSingleEmoji(value) {
-  if (typeof value !== 'string' || !/\p{Extended_Pictographic}/u.test(value)) return false
+  if (typeof value !== 'string' || !/\p{Extended_Pictographic}|\p{Regional_Indicator}|⃣/u.test(value)) return false
   return [...new Intl.Segmenter().segment(value)].length === 1
 }
 

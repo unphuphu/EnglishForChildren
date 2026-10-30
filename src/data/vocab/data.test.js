@@ -29,3 +29,20 @@ test('no word is repeated within a topic', () => {
     expect(texts.filter((t, i) => texts.indexOf(t) !== i), topic).toEqual([])
   }
 })
+
+test('total word count is between 1000 and 2000', () => {
+  expect(words.length).toBeGreaterThanOrEqual(1000)
+  expect(words.length).toBeLessThanOrEqual(2000)
+})
+
+test('there are 25 to 30 topics', () => {
+  const count = Object.keys(byTopic).length
+  expect(count).toBeGreaterThanOrEqual(25)
+  expect(count).toBeLessThanOrEqual(30)
+})
+
+test('words without emoji still have an example sentence', () => {
+  for (const w of words.filter((x) => !x.emoji)) {
+    expect(w.example.trim().length, w.id).toBeGreaterThan(0)
+  }
+})
