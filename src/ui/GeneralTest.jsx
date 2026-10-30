@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { todayISO } from '../core/date.js'
 import { finishSession } from '../core/progress.js'
@@ -28,7 +28,6 @@ function GeneralTestRound() {
       <main>
         <h1>Kiểm tra tổng hợp</h1>
         <p>Cần học ít nhất 10 từ để làm bài kiểm tra tổng hợp.</p>
-        <Link to="/">Về trang chủ</Link>
       </main>
     )
   }

@@ -11,7 +11,10 @@ import { renderApp, seededStorage } from '../test/utils.jsx'
 const back = () => screen.getByRole('link', { name: /trang chủ/i })
 
 describe('back navigation', () => {
-  test.each(['/settings', '/profile', '/topics', '/topics/animals', '/games/quiz', '/play/quiz?topic=animals'])(
+  test.each([
+    '/settings', '/profile', '/topics', '/topics/animals', '/games/quiz', '/play/quiz?topic=animals',
+    '/lesson', '/lesson/topic', '/grammar', '/grammar/basics', '/test',
+  ])(
     '%s has a way back to the home page',
     (route) => {
       renderApp(<App />, { route, storage: seededStorage().storage })
