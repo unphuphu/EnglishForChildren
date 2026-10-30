@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run validate:vocab && vite build",
     "preview": "vite preview",
     "test": "vitest run",
     "validate:vocab": "node scripts/validateVocab.js"
