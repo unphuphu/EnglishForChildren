@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { buildDailySession, buildTopicSession } from '../core/session.js'
-import { dailyCount, finishSession } from '../core/progress.js'
+import { finishSession } from '../core/progress.js'
 import { todayISO } from '../core/date.js'
 import Flashcard from '../games/Flashcard.jsx'
 import Quiz from '../games/Quiz.jsx'
@@ -57,17 +57,14 @@ function PlayRound({ mode, topic, onAgain }) {
       setStepIndex(stepIndex + 1)
       return
     }
-    const goal = currentProfile.dailyGoal
-    const out = finishSession(progress, { results, goal, today, vocab: vocab.all() })
+    const out = finishSession(progress, { results, today, vocab: vocab.all() })
     saveProgress(out.state)
     const wrongIds = new Set(results.filter((r) => !r.correct).map((r) => r.wordId))
     setSummary({
       xpGained: out.xpGained,
       newBadges: out.newBadges,
-      goalReachedNow: out.goalReachedNow,
+      lessonDone: false,
       reviewWords: session.words.filter((w) => wrongIds.has(w.id)),
-      count: dailyCount(out.state, today),
-      goal,
     })
   }
 

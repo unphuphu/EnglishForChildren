@@ -16,4 +16,10 @@ export const BADGES = [
   { id: 'mastered-100', title: 'Thuộc 100 từ', emoji: '📘', test: (s) => masteredCount(s) >= 100 },
   { id: 'mastered-500', title: 'Thuộc 500 từ', emoji: '📕', test: (s) => masteredCount(s) >= 500 },
   { id: 'first-perfect', title: 'Lượt hoàn hảo đầu tiên', emoji: '⭐', test: (s) => s.perfectSessions >= 1 },
+  {
+    id: 'grammar-first-lesson',
+    title: 'Buổi học ngữ pháp đầu tiên',
+    emoji: '📝',
+    test: (s) => Object.values(s.grammar.lessons).some((l) => l.partsDone >= 1),
+  },
 ]
