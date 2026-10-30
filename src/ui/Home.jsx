@@ -1,10 +1,14 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
+import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
 import { currentStreak, dailyCount, levelForXp, xpForLevel } from '../core/progress.js'
 import { todayISO } from '../core/date.js'
 
 export default function Home() {
   const { currentProfile, progress } = useApp()
+  const speechAvailable = useSpeechAvailable()
+  const [noteDismissed, setNoteDismissed] = useState(false)
   const today = todayISO()
   const level = levelForXp(progress.xp)
   const low = xpForLevel(level)
@@ -14,6 +18,12 @@ export default function Home() {
 
   return (
     <main className="home">
+      {!speechAvailable && !noteDismissed && (
+        <p className="notice">
+          Máy này chưa có giọng đọc tiếng Anh nên chưa nghe được phát âm. Bạn vẫn học được bằng chữ và hình.{' '}
+          <button type="button" onClick={() => setNoteDismissed(true)}>Đóng</button>
+        </p>
+      )}
       <h1>Xin chào, {currentProfile.name}!</h1>
       <div className="stats">
         <span className="streak" aria-label="Chuỗi ngày">🔥 {currentStreak(progress, today)}</span>
