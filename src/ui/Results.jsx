@@ -44,7 +44,7 @@ export default function Results({ summary, onAgain }) {
           </ul>
         </>
       )}
-      <button type="button" className="primary" onClick={onAgain}>Chơi tiếp</button>
+      <button type="button" className="primary" onClick={onAgain}>{lessonDone ? 'Học tiếp' : 'Chơi tiếp'}</button>
       <p><Link to="/">Về trang chủ</Link></p>
     </main>
   )

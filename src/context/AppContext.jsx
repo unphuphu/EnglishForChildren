@@ -4,10 +4,14 @@ import { createProfiles } from '../core/profiles.js'
 import { createProgressStore, emptyProgress } from '../core/progress.js'
 import { createVocabService } from '../core/vocabService.js'
 import defaultWords from '../data/vocab/index.js'
+import defaultLessons from '../data/grammar/lessons.js'
+import defaultRoadmap from '../data/roadmap.json'
 
 const AppContext = createContext(null)
 
-export function AppProvider({ storage: storageProp, words = defaultWords, children }) {
+export function AppProvider({
+  storage: storageProp, words = defaultWords, lessons = defaultLessons, roadmap = defaultRoadmap, children,
+}) {
   const storage = useMemo(() => storageProp ?? createStorage(), [storageProp])
   const profiles = useMemo(() => createProfiles(storage), [storage])
   const vocab = useMemo(() => createVocabService(words), [words])
@@ -59,6 +63,8 @@ export function AppProvider({ storage: storageProp, words = defaultWords, childr
     profiles,
     profileList,
     vocab,
+    lessons,
+    roadmap,
     currentProfile,
     progress: loaded.progress,
     progressProblem: loaded.problem,
