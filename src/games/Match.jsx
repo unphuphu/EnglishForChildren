@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { buildMatchBoard } from './matchLogic.js'
+import { speak } from '../core/speech.js'
 
 const MISMATCH_DELAY_MS = 800
 
-export default function Match({ words, onFinish, rng = Math.random }) {
+export default function Match({ words, onFinish, rng = Math.random, speechRate = 1, voiceName }) {
   const board = useMemo(() => buildMatchBoard(words, rng), [words, rng])
   const wordIds = useMemo(() => {
     const onBoard = new Set(board.map((c) => c.wordId))
@@ -44,6 +45,7 @@ export default function Match({ words, onFinish, rng = Math.random }) {
   function flip(card) {
     if (flipped.length >= 2 || flipped.includes(card.id) || matched.includes(card.wordId)) return
     setFlipped([...flipped, card.id])
+    if (card.kind === 'en') speak(card.text, { rate: speechRate, voice: voiceName })
   }
 
   return (

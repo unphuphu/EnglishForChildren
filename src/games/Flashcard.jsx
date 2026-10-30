@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { speak } from '../core/speech.js'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
+import { useAutoSpeak } from './useAutoSpeak.js'
 
 export default function Flashcard({ words, onFinish, speechRate = 1, voiceName }) {
   const [index, setIndex] = useState(0)
@@ -8,6 +9,7 @@ export default function Flashcard({ words, onFinish, speechRate = 1, voiceName }
   const [results, setResults] = useState([])
   const available = useSpeechAvailable()
   const word = words[index]
+  useAutoSpeak(word?.word, { rate: speechRate, voice: voiceName })
   if (!word) return null
 
   function answer(correct) {

@@ -1,13 +1,18 @@
 import { useState } from 'react'
+import { useAutoSpeak } from './useAutoSpeak.js'
 
-export default function ChoiceGame({ words, questions, renderPrompt, onFinish }) {
+// `getSpeech({ question, word, answered, index })` returns the English text to read aloud
+// (or null for silence); it is spoken once each time the returned text changes.
+export default function ChoiceGame({ words, questions, renderPrompt, onFinish, getSpeech, speechRate = 1, voiceName }) {
   const [index, setIndex] = useState(0)
   const [picked, setPicked] = useState(null)
   const [results, setResults] = useState([])
   const question = questions[index]
+  const answered = picked !== null
+  const spoken = question && getSpeech ? getSpeech({ question, word: words[index], answered, index }) : null
+  useAutoSpeak(spoken, { rate: speechRate, voice: voiceName })
   if (!question) return null
 
-  const answered = picked !== null
   const isLast = index === questions.length - 1
 
   function choose(option) {

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { speak } from '../core/speech.js'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
 import { assemble, lettersOf, scramble } from './scrambleLogic.js'
+import { useAutoSpeak } from './useAutoSpeak.js'
 
 const MAX_ATTEMPTS = 2
 
@@ -13,6 +14,7 @@ export default function Scramble({ words, onFinish, rng = Math.random, speechRat
   const [results, setResults] = useState([])
   const available = useSpeechAvailable()
   const word = words[index]
+  useAutoSpeak(word && (status === 'right' || status === 'revealed') ? word.word : null, { rate: speechRate, voice: voiceName })
   const tiles = useMemo(
     () => (word ? scramble(word.word, rng).map((ch, id) => ({ id, ch })) : []),
     [word, rng],
