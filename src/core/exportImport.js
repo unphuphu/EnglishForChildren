@@ -2,7 +2,7 @@ import { AVATARS, createProfiles, DEFAULT_DAILY_GOAL, MIN_DAILY_GOAL } from './p
 import { createProgressStore, normalizeProgress } from './progress.js'
 
 const APP = 'english-for-children'
-const FILE_VERSION = 1
+const FILE_VERSION = 2
 const invalid = () => new Error('INVALID_FILE')
 
 export function exportProfile(storage, profileId) {

@@ -28,7 +28,7 @@ test('damaged progress shows the recovery screen instead of crashing', () => {
 
 test('data from a newer version is treated as damaged, not as a crash', () => {
   const { storage, profile } = seededStorage()
-  storage.set(`progress:${profile.id}`, { version: 9, xp: 1, cards: {} })
+  storage.set(`progress:${profile.id}`, { ...emptyProgress(), version: 9 })
   renderApp(<App />, { storage })
   expect(screen.getByRole('heading', { name: /dữ liệu học bị hỏng/i })).toBeInTheDocument()
 })

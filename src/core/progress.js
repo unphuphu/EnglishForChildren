@@ -3,7 +3,7 @@ import { addDays } from './date.js'
 import { isMastered, newCard, review } from './srs.js'
 import { migrateData } from './migrate.js'
 
-const VERSION = 1
+const VERSION = 2
 const DATE = /^\d{4}-\d{2}-\d{2}$/
 const invalid = () => new Error('INVALID_PROGRESS')
 const isObject = (v) => v !== null && typeof v === 'object' && !Array.isArray(v)
@@ -19,7 +19,24 @@ export const emptyProgress = () => ({
   badges: [],
   perfectSessions: 0,
   daily: { date: null, correctIds: [], goalAwarded: false },
+  plan: { step: 0 },
+  grammar: { lessons: {}, sentences: {}, checkpoints: {}, tests: [] },
 })
+
+const countsOf = (record, fields) =>
+  isObject(record) && Object.values(record).every((item) => isObject(item) && fields.every((f) => isCount(item[f])))
+
+function normalizeGrammar(grammar) {
+  if (!isObject(grammar)) throw invalid()
+  const { lessons, sentences, checkpoints, tests } = grammar
+  if (!countsOf(lessons, ['partsDone', 'correct', 'wrong'])) throw invalid()
+  if (!countsOf(sentences, ['seen', 'wrong'])) throw invalid()
+  if (!countsOf(checkpoints, ['best', 'total'])) throw invalid()
+  if (!Array.isArray(tests) || !tests.every((t) => isObject(t) && typeof t.date === 'string' && isCount(t.score) && isCount(t.total))) {
+    throw invalid()
+  }
+  return { lessons, sentences, checkpoints, tests }
+}
 
 // Validates data read from storage or an imported file and fills missing optional sections.
 // Throws Error('INVALID_PROGRESS') for anything the app could not safely use.
@@ -46,8 +63,12 @@ export function normalizeProgress(data) {
   if (!isObject(streak) || !isCount(streak.count) || !isDateOrNull(streak.lastDate)) throw invalid()
   if (!isObject(daily) || !isDateOrNull(daily.date) || !isStringList(daily.correctIds)) throw invalid()
   if (!isStringList(badges) || !isCount(perfectSessions)) throw invalid()
+  if (!isObject(migrated.plan) || !Number.isInteger(migrated.plan.step) || migrated.plan.step < 0) throw invalid()
+  const grammar = normalizeGrammar(migrated.grammar)
 
   return {
+    plan: { step: migrated.plan.step },
+    grammar,
     version: VERSION,
     xp,
     streak: { count: streak.count, lastDate: streak.lastDate },
