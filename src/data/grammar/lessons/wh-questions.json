@@ -1,0 +1,54 @@
+{
+  "id": "wh-questions",
+  "title": "Câu hỏi What / Where / Who",
+  "order": 8,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "What hỏi về cái gì, sự vật. Where hỏi về nơi chốn, ở đâu. Who hỏi về người, là ai. Các từ này đứng đầu câu hỏi.",
+      "examples": [
+        { "en": "What is this? It is a cat.", "vi": "Đây là gì? Nó là một con mèo." },
+        { "en": "Where is the dog? It is in the house.", "vi": "Con chó ở đâu? Nó ở trong nhà." },
+        { "en": "Who is she? She is my sister.", "vi": "Cô ấy là ai? Cô ấy là chị gái của tôi." }
+      ]
+    },
+    {
+      "vi": "Với nhiều vật hoặc nhiều người, ta dùng are: What are these? Where are the pens? Who are they? Câu trả lời cũng dùng They are...",
+      "examples": [
+        { "en": "Where are the pens? They are on the desk.", "vi": "Những cây bút mực ở đâu? Chúng ở trên bàn học." },
+        { "en": "Who are they? They are my parents.", "vi": "Họ là ai? Họ là bố mẹ của tôi." }
+      ]
+    },
+    {
+      "vi": "Với động từ thường, ta thêm do (hoặc does) sau từ để hỏi: What do you drink? Where do you work? Với who làm chủ ngữ, ta không cần do: Who sings a song?",
+      "examples": [
+        { "en": "What do you drink? I drink water.", "vi": "Bạn uống gì? Tôi uống nước." },
+        { "en": "Who sings a song? My sister sings a song.", "vi": "Ai hát một bài hát? Chị gái tôi hát một bài hát." }
+      ]
+    }
+  ],
+  "sentences": [
+    { "id": "wh-questions-001", "en": "Where is the dog? It is in the house.", "vi": "Con chó ở đâu? Nó ở trong nhà.", "uses": ["dog", "house"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What is the dog? It is in the house.", "Who is the dog? It is in the house."], "extra": ["are", "they"], "session": 1 },
+    { "id": "wh-questions-002", "en": "What is this? It is a cat.", "vi": "Đây là gì? Nó là một con mèo.", "uses": ["cat"], "blank": { "answer": "What", "options": ["What", "Where", "Who"] }, "wrong": ["Where is this? It is a cat.", "Who is this? It is a cat."], "extra": ["are", "they"], "session": 1 },
+    { "id": "wh-questions-003", "en": "Who is she? She is my sister.", "vi": "Cô ấy là ai? Cô ấy là chị gái của tôi.", "uses": ["sister"], "blank": { "answer": "Who", "options": ["Who", "What", "Where"] }, "wrong": ["What is she? She is my sister.", "Where is she? She is my sister."], "extra": ["are", "he"], "session": 1 },
+    { "id": "wh-questions-004", "en": "Where is my mother? She is in the bedroom.", "vi": "Mẹ tôi ở đâu? Mẹ ở trong phòng ngủ.", "uses": ["mother", "bedroom"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What is my mother? She is in the bedroom.", "Who is my mother? She is in the bedroom."], "extra": ["are", "he"], "session": 1 },
+    { "id": "wh-questions-005", "en": "Who is he? He is my brother.", "vi": "Anh ấy là ai? Anh ấy là anh trai của tôi.", "uses": ["brother"], "blank": { "answer": "Who", "options": ["Who", "What", "Where"] }, "wrong": ["What is he? He is my brother.", "Where is he? He is my brother."], "extra": ["are", "she"], "session": 1 },
+    { "id": "wh-questions-006", "en": "What is that? It is a bird.", "vi": "Kia là gì? Nó là một con chim.", "uses": ["bird"], "blank": { "answer": "What", "options": ["What", "Where", "Who"] }, "wrong": ["Where is that? It is a bird.", "Who is that? It is a bird."], "extra": ["are", "they"], "session": 1 },
+    { "id": "wh-questions-007", "en": "Where are the pens? They are on the desk.", "vi": "Những cây bút mực ở đâu? Chúng ở trên bàn học.", "uses": ["pen", "desk"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What are the pens? They are on the desk.", "Who are the pens? They are on the desk."], "extra": ["is", "it"], "session": 1 },
+    { "id": "wh-questions-008", "en": "Who are they? They are my parents.", "vi": "Họ là ai? Họ là bố mẹ của tôi.", "uses": ["parent"], "blank": { "answer": "Who", "options": ["Who", "What", "Where"] }, "wrong": ["What are they? They are my parents.", "Where are they? They are my parents."], "extra": ["is", "it"], "session": 1 },
+    { "id": "wh-questions-009", "en": "What are these? They are books.", "vi": "Đây là những gì? Chúng là những quyển sách.", "uses": ["book"], "blank": { "answer": "What", "options": ["What", "Where", "Who"] }, "wrong": ["Where are these? They are books.", "Who are these? They are books."], "extra": ["is", "it"], "session": 1 },
+    { "id": "wh-questions-010", "en": "Where is the teacher? She is in the classroom.", "vi": "Cô giáo ở đâu? Cô ấy ở trong lớp học.", "uses": ["teacher", "classroom"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What is the teacher? She is in the classroom.", "Who is the teacher? She is in the classroom."], "extra": ["are", "he"], "session": 1 },
+    { "id": "wh-questions-011", "en": "Who is the doctor? She is my mother.", "vi": "Bác sĩ là ai? Cô ấy là mẹ tôi.", "uses": ["doctor", "mother"], "blank": { "answer": "Who", "options": ["Who", "What", "Where"] }, "wrong": ["What is the doctor? She is my mother.", "Where is the doctor? She is my mother."], "extra": ["are", "he"], "session": 1 },
+    { "id": "wh-questions-012", "en": "Where is the park? It is near the school.", "vi": "Công viên ở đâu? Nó ở gần trường học.", "uses": ["park", "school"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What is the park? It is near the school.", "Who is the park? It is near the school."], "extra": ["are", "they"], "session": 1 },
+    { "id": "wh-questions-013", "en": "What is this? It is a sandwich.", "vi": "Đây là gì? Nó là một cái bánh sandwich.", "uses": ["sandwich"], "blank": { "answer": "What", "options": ["What", "Where", "Who"] }, "wrong": ["Where is this? It is a sandwich.", "Who is this? It is a sandwich."], "extra": ["are", "they"], "session": 1 },
+    { "id": "wh-questions-014", "en": "Where are the students? They are in the park.", "vi": "Các học sinh ở đâu? Họ ở trong công viên.", "uses": ["student", "park"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What are the students? They are in the park.", "Who are the students? They are in the park."], "extra": ["is", "it"], "session": 1 },
+    { "id": "wh-questions-015", "en": "Who is sleeping? The baby is sleeping.", "vi": "Ai đang ngủ? Em bé đang ngủ.", "uses": ["sleep", "baby"], "blank": { "answer": "Who", "options": ["Who", "What", "Where"] }, "wrong": ["What is sleeping? The baby is sleeping.", "Where is sleeping? The baby is sleeping."], "extra": ["are", "sleeps"], "session": 1 },
+    { "id": "wh-questions-016", "en": "Who sings a song? My sister sings a song.", "vi": "Ai hát một bài hát? Chị gái tôi hát một bài hát.", "uses": ["sing", "song", "sister"], "blank": { "answer": "Who", "options": ["Who", "What", "Where"] }, "wrong": ["What sings a song? My sister sings a song.", "Where sings a song? My sister sings a song."], "extra": ["do", "sing"], "session": 1 },
+    { "id": "wh-questions-017", "en": "What is in the bottle? There is milk in the bottle.", "vi": "Có gì trong cái chai? Có sữa trong cái chai.", "uses": ["bottle", "milk"], "blank": { "answer": "What", "options": ["What", "Where", "Who"] }, "wrong": ["Where is in the bottle? There is milk in the bottle.", "Who is in the bottle? There is milk in the bottle."], "extra": ["are", "it"], "session": 1 },
+    { "id": "wh-questions-018", "en": "Where is the bottle? It is on the table.", "vi": "Cái chai ở đâu? Nó ở trên cái bàn.", "uses": ["bottle", "table"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What is the bottle? It is on the table.", "Who is the bottle? It is on the table."], "extra": ["are", "they"], "session": 1 },
+    { "id": "wh-questions-019", "en": "What do you drink? I drink water.", "vi": "Bạn uống gì? Tôi uống nước.", "uses": ["drink", "water"], "blank": { "answer": "What", "options": ["What", "Where", "Who"] }, "wrong": ["Where do you drink? I drink water.", "Who do you drink? I drink water."], "extra": ["does", "drinks"], "session": 1 },
+    { "id": "wh-questions-020", "en": "Where do you work? I work in a hospital.", "vi": "Bạn làm việc ở đâu? Tôi làm việc ở bệnh viện.", "uses": ["work", "hospital"], "blank": { "answer": "Where", "options": ["Where", "What", "Who"] }, "wrong": ["What do you work? I work in a hospital.", "Who do you work? I work in a hospital."], "extra": ["does", "works"], "session": 1 },
+    { "id": "wh-questions-021", "en": "Who works in the school? The teacher works in the school.", "vi": "Ai làm việc ở trường? Cô giáo làm việc ở trường.", "uses": ["work", "school", "teacher"], "blank": { "answer": "Who", "options": ["Who", "What", "Where"] }, "wrong": ["What works in the school? The teacher works in the school.", "Where works in the school? The teacher works in the school."], "extra": ["do", "work"], "session": 1 },
+    { "id": "wh-questions-022", "en": "What is in the garden? There is a rabbit in the garden.", "vi": "Có gì trong vườn? Có một con thỏ trong vườn.", "uses": ["garden", "rabbit"], "blank": { "answer": "What", "options": ["What", "Where", "Who"] }, "wrong": ["Where is in the garden? There is a rabbit in the garden.", "Who is in the garden? There is a rabbit in the garden."], "extra": ["are", "it"], "session": 1 }
+  ]
+}

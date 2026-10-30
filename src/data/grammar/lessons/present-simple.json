@@ -1,0 +1,55 @@
+{
+  "id": "present-simple",
+  "title": "Hiện tại đơn",
+  "order": 6,
+  "sessions": 2,
+  "explain": [
+    {
+      "vi": "Thì hiện tại đơn nói về việc làm thường ngày hoặc sự thật. Với I, you, we, they và nhiều người, ta dùng động từ nguyên mẫu. Với he, she, it hoặc một người/vật, ta thêm s vào động từ.",
+      "examples": [
+        { "en": "I work in a hospital.", "vi": "Tôi làm việc ở bệnh viện." },
+        { "en": "My mother works in a hospital.", "vi": "Mẹ tôi làm việc ở bệnh viện." }
+      ]
+    },
+    {
+      "vi": "Để nói \"không\", ta dùng don't (với I, you, we, they) hoặc doesn't (với he, she, it) rồi dùng động từ nguyên mẫu, không thêm s.",
+      "examples": [
+        { "en": "They don't work in a hospital.", "vi": "Họ không làm việc ở bệnh viện." },
+        { "en": "The cook doesn't help the farmer.", "vi": "Người đầu bếp không giúp người nông dân." }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta dùng Do (với I, you, we, they) hoặc Does (với he, she, it) đứng đầu câu, rồi chủ ngữ và động từ nguyên mẫu.",
+      "examples": [
+        { "en": "Do you work in a school?", "vi": "Bạn có làm việc ở trường học không?" },
+        { "en": "Does your mother drink coffee?", "vi": "Mẹ bạn có uống cà phê không?" }
+      ]
+    }
+  ],
+  "sentences": [
+    { "id": "present-simple-001", "en": "I work in a hospital.", "vi": "Tôi làm việc ở bệnh viện.", "uses": ["work", "hospital"], "blank": { "answer": "work", "options": ["work", "works", "working"] }, "wrong": ["I works in a hospital.", "I working in a hospital."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-002", "en": "My mother works in a hospital.", "vi": "Mẹ tôi làm việc ở bệnh viện.", "uses": ["mother", "work", "hospital"], "blank": { "answer": "works", "options": ["works", "work", "working"] }, "wrong": ["My mother work in a hospital.", "My mother working in a hospital."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-003", "en": "The doctor helps the nurse.", "vi": "Bác sĩ giúp y tá.", "uses": ["doctor", "help", "nurse"], "blank": { "answer": "helps", "options": ["helps", "help", "helping"] }, "wrong": ["The doctor help the nurse.", "The doctor helping the nurse."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-004", "en": "The nurses help the baby.", "vi": "Các y tá giúp em bé.", "uses": ["nurse", "help", "baby"], "blank": { "answer": "help", "options": ["help", "helps", "helping"] }, "wrong": ["The nurses helps the baby.", "The nurses helping the baby."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-005", "en": "The farmer works with the cow.", "vi": "Người nông dân làm việc với con bò.", "uses": ["farmer", "work", "cow"], "blank": { "answer": "works", "options": ["works", "work", "working"] }, "wrong": ["The farmer work with the cow.", "The farmer working with the cow."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-006", "en": "She sings a song.", "vi": "Cô ấy hát một bài hát.", "uses": ["sing", "song"], "blank": { "answer": "sings", "options": ["sings", "sing", "singing"] }, "wrong": ["She sing a song.", "She singing a song."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-007", "en": "He dances with the baby.", "vi": "Anh ấy nhảy cùng em bé.", "uses": ["dance", "baby"], "blank": { "answer": "dances", "options": ["dances", "dance", "dancing"] }, "wrong": ["He dance with the baby.", "He dancing with the baby."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-008", "en": "We paint a house.", "vi": "Chúng tôi sơn một ngôi nhà.", "uses": ["paint", "house"], "blank": { "answer": "paint", "options": ["paint", "paints", "painting"] }, "wrong": ["We paints a house.", "We painting a house."], "extra": ["is", "does"], "session": 1 },
+    { "id": "present-simple-009", "en": "They don't work in a hospital.", "vi": "Họ không làm việc ở bệnh viện.", "uses": ["work", "hospital"], "blank": { "answer": "don't", "options": ["don't", "doesn't", "not"] }, "wrong": ["They doesn't work in a hospital.", "They not work in a hospital."], "extra": ["works", "doesn't"], "session": 1 },
+    { "id": "present-simple-010", "en": "The cook doesn't help the farmer.", "vi": "Người đầu bếp không giúp người nông dân.", "uses": ["cook", "help", "farmer"], "blank": { "answer": "doesn't", "options": ["doesn't", "don't", "not"] }, "wrong": ["The cook don't help the farmer.", "The cook doesn't helps the farmer."], "extra": ["helps", "don't"], "session": 1 },
+    { "id": "present-simple-011", "en": "Do you work in a school?", "vi": "Bạn có làm việc ở trường học không?", "uses": ["work", "school"], "blank": { "answer": "Do", "options": ["Do", "Does", "Are"] }, "wrong": ["Does you work in a school?", "Are you work in a school?"], "extra": ["Does", "works"], "session": 1 },
+    { "id": "present-simple-012", "en": "Does your father help the doctor?", "vi": "Bố bạn có giúp bác sĩ không?", "uses": ["father", "help", "doctor"], "blank": { "answer": "Does", "options": ["Does", "Do", "Is"] }, "wrong": ["Do your father help the doctor?", "Does your father helps the doctor?"], "extra": ["Do", "helps"], "session": 1 },
+    { "id": "present-simple-013", "en": "I drink milk.", "vi": "Tôi uống sữa.", "uses": ["drink", "milk"], "blank": { "answer": "drink", "options": ["drink", "drinks", "drinking"] }, "wrong": ["I drinks milk.", "I drinking milk."], "extra": ["is", "does"], "session": 2 },
+    { "id": "present-simple-014", "en": "She drinks water.", "vi": "Cô ấy uống nước.", "uses": ["drink", "water"], "blank": { "answer": "drinks", "options": ["drinks", "drink", "drinking"] }, "wrong": ["She drink water.", "She drinking water."], "extra": ["is", "does"], "session": 2 },
+    { "id": "present-simple-015", "en": "My father drinks coffee.", "vi": "Bố tôi uống cà phê.", "uses": ["father", "drink", "coffee"], "blank": { "answer": "drinks", "options": ["drinks", "drink", "drinking"] }, "wrong": ["My father drink coffee.", "My father drinking coffee."], "extra": ["is", "does"], "session": 2 },
+    { "id": "present-simple-016", "en": "My mother drinks tea.", "vi": "Mẹ tôi uống trà.", "uses": ["mother", "drink", "tea"], "blank": { "answer": "drinks", "options": ["drinks", "drink", "drinking"] }, "wrong": ["My mother drink tea.", "My mother drinking tea."], "extra": ["is", "does"], "session": 2 },
+    { "id": "present-simple-017", "en": "The baby drinks milk.", "vi": "Em bé uống sữa.", "uses": ["baby", "drink", "milk"], "blank": { "answer": "drinks", "options": ["drinks", "drink", "drinking"] }, "wrong": ["The baby drink milk.", "The baby drinking milk."], "extra": ["is", "does"], "session": 2 },
+    { "id": "present-simple-018", "en": "We drink juice.", "vi": "Chúng tôi uống nước ép.", "uses": ["drink", "juice"], "blank": { "answer": "drink", "options": ["drink", "drinks", "drinking"] }, "wrong": ["We drinks juice.", "We drinking juice."], "extra": ["is", "does"], "session": 2 },
+    { "id": "present-simple-019", "en": "The cat doesn't drink coffee.", "vi": "Con mèo không uống cà phê.", "uses": ["cat", "drink", "coffee"], "blank": { "answer": "doesn't", "options": ["doesn't", "don't", "not"] }, "wrong": ["The cat don't drink coffee.", "The cat doesn't drinks coffee."], "extra": ["drinks", "don't"], "session": 2 },
+    { "id": "present-simple-020", "en": "They don't drink tea.", "vi": "Họ không uống trà.", "uses": ["drink", "tea"], "blank": { "answer": "don't", "options": ["don't", "doesn't", "not"] }, "wrong": ["They doesn't drink tea.", "They not drink tea."], "extra": ["drinks", "doesn't"], "session": 2 },
+    { "id": "present-simple-021", "en": "Do you drink milk?", "vi": "Bạn có uống sữa không?", "uses": ["drink", "milk"], "blank": { "answer": "Do", "options": ["Do", "Does", "Are"] }, "wrong": ["Does you drink milk?", "Are you drink milk?"], "extra": ["Does", "drinks"], "session": 2 },
+    { "id": "present-simple-022", "en": "Does your mother drink coffee?", "vi": "Mẹ bạn có uống cà phê không?", "uses": ["mother", "drink", "coffee"], "blank": { "answer": "Does", "options": ["Does", "Do", "Is"] }, "wrong": ["Do your mother drink coffee?", "Does your mother drinks coffee?"], "extra": ["Do", "drinks"], "session": 2 },
+    { "id": "present-simple-023", "en": "The students drink water in the classroom.", "vi": "Các học sinh uống nước trong lớp học.", "uses": ["student", "drink", "water", "classroom"], "blank": { "answer": "drink", "options": ["drink", "drinks", "drinking"] }, "wrong": ["The students drinks water in the classroom.", "The students drinking water in the classroom."], "extra": ["is", "does"], "session": 2 },
+    { "id": "present-simple-024", "en": "The teacher works and drinks tea.", "vi": "Cô giáo làm việc và uống trà.", "uses": ["teacher", "work", "drink", "tea"], "blank": { "answer": "works", "options": ["works", "work", "working"] }, "wrong": ["The teacher work and drinks tea.", "The teacher works and drink tea."], "extra": ["is", "does"], "session": 2 }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "present-continuous",
+  "title": "Hiện tại tiếp diễn",
+  "order": 7,
+  "sessions": 2,
+  "explain": [
+    {
+      "vi": "Thì hiện tại tiếp diễn nói về việc đang xảy ra ngay lúc này. Cấu trúc: am / is / are + động từ thêm ing. Dùng am với I, is với he, she, it, are với you, we, they.",
+      "examples": [
+        { "en": "I am singing.", "vi": "Tôi đang hát." },
+        { "en": "She is dancing.", "vi": "Cô ấy đang nhảy." }
+      ]
+    },
+    {
+      "vi": "Khi thêm ing: động từ tận cùng e thì bỏ e (dance → dancing). Động từ ngắn có một nguyên âm và một phụ âm cuối thì gấp đôi phụ âm (sit → sitting, cut → cutting).",
+      "examples": [
+        { "en": "My father is sitting on the sofa.", "vi": "Bố tôi đang ngồi trên ghế sofa." },
+        { "en": "I am cutting a carrot.", "vi": "Tôi đang cắt một củ cà rốt." }
+      ]
+    },
+    {
+      "vi": "Để nói \"không\", ta thêm not sau am/is/are. Để hỏi, ta đưa am/is/are lên đầu câu: Is the baby sleeping?",
+      "examples": [
+        { "en": "I am not sleeping.", "vi": "Tôi không đang ngủ." },
+        { "en": "Are they standing near the table?", "vi": "Họ có đang đứng gần cái bàn không?" }
+      ]
+    }
+  ],
+  "sentences": [
+    { "id": "present-continuous-001", "en": "I am singing.", "vi": "Tôi đang hát.", "uses": ["sing"], "blank": { "answer": "am", "options": ["am", "is", "are"] }, "wrong": ["I is singing.", "I are singing."], "extra": ["is", "sing"], "session": 1 },
+    { "id": "present-continuous-002", "en": "She is dancing.", "vi": "Cô ấy đang nhảy.", "uses": ["dance"], "blank": { "answer": "dancing", "options": ["dancing", "dance", "dances"] }, "wrong": ["She is dance.", "She is dances."], "extra": ["are", "dance"], "session": 1 },
+    { "id": "present-continuous-003", "en": "He is painting a house.", "vi": "Anh ấy đang sơn một ngôi nhà.", "uses": ["paint", "house"], "blank": { "answer": "is", "options": ["is", "are", "am"] }, "wrong": ["He are painting a house.", "He am painting a house."], "extra": ["are", "paint"], "session": 1 },
+    { "id": "present-continuous-004", "en": "The baby is sleeping.", "vi": "Em bé đang ngủ.", "uses": ["baby", "sleep"], "blank": { "answer": "sleeping", "options": ["sleeping", "sleep", "sleeps"] }, "wrong": ["The baby is sleep.", "The baby is sleeps."], "extra": ["are", "sleep"], "session": 1 },
+    { "id": "present-continuous-005", "en": "My father is sitting on the sofa.", "vi": "Bố tôi đang ngồi trên ghế sofa.", "uses": ["father", "sit", "sofa"], "blank": { "answer": "sitting", "options": ["sitting", "siting", "sit"] }, "wrong": ["My father is siting on the sofa.", "My father is sit on the sofa."], "extra": ["are", "sits"], "session": 1 },
+    { "id": "present-continuous-006", "en": "The cat is sleeping on the bed.", "vi": "Con mèo đang ngủ trên giường.", "uses": ["cat", "sleep", "bed"], "blank": { "answer": "is", "options": ["is", "are", "am"] }, "wrong": ["The cat are sleeping on the bed.", "The cat sleeping on the bed."], "extra": ["are", "sleeps"], "session": 1 },
+    { "id": "present-continuous-007", "en": "We are working at school.", "vi": "Chúng tôi đang làm việc ở trường.", "uses": ["work", "school"], "blank": { "answer": "are", "options": ["are", "is", "am"] }, "wrong": ["We is working at school.", "We am working at school."], "extra": ["is", "work"], "session": 1 },
+    { "id": "present-continuous-008", "en": "They are drinking water.", "vi": "Họ đang uống nước.", "uses": ["drink", "water"], "blank": { "answer": "drinking", "options": ["drinking", "drink", "drinks"] }, "wrong": ["They are drink water.", "They is drinking water."], "extra": ["is", "drinks"], "session": 1 },
+    { "id": "present-continuous-009", "en": "The doctor is not sitting.", "vi": "Bác sĩ không đang ngồi.", "uses": ["doctor", "sit"], "blank": { "answer": "sitting", "options": ["sitting", "siting", "sit"] }, "wrong": ["The doctor is not siting.", "The doctor is not sit."], "extra": ["are", "sits"], "session": 1 },
+    { "id": "present-continuous-010", "en": "I am not sleeping.", "vi": "Tôi không đang ngủ.", "uses": ["sleep"], "blank": { "answer": "sleeping", "options": ["sleeping", "sleep", "sleeps"] }, "wrong": ["I am not sleep.", "I is not sleeping."], "extra": ["is", "sleeps"], "session": 1 },
+    { "id": "present-continuous-011", "en": "Is the baby sleeping?", "vi": "Em bé có đang ngủ không?", "uses": ["baby", "sleep"], "blank": { "answer": "Is", "options": ["Is", "Are", "Am"] }, "wrong": ["Are the baby sleeping?", "Is the baby sleep?"], "extra": ["Are", "sleeps"], "session": 1 },
+    { "id": "present-continuous-012", "en": "Are they standing near the table?", "vi": "Họ có đang đứng gần cái bàn không?", "uses": ["stand", "table"], "blank": { "answer": "Are", "options": ["Are", "Is", "Am"] }, "wrong": ["Is they standing near the table?", "Are they stand near the table?"], "extra": ["Is", "stands"], "session": 1 },
+    { "id": "present-continuous-013", "en": "I am cutting a carrot.", "vi": "Tôi đang cắt một củ cà rốt.", "uses": ["cut", "carrot"], "blank": { "answer": "cutting", "options": ["cutting", "cuting", "cut"] }, "wrong": ["I am cuting a carrot.", "I am cut a carrot."], "extra": ["is", "cuts"], "session": 2 },
+    { "id": "present-continuous-014", "en": "She is cutting an onion.", "vi": "Cô ấy đang cắt một củ hành.", "uses": ["cut", "onion"], "blank": { "answer": "is", "options": ["is", "are", "am"] }, "wrong": ["She are cutting an onion.", "She am cutting an onion."], "extra": ["are", "cuts"], "session": 2 },
+    { "id": "present-continuous-015", "en": "My mother is cutting a tomato.", "vi": "Mẹ tôi đang cắt một quả cà chua.", "uses": ["mother", "cut", "tomato"], "blank": { "answer": "is", "options": ["is", "are", "am"] }, "wrong": ["My mother are cutting a tomato.", "My mother am cutting a tomato."], "extra": ["are", "cuts"], "session": 2 },
+    { "id": "present-continuous-016", "en": "The farmer is growing corn.", "vi": "Người nông dân đang trồng ngô.", "uses": ["farmer", "grow", "corn"], "blank": { "answer": "growing", "options": ["growing", "grow", "grows"] }, "wrong": ["The farmer is grow corn.", "The farmer is grows corn."], "extra": ["are", "grows"], "session": 2 },
+    { "id": "present-continuous-017", "en": "We are growing potatoes in the garden.", "vi": "Chúng tôi đang trồng khoai tây trong vườn.", "uses": ["grow", "potato", "garden"], "blank": { "answer": "are", "options": ["are", "is", "am"] }, "wrong": ["We is growing potatoes in the garden.", "We am growing potatoes in the garden."], "extra": ["is", "grow"], "session": 2 },
+    { "id": "present-continuous-018", "en": "They are cutting vegetables.", "vi": "Họ đang cắt rau củ.", "uses": ["cut", "vegetable"], "blank": { "answer": "cutting", "options": ["cutting", "cuting", "cut"] }, "wrong": ["They are cut vegetables.", "They are cuting vegetables."], "extra": ["is", "cuts"], "session": 2 },
+    { "id": "present-continuous-019", "en": "He is not cutting the leaf.", "vi": "Anh ấy không đang cắt chiếc lá.", "uses": ["cut", "leaf"], "blank": { "answer": "is", "options": ["is", "are", "am"] }, "wrong": ["He are not cutting the leaf.", "He am not cutting the leaf."], "extra": ["are", "cuts"], "session": 2 },
+    { "id": "present-continuous-020", "en": "The cat is not sitting in the garden.", "vi": "Con mèo không đang ngồi trong vườn.", "uses": ["cat", "sit", "garden"], "blank": { "answer": "sitting", "options": ["sitting", "siting", "sit"] }, "wrong": ["The cat is not siting in the garden.", "The cat is not sit in the garden."], "extra": ["are", "sits"], "session": 2 },
+    { "id": "present-continuous-021", "en": "Is your father cutting onions?", "vi": "Bố bạn có đang cắt hành không?", "uses": ["father", "cut", "onion"], "blank": { "answer": "Is", "options": ["Is", "Are", "Am"] }, "wrong": ["Are your father cutting onions?", "Is your father cut onions?"], "extra": ["Are", "cuts"], "session": 2 },
+    { "id": "present-continuous-022", "en": "Are the students growing corn?", "vi": "Các học sinh có đang trồng ngô không?", "uses": ["student", "grow", "corn"], "blank": { "answer": "Are", "options": ["Are", "Is", "Am"] }, "wrong": ["Is the students growing corn?", "Are the students grow corn?"], "extra": ["Is", "grows"], "session": 2 },
+    { "id": "present-continuous-023", "en": "My grandfather is sitting in the garden.", "vi": "Ông tôi đang ngồi trong vườn.", "uses": ["grandfather", "sit", "garden"], "blank": { "answer": "sitting", "options": ["sitting", "siting", "sit"] }, "wrong": ["My grandfather is siting in the garden.", "My grandfather are sitting in the garden."], "extra": ["are", "sits"], "session": 2 },
+    { "id": "present-continuous-024", "en": "The cook is cutting a potato.", "vi": "Người đầu bếp đang cắt một củ khoai tây.", "uses": ["cook", "cut", "potato"], "blank": { "answer": "is", "options": ["is", "are", "am"] }, "wrong": ["The cook are cutting a potato.", "The cook cutting a potato."], "extra": ["are", "cuts"], "session": 2 }
+  ]
+}

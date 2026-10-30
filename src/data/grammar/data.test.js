@@ -5,24 +5,37 @@ import vocab from '../vocab/index.js'
 import { validateGrammar } from '../../core/grammarSchema.js'
 import { roadmapCoverageErrors } from '../../core/plan.js'
 
-const present = new Set(lessons.map((l) => l.id))
-const steps = roadmap.filter((s) => present.has(s.lesson))
-
-test('lessons 1 to 4 exist in order with the specified sessions', () => {
-  expect(lessons.slice(0, 4).map((l) => [l.id, l.order, l.sessions])).toEqual([
-    ['to-be', 1, 2], ['this-that', 2, 1], ['there-is-are', 3, 2], ['have-has', 4, 1],
+test('the eight lessons exist in order with the specified sessions', () => {
+  expect(lessons.map((l) => [l.id, l.order, l.sessions])).toEqual([
+    ['to-be', 1, 2],
+    ['this-that', 2, 1],
+    ['there-is-are', 3, 2],
+    ['have-has', 4, 1],
+    ['can', 5, 1],
+    ['present-simple', 6, 2],
+    ['present-continuous', 7, 2],
+    ['wh-questions', 8, 1],
   ])
 })
 
-test('all lessons and the roadmap steps that use them are valid', () => {
-  expect(validateGrammar({ lessons, roadmap: steps, vocab, freeWords })).toEqual([])
+test('the roadmap has 12 steps that cover every lesson part exactly once', () => {
+  expect(roadmap).toHaveLength(12)
+  const expected = lessons.flatMap((l) => Array.from({ length: l.sessions }, (_, i) => `${l.id}:${i + 1}`))
+  expect(roadmap.map((s) => `${s.lesson}:${s.part}`)).toEqual(expected)
 })
 
-test('each lesson has between 20 and 26 sentences', () => {
+test('all lessons and the whole roadmap are valid', () => {
+  expect(validateGrammar({ lessons, roadmap, vocab, freeWords })).toEqual([])
+})
+
+test('each lesson has between 20 and 26 sentences and the total is between 160 and 200', () => {
   for (const lesson of lessons) {
     expect(lesson.sentences.length, lesson.id).toBeGreaterThanOrEqual(20)
     expect(lesson.sentences.length, lesson.id).toBeLessThanOrEqual(26)
   }
+  const total = lessons.reduce((n, l) => n + l.sentences.length, 0)
+  expect(total).toBeGreaterThanOrEqual(160)
+  expect(total).toBeLessThanOrEqual(200)
 })
 
 test('every session of a two-session lesson has at least 10 sentences', () => {
@@ -41,6 +54,16 @@ test('every lesson explains in at least two blocks with examples', () => {
   }
 })
 
-test('the roadmap steps covered by these lessons have enough eligible sentences', () => {
-  expect(roadmapCoverageErrors({ roadmap: steps, lessons, vocab })).toEqual([])
+test('every roadmap step has enough eligible sentences', () => {
+  expect(roadmapCoverageErrors({ roadmap, lessons, vocab })).toEqual([])
+})
+
+test('every sentence has exactly one blank answer in the text and distinct wrong sentences', () => {
+  for (const lesson of lessons) {
+    for (const s of lesson.sentences) {
+      expect(new Set(s.wrong).size, s.id).toBe(s.wrong.length)
+      expect(s.wrong.includes(s.en), s.id).toBe(false)
+      expect(s.blank.options.includes(s.blank.answer), s.id).toBe(true)
+    }
+  }
 })
