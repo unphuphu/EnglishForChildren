@@ -1,6 +1,6 @@
 import { createStorage } from './storage.js'
 import {
-  emptyProgress, levelForXp, currentStreak, dailyCount, finishSession, createProgressStore,
+  emptyProgress, levelForXp, xpForLevel, currentStreak, dailyCount, finishSession, createProgressStore,
 } from './progress.js'
 
 const D = '2026-10-30'
@@ -131,4 +131,12 @@ test('save then load round-trips and profiles never see each other', () => {
   a.save({ ...emptyProgress(), xp: 42 })
   expect(a.load().xp).toBe(42)
   expect(b.load().xp).toBe(0)
+})
+
+test('xpForLevel is the first XP of a level and agrees with levelForXp', () => {
+  expect([1, 2, 3, 4].map(xpForLevel)).toEqual([0, 50, 200, 450])
+  for (const level of [1, 2, 3, 4, 8]) {
+    expect(levelForXp(xpForLevel(level))).toBe(level)
+    if (level > 1) expect(levelForXp(xpForLevel(level) - 1)).toBe(level - 1)
+  }
 })

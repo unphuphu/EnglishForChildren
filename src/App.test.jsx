@@ -1,12 +1,8 @@
-import { render, screen } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
+import { screen } from '@testing-library/react'
 import App from './App.jsx'
+import { renderApp } from './test/utils.jsx'
 
 test('shows the app title', () => {
-  render(
-    <MemoryRouter>
-      <App />
-    </MemoryRouter>,
-  )
+  renderApp(<App />)
   expect(screen.getByText(/English For Children/i)).toBeInTheDocument()
 })

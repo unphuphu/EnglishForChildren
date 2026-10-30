@@ -16,6 +16,7 @@ export const emptyProgress = () => ({
 })
 
 export const levelForXp = (xp) => Math.floor(Math.sqrt(xp / 50)) + 1
+export const xpForLevel = (level) => 50 * (level - 1) ** 2
 
 export function currentStreak(state, today) {
   const { count, lastDate } = state.streak
