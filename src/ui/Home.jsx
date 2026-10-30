@@ -2,22 +2,23 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
-import { currentStreak, dailyCount, levelForXp, xpForLevel } from '../core/progress.js'
+import { currentStreak, levelForXp, xpForLevel } from '../core/progress.js'
+import { suggestToday } from '../core/plan.js'
 import { todayISO } from '../core/date.js'
-import { MODE_LABELS } from './modes.js'
+import { MODE_LABELS, prettyTopic } from './modes.js'
 
 const GAME_ICONS = { flashcard: '🗂️', quiz: '❓', listen: '🎧', scramble: '🔤', match: '🃏' }
 
 export default function Home() {
-  const { currentProfile, progress } = useApp()
+  const { currentProfile, progress, vocab, lessons, roadmap } = useApp()
   const speechAvailable = useSpeechAvailable()
   const [noteDismissed, setNoteDismissed] = useState(false)
   const today = todayISO()
   const level = levelForXp(progress.xp)
   const low = xpForLevel(level)
   const high = xpForLevel(level + 1)
-  const count = dailyCount(progress, today)
-  const goal = currentProfile.dailyGoal
+  const suggestion = suggestToday({ roadmap, lessons, vocab: vocab.all(), progress })
+  const doneToday = progress.daily.date === today && progress.daily.goalAwarded
 
   return (
     <main className="home">
@@ -37,12 +38,24 @@ export default function Home() {
       </div>
       <progress className="xp-bar" max={high - low} value={progress.xp - low} aria-label="Điểm kinh nghiệm" />
       <p className="xp-text">{progress.xp - low}/{high - low} XP</p>
-      <div className="goal">
-        <p>Mục tiêu hôm nay</p>
-        <progress max={goal} value={Math.min(count, goal)} aria-label="Tiến độ mục tiêu" />
-        <span className="goal-count">{count}/{goal}</span>
-      </div>
-      <Link to="/play/daily" className="primary big">Học hôm nay</Link>
+
+      <section className="today-card">
+        <h2>Buổi học hôm nay</h2>
+        <p className="today-plan">
+          {suggestion.topic
+            ? `Hôm nay: chủ đề ${prettyTopic(suggestion.topic)} + ${
+              suggestion.lessonId
+                ? `bài ${suggestion.lessonTitle} (buổi ${suggestion.part}/${suggestion.sessions})`
+                : 'ôn ngữ pháp'}`
+            : 'Hôm nay chưa có chủ đề nào.'}
+        </p>
+        <p className="today-status">{doneToday ? 'Đã xong ✅' : 'Chưa làm'}</p>
+        <Link to="/lesson" className="primary big">Bắt đầu</Link>
+        <Link to="/lesson/topic" className="change-topic">Đổi chủ đề</Link>
+      </section>
+
+      <Link to="/play/daily" className="topic-card quick-review">⚡ Ôn nhanh</Link>
+
       <h2>Chơi game</h2>
       <div className="game-grid">
         {Object.entries(MODE_LABELS).map(([mode, label]) => (

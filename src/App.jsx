@@ -9,6 +9,7 @@ import ModePicker from './ui/ModePicker.jsx'
 import Play from './ui/Play.jsx'
 import GameTopics from './ui/GameTopics.jsx'
 import Lesson from './ui/Lesson.jsx'
+import ChangeTopic from './ui/ChangeTopic.jsx'
 import ProfileScreen from './ui/ProfileScreen.jsx'
 import Settings from './ui/Settings.jsx'
 import Recovery from './ui/Recovery.jsx'
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/topics" element={signedIn(<Topics />)} />
         <Route path="/topics/:topic" element={signedIn(<ModePicker />)} />
         <Route path="/lesson" element={signedIn(<Lesson />)} />
+        <Route path="/lesson/topic" element={signedIn(<ChangeTopic />)} />
         <Route path="/games/:mode" element={signedIn(<GameTopics />)} />
         <Route path="/play/:mode" element={signedIn(<Play />)} />
         <Route path="/profile" element={signedIn(<ProfileScreen />)} />
