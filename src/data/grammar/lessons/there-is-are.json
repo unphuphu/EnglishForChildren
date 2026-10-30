@@ -1,0 +1,73 @@
+{
+  "id": "there-is-are",
+  "title": "There is / There are",
+  "order": 3,
+  "sessions": 2,
+  "explain": [
+    {
+      "vi": "There is và there are dùng để nói \"có\" một thứ gì đó ở một nơi nào đó. There is + một vật (số ít). There are + nhiều vật (số nhiều).",
+      "examples": [
+        {
+          "en": "There is a dog in the house.",
+          "vi": "Có một con chó trong nhà."
+        },
+        {
+          "en": "There are many birds in the house.",
+          "vi": "Có nhiều con chim trong nhà."
+        }
+      ]
+    },
+    {
+      "vi": "Để nói \"không có\", ta thêm not sau is/are, hoặc dùng no trước danh từ: There is not a cat... / There are no rabbits...",
+      "examples": [
+        {
+          "en": "There is not a cat in the room.",
+          "vi": "Không có con mèo nào trong phòng."
+        },
+        {
+          "en": "There are no rabbits in the house.",
+          "vi": "Không có con thỏ nào trong nhà."
+        }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta đảo is/are lên trước there: Is there...? / Are there...? Với câu hỏi nhiều vật, ta hay dùng any.",
+      "examples": [
+        {
+          "en": "Is there a mouse in the room?",
+          "vi": "Có con chuột nào trong phòng không?"
+        },
+        {
+          "en": "Are there any birds in the bedroom?",
+          "vi": "Có con chim nào trong phòng ngủ không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"there-is-are-001","en":"There is a dog in the house.","vi":"Có một con chó trong nhà.","uses":["dog","house"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a dog in the house.","There am a dog in the house."],"extra":["are","have"],"session":1},
+    {"id":"there-is-are-002","en":"There are cats in the room.","vi":"Có những con mèo trong phòng.","uses":["cat","room"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is cats in the room.","There am cats in the room."],"extra":["is","have"],"session":1},
+    {"id":"there-is-are-003","en":"There is a bird at the window.","vi":"Có một con chim ở cửa sổ.","uses":["bird","window"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a bird at the window.","There am a bird at the window."],"extra":["are","has"],"session":1},
+    {"id":"there-is-are-004","en":"There is a key on the floor.","vi":"Có một chiếc chìa khóa trên sàn nhà.","uses":["key","floor"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a key on the floor.","There am a key on the floor."],"extra":["are","has"],"session":1},
+    {"id":"there-is-are-005","en":"There are many fish in the bathroom.","vi":"Có nhiều con cá trong phòng tắm.","uses":["fish","bathroom"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is many fish in the bathroom.","There am many fish in the bathroom."],"extra":["is","has"],"session":1},
+    {"id":"there-is-are-006","en":"There is a baby in the bedroom.","vi":"Có một em bé trong phòng ngủ.","uses":["baby","bedroom"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a baby in the bedroom.","There am a baby in the bedroom."],"extra":["are","has"],"session":1},
+    {"id":"there-is-are-007","en":"There is not a cat in the living room.","vi":"Không có con mèo nào trong phòng khách.","uses":["cat","living room"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are not a cat in the living room.","There am not a cat in the living room."],"extra":["are","has"],"session":1},
+    {"id":"there-is-are-008","en":"There are no rabbits in the house.","vi":"Không có con thỏ nào trong nhà.","uses":["rabbit","house"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is no rabbits in the house.","There am no rabbits in the house."],"extra":["is","has"],"session":1},
+    {"id":"there-is-are-009","en":"Is there a mouse in the room?","vi":"Có con chuột nào trong phòng không?","uses":["mouse","room"],"blank":{"answer":"Is","options":["Is","Are","Am"]},"wrong":["Are there a mouse in the room?","Am there a mouse in the room?"],"extra":["Are","any"],"session":1},
+    {"id":"there-is-are-010","en":"Are there any birds in the bedroom?","vi":"Có con chim nào trong phòng ngủ không?","uses":["bird","bedroom"],"blank":{"answer":"Are","options":["Are","Is","Am"]},"wrong":["Is there any birds in the bedroom?","Am there any birds in the bedroom?"],"extra":["Is","a"],"session":1},
+    {"id":"there-is-are-011","en":"There is a sleepy dog near the door.","vi":"Có một con chó buồn ngủ gần cánh cửa.","uses":["sleepy","dog","door"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a sleepy dog near the door.","There am a sleepy dog near the door."],"extra":["are","has"],"session":1},
+    {"id":"there-is-are-012","en":"There are many windows in my house.","vi":"Có nhiều cửa sổ trong nhà tôi.","uses":["window","house"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is many windows in my house.","There am many windows in my house."],"extra":["is","has"],"session":1},
+    {"id":"there-is-are-013","en":"There is a book on the desk.","vi":"Có một quyển sách trên bàn học.","uses":["book","desk"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a book on the desk.","There am a book on the desk."],"extra":["are","has"],"session":2},
+    {"id":"there-is-are-014","en":"There are many pencils on the desk.","vi":"Có nhiều cây bút chì trên bàn học.","uses":["pencil","desk"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is many pencils on the desk.","There am many pencils on the desk."],"extra":["is","has"],"session":2},
+    {"id":"there-is-are-015","en":"There is a teacher in the classroom.","vi":"Có một giáo viên trong lớp học.","uses":["teacher","classroom"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a teacher in the classroom.","There am a teacher in the classroom."],"extra":["are","has"],"session":2},
+    {"id":"there-is-are-016","en":"There are many students in the classroom.","vi":"Có nhiều học sinh trong lớp học.","uses":["student","classroom"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is many students in the classroom.","There am many students in the classroom."],"extra":["is","has"],"session":2},
+    {"id":"there-is-are-017","en":"There is a notebook under the chair.","vi":"Có một quyển vở dưới cái ghế.","uses":["notebook","chair"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a notebook under the chair.","There am a notebook under the chair."],"extra":["are","has"],"session":2},
+    {"id":"there-is-are-018","en":"There are many pens in my school.","vi":"Có nhiều cây bút mực trong trường của tôi.","uses":["pen","school"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is many pens in my school.","There am many pens in my school."],"extra":["is","has"],"session":2},
+    {"id":"there-is-are-019","en":"There is not a chair near the window.","vi":"Không có cái ghế nào gần cửa sổ.","uses":["chair","window"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are not a chair near the window.","There am not a chair near the window."],"extra":["are","has"],"session":2},
+    {"id":"there-is-are-020","en":"There are not many books on the desk.","vi":"Không có nhiều quyển sách trên bàn học.","uses":["book","desk"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is not many books on the desk.","There am not many books on the desk."],"extra":["is","has"],"session":2},
+    {"id":"there-is-are-021","en":"Is there a pen on the desk?","vi":"Có cây bút mực nào trên bàn học không?","uses":["pen","desk"],"blank":{"answer":"Is","options":["Is","Are","Am"]},"wrong":["Are there a pen on the desk?","Am there a pen on the desk?"],"extra":["Are","any"],"session":2},
+    {"id":"there-is-are-022","en":"Are there many students in the school?","vi":"Có nhiều học sinh trong trường không?","uses":["student","school"],"blank":{"answer":"Are","options":["Are","Is","Am"]},"wrong":["Is there many students in the school?","Am there many students in the school?"],"extra":["Is","a"],"session":2},
+    {"id":"there-is-are-023","en":"There is a cat behind the door of the classroom.","vi":"Có một con mèo phía sau cánh cửa lớp học.","uses":["cat","door","classroom"],"blank":{"answer":"is","options":["is","are","be"]},"wrong":["There are a cat behind the door of the classroom.","There am a cat behind the door of the classroom."],"extra":["are","has"],"session":2},
+    {"id":"there-is-are-024","en":"There are no desks in the bedroom.","vi":"Không có cái bàn học nào trong phòng ngủ.","uses":["desk","bedroom"],"blank":{"answer":"are","options":["are","is","be"]},"wrong":["There is no desks in the bedroom.","There am no desks in the bedroom."],"extra":["is","has"],"session":2}
+  ]
+}

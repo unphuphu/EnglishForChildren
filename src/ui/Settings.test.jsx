@@ -18,7 +18,7 @@ const profileOf = (storage, id) => createProfiles(storage).list().find((p) => p.
 test('the goal control only offers 5, 10, 15 and 20', () => {
   const { storage } = seededStorage()
   renderApp(<App />, { route: '/settings', storage })
-  const select = screen.getByLabelText(/mục tiêu/i)
+  const select = screen.getByLabelText(/số từ mới mỗi buổi/i)
   expect(within(select).getAllByRole('option').map((o) => o.value)).toEqual(['5', '10', '15', '20'])
 })
 
@@ -26,7 +26,7 @@ test('changing the goal is saved to the profile', async () => {
   const user = userEvent.setup()
   const { storage, profile } = seededStorage({ dailyGoal: 10 })
   renderApp(<App />, { route: '/settings', storage })
-  await user.selectOptions(screen.getByLabelText(/mục tiêu/i), '20')
+  await user.selectOptions(screen.getByLabelText(/số từ mới mỗi buổi/i), '20')
   expect(profileOf(storage, profile.id).dailyGoal).toBe(20)
 })
 

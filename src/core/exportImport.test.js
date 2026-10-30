@@ -29,7 +29,14 @@ test('export then import into a fresh storage reproduces name, goal, xp and card
 
 test('the export is marked as coming from this app', () => {
   const { storage, profile } = source()
-  expect(JSON.parse(exportProfile(storage, profile.id))).toMatchObject({ app: 'english-for-children', version: 1 })
+  expect(JSON.parse(exportProfile(storage, profile.id))).toMatchObject({ app: 'english-for-children', version: 2 })
+})
+
+test('a file exported by version 1 is rejected', () => {
+  const { storage, profile } = source()
+  const data = JSON.parse(exportProfile(storage, profile.id))
+  data.version = 1
+  expect(() => importProfile(fresh(), JSON.stringify(data))).toThrow('INVALID_FILE')
 })
 
 test('exporting an unknown profile throws NOT_FOUND', () => {

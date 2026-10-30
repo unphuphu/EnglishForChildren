@@ -4,13 +4,18 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { AppProvider } from './context/AppContext.jsx'
 import ErrorBoundary from './ui/ErrorBoundary.jsx'
+import { createStorage } from './core/storage.js'
+import { cleanOldData } from './core/dataVersion.js'
 import './styles.css'
+
+const storage = createStorage()
+cleanOldData(storage)
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ErrorBoundary>
+    <ErrorBoundary storage={storage}>
       <BrowserRouter>
-        <AppProvider>
+        <AppProvider storage={storage}>
           <App />
         </AppProvider>
       </BrowserRouter>

@@ -3,7 +3,7 @@ import { addDays } from './date.js'
 import { isMastered, newCard, review } from './srs.js'
 import { migrateData } from './migrate.js'
 
-const VERSION = 1
+const VERSION = 2
 const DATE = /^\d{4}-\d{2}-\d{2}$/
 const invalid = () => new Error('INVALID_PROGRESS')
 const isObject = (v) => v !== null && typeof v === 'object' && !Array.isArray(v)
@@ -19,7 +19,24 @@ export const emptyProgress = () => ({
   badges: [],
   perfectSessions: 0,
   daily: { date: null, correctIds: [], goalAwarded: false },
+  plan: { step: 0 },
+  grammar: { lessons: {}, sentences: {}, checkpoints: {}, tests: [] },
 })
+
+const countsOf = (record, fields) =>
+  isObject(record) && Object.values(record).every((item) => isObject(item) && fields.every((f) => isCount(item[f])))
+
+function normalizeGrammar(grammar) {
+  if (!isObject(grammar)) throw invalid()
+  const { lessons, sentences, checkpoints, tests } = grammar
+  if (!countsOf(lessons, ['partsDone', 'correct', 'wrong'])) throw invalid()
+  if (!countsOf(sentences, ['seen', 'wrong'])) throw invalid()
+  if (!countsOf(checkpoints, ['best', 'total'])) throw invalid()
+  if (!Array.isArray(tests) || !tests.every((t) => isObject(t) && typeof t.date === 'string' && isCount(t.score) && isCount(t.total))) {
+    throw invalid()
+  }
+  return { lessons, sentences, checkpoints, tests }
+}
 
 // Validates data read from storage or an imported file and fills missing optional sections.
 // Throws Error('INVALID_PROGRESS') for anything the app could not safely use.
@@ -46,8 +63,12 @@ export function normalizeProgress(data) {
   if (!isObject(streak) || !isCount(streak.count) || !isDateOrNull(streak.lastDate)) throw invalid()
   if (!isObject(daily) || !isDateOrNull(daily.date) || !isStringList(daily.correctIds)) throw invalid()
   if (!isStringList(badges) || !isCount(perfectSessions)) throw invalid()
+  if (!isObject(migrated.plan) || !Number.isInteger(migrated.plan.step) || migrated.plan.step < 0) throw invalid()
+  const grammar = normalizeGrammar(migrated.grammar)
 
   return {
+    plan: { step: migrated.plan.step },
+    grammar,
     version: VERSION,
     xp,
     streak: { count: streak.count, lastDate: streak.lastDate },
@@ -89,35 +110,66 @@ function advanceStreak(streak, today) {
 
 // Results flagged selfReported (flashcard "I remember") schedule cards but earn no XP,
 // no daily-goal progress and no perfect bonus: only answered questions score.
-export function finishSession(state, { results, goal, today, vocab }) {
+//
+// `sentenceResults` ({ sentenceId, lessonId, wordIds, correct }) score like answers; a correct one
+// also counts as a correct review of the words it uses, a wrong one says nothing about the words.
+// Only a completed lesson (`completesLesson`) earns the goal bonus and extends the streak, and
+// `grammarRef` ({ lessonId, part, advancePlan }) then records the finished lesson part.
+export function finishSession(state, {
+  results, sentenceResults = [], today, vocab, completesLesson = false, grammarRef = null,
+}) {
   const cards = { ...state.cards }
   const outcomes = new Map()
   for (const { wordId, correct } of results) {
     outcomes.set(wordId, (outcomes.get(wordId) ?? true) && correct)
+  }
+  for (const sentence of sentenceResults) {
+    if (!sentence.correct) continue
+    for (const id of sentence.wordIds) if (!outcomes.has(id)) outcomes.set(id, true)
   }
   for (const [wordId, correct] of outcomes) {
     cards[wordId] = review(cards[wordId] ?? newCard(), correct, today)
   }
 
   const scored = results.filter((r) => !r.selfReported)
-  const correctResults = scored.filter((r) => r.correct)
+  const correctWords = scored.filter((r) => r.correct)
+  const answers = scored.length + sentenceResults.length
+  const correctCount = correctWords.length + sentenceResults.filter((s) => s.correct).length
   const sameDay = state.daily.date === today
   const daily = {
     date: today,
-    correctIds: [...new Set([...(sameDay ? state.daily.correctIds : []), ...correctResults.map((r) => r.wordId)])],
+    correctIds: [...new Set([...(sameDay ? state.daily.correctIds : []), ...correctWords.map((r) => r.wordId)])],
     goalAwarded: sameDay ? state.daily.goalAwarded : false,
   }
 
-  let xpGained = correctResults.length * XP.correct
-  const perfect = scored.length > 0 && correctResults.length === scored.length
+  let xpGained = correctCount * XP.correct
+  const perfect = answers > 0 && correctCount === answers
   if (perfect) xpGained += XP.perfectSession
 
   let streak = state.streak
-  const goalReachedNow = !daily.goalAwarded && daily.correctIds.length >= goal
+  const goalReachedNow = completesLesson && !daily.goalAwarded
   if (goalReachedNow) {
     xpGained += XP.goalReached
     daily.goalAwarded = true
     streak = advanceStreak(streak, today)
+  }
+
+  const grammar = { ...state.grammar, lessons: { ...state.grammar.lessons }, sentences: { ...state.grammar.sentences } }
+  for (const s of sentenceResults) {
+    const seen = grammar.sentences[s.sentenceId] ?? { seen: 0, wrong: 0 }
+    grammar.sentences[s.sentenceId] = { seen: seen.seen + 1, wrong: seen.wrong + (s.correct ? 0 : 1) }
+    const lesson = grammar.lessons[s.lessonId] ?? { partsDone: 0, correct: 0, wrong: 0 }
+    grammar.lessons[s.lessonId] = {
+      ...lesson,
+      correct: lesson.correct + (s.correct ? 1 : 0),
+      wrong: lesson.wrong + (s.correct ? 0 : 1),
+    }
+  }
+  let plan = state.plan
+  if (completesLesson && grammarRef?.lessonId) {
+    const lesson = grammar.lessons[grammarRef.lessonId] ?? { partsDone: 0, correct: 0, wrong: 0 }
+    grammar.lessons[grammarRef.lessonId] = { ...lesson, partsDone: lesson.partsDone + 1 }
+    if (grammarRef.advancePlan) plan = { step: plan.step + 1 }
   }
 
   const next = {
@@ -127,6 +179,8 @@ export function finishSession(state, { results, goal, today, vocab }) {
     cards,
     perfectSessions: state.perfectSessions + (perfect ? 1 : 0),
     daily,
+    grammar,
+    plan,
   }
   const earned = [...BADGES.filter((b) => b.test(next)).map((b) => b.id), ...topicCompleteBadges(next, vocab)]
   const newBadges = earned.filter((id) => !state.badges.includes(id))

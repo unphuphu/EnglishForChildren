@@ -51,8 +51,9 @@ describe('normalizeProgress', () => {
     expect(normalizeProgress(emptyProgress())).toEqual(emptyProgress())
   })
 
-  test('fills the optional sections of a partial state', () => {
-    const state = normalizeProgress({ version: 1, xp: 5, cards: {} })
+  test('fills the optional v1 sections of a state that has the required v2 sections', () => {
+    const { streak, daily, badges, perfectSessions, ...rest } = emptyProgress()
+    const state = normalizeProgress(rest)
     expect(state.streak).toEqual({ count: 0, lastDate: null })
     expect(state.daily).toEqual({ date: null, correctIds: [], goalAwarded: false })
     expect(state.badges).toEqual([])
@@ -63,13 +64,14 @@ describe('normalizeProgress', () => {
     ['null', null],
     ['a string', '5'],
     ['an array', []],
-    ['no version', { xp: 0, cards: {} }],
-    ['a newer version', { version: 2, xp: 0, cards: {} }],
-    ['a non-numeric xp', { version: 1, xp: 'a', cards: {} }],
-    ['cards as an array', { version: 1, xp: 0, cards: [] }],
-    ['a card with a numeric due', { version: 1, xp: 0, cards: { a: { box: 1, correct: 1, wrong: 0, due: 5 } } }],
-    ['a card with box 9', { version: 1, xp: 0, cards: { a: { box: 9, correct: 1, wrong: 0, due: null } } }],
-    ['a streak without a count', { version: 1, xp: 0, cards: {}, streak: {} }],
+    ['no version', (() => { const { version, ...rest } = emptyProgress(); return rest })()],
+    ['version 1 (no migration from v1)', { ...emptyProgress(), version: 1 }],
+    ['a newer version', { ...emptyProgress(), version: 3 }],
+    ['a non-numeric xp', { ...emptyProgress(), xp: 'a' }],
+    ['cards as an array', { ...emptyProgress(), cards: [] }],
+    ['a card with a numeric due', { ...emptyProgress(), cards: { a: { box: 1, correct: 1, wrong: 0, due: 5 } } }],
+    ['a card with box 9', { ...emptyProgress(), cards: { a: { box: 9, correct: 1, wrong: 0, due: null } } }],
+    ['a streak without a count', { ...emptyProgress(), streak: {} }],
   ])('rejects %s', (_label, data) => {
     expect(() => normalizeProgress(data)).toThrow('INVALID_PROGRESS')
   })
@@ -93,7 +95,7 @@ describe('progress store recovery', () => {
 
   test('a future version counts as corrupt and load never throws', () => {
     const { storage, store } = setup()
-    storage.set('progress:p1', { version: 9, xp: 1, cards: {} })
+    storage.set('progress:p1', { ...emptyProgress(), version: 9 })
     expect(store.check()).toBe('corrupt')
     expect(store.load()).toEqual(emptyProgress())
   })
@@ -142,25 +144,30 @@ describe('profile list hardening', () => {
 
 describe('import hardening', () => {
   const file = (progress) => JSON.stringify({
-    app: 'english-for-children', version: 1,
+    app: 'english-for-children', version: 2,
     profile: { name: 'Lan', avatar: AVATARS[0], dailyGoal: 10 }, progress,
   })
 
-  test('a partial progress file is accepted and completed with defaults', () => {
+  test('a progress file that lacks the v2 sections is rejected', () => {
     const storage = createStorage(backendWithMap())
-    const created = importProfile(storage, file({ version: 1, xp: 0, cards: {} }))
-    const loaded = createProgressStore(storage, created.id).load()
-    expect(loaded.streak).toEqual({ count: 0, lastDate: null })
+    expect(() => importProfile(storage, file({ version: 2, xp: 0, cards: {} }))).toThrow('INVALID_FILE')
+  })
+
+  test('a complete progress file is accepted', () => {
+    const storage = createStorage(backendWithMap())
+    const created = importProfile(storage, file(emptyProgress()))
+    expect(createProgressStore(storage, created.id).load()).toEqual(emptyProgress())
   })
 
   test('a progress file without a version is rejected', () => {
     const storage = createStorage(backendWithMap())
-    expect(() => importProfile(storage, file({ xp: 0, cards: {} }))).toThrow('INVALID_FILE')
+    const { version, ...rest } = emptyProgress()
+    expect(() => importProfile(storage, file(rest))).toThrow('INVALID_FILE')
   })
 
   test('a progress file with a malformed card is rejected', () => {
     const storage = createStorage(backendWithMap())
-    const bad = { version: 1, xp: 0, cards: { a: { box: 1, correct: 1, wrong: 0, due: 5 } } }
+    const bad = { ...emptyProgress(), cards: { a: { box: 1, correct: 1, wrong: 0, due: 5 } } }
     expect(() => importProfile(storage, file(bad))).toThrow('INVALID_FILE')
   })
 })

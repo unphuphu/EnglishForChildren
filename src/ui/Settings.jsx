@@ -88,7 +88,7 @@ export default function Settings() {
 
       <section>
         <label className="field">
-          Mục tiêu mỗi ngày (số từ)
+          Số từ mới mỗi buổi học
           <select value={currentProfile.dailyGoal} onChange={(e) => update({ dailyGoal: Number(e.target.value) })}>
             {GOAL_OPTIONS.map((g) => <option key={g} value={g}>{g}</option>)}
           </select>

@@ -5,6 +5,9 @@ import { prettyTopic } from './modes.js'
 export function badgeInfo(id) {
   const known = BADGES.find((b) => b.id === id)
   if (known) return { title: known.title, emoji: known.emoji }
+  if (id.startsWith('grammar-group-')) {
+    return { title: `Đạt kiểm tra nhóm ${id.slice('grammar-group-'.length)}`, emoji: '🎓' }
+  }
   if (id.startsWith('topic-complete:')) {
     return { title: `Hoàn thành chủ đề ${prettyTopic(id.slice('topic-complete:'.length))}`, emoji: '🏆' }
   }
@@ -12,12 +15,12 @@ export function badgeInfo(id) {
 }
 
 export default function Results({ summary, onAgain }) {
-  const { xpGained, newBadges, goalReachedNow, reviewWords, count, goal } = summary
+  const { xpGained, newBadges, lessonDone, reviewWords } = summary
   return (
     <main className="results">
       <h1>Hoàn thành! 🎉</h1>
       <p className="big-xp">+{xpGained} XP</p>
-      <p>{goalReachedNow ? 'Bạn đã đạt mục tiêu hôm nay! 🎯' : `Hôm nay: ${count}/${goal} từ`}</p>
+      {lessonDone && <p>Buổi học hôm nay đã xong ✅</p>}
       {newBadges.length > 0 && (
         <>
           <h2>Huy hiệu mới</h2>
@@ -44,7 +47,7 @@ export default function Results({ summary, onAgain }) {
           </ul>
         </>
       )}
-      <button type="button" className="primary" onClick={onAgain}>Chơi tiếp</button>
+      <button type="button" className="primary" onClick={onAgain}>{lessonDone ? 'Học tiếp' : 'Chơi tiếp'}</button>
       <p><Link to="/">Về trang chủ</Link></p>
     </main>
   )

@@ -8,7 +8,7 @@ const ids = (n, from = 0) => Array.from({ length: n }, (_, i) => `w${from + i}`)
 const results = (list, correct = true) => list.map((wordId) => ({ wordId, correct }))
 const vocab = ids(30).map((id) => ({ id, topic: 'misc', level: 1 }))
 const run = (state, res, extra = {}) =>
-  finishSession(state, { results: res, goal: 10, today: D, vocab, ...extra })
+  finishSession(state, { results: res, today: D, vocab, ...extra })
 
 function memoryBackend() {
   const map = new Map()
@@ -23,15 +23,27 @@ test('7 correct and 3 wrong give 70 XP and no bonuses', () => {
   expect(out.state.xp).toBe(70)
 })
 
-test('10 of 10 correct with goal 10 gives 100 + 20 perfect + 30 goal = 150', () => {
+test('10 of 10 correct without a lesson gives 100 + 20 perfect and never the goal bonus', () => {
   const out = run(emptyProgress(), results(ids(10)))
+  expect(out.xpGained).toBe(120)
+  expect(out.goalReachedNow).toBe(false)
+})
+
+test('completing a lesson adds the 30 XP goal bonus: 100 + 20 + 30 = 150', () => {
+  const out = run(emptyProgress(), results(ids(10)), { completesLesson: true })
   expect(out.xpGained).toBe(150)
   expect(out.goalReachedNow).toBe(true)
 })
 
+test('a lesson with no correct answers still earns the goal bonus', () => {
+  const out = run(emptyProgress(), results(ids(3), false), { completesLesson: true })
+  expect(out.xpGained).toBe(30)
+  expect(out.goalReachedNow).toBe(true)
+})
+
 test('the goal bonus is awarded once per day', () => {
-  const first = run(emptyProgress(), results(ids(10)))
-  const second = run(first.state, results(ids(10, 10)))
+  const first = run(emptyProgress(), results(ids(10)), { completesLesson: true })
+  const second = run(first.state, results(ids(10, 10)), { completesLesson: true })
   expect(second.xpGained).toBe(120)
   expect(second.goalReachedNow).toBe(false)
 })
@@ -49,18 +61,24 @@ test('dailyCount is 0 on a new day', () => {
   expect(dailyCount(a.state, '2026-10-31')).toBe(0)
 })
 
-test('streak grows on consecutive goal days and resets after a missed day', () => {
-  const day1 = run(emptyProgress(), results(ids(10)), { today: '2026-10-30' })
+test('streak grows on consecutive lesson days and resets after a missed day', () => {
+  const day1 = run(emptyProgress(), results(ids(10)), { today: '2026-10-30', completesLesson: true })
   expect(day1.state.streak.count).toBe(1)
-  const day2 = run(day1.state, results(ids(10, 10)), { today: '2026-10-31' })
+  const day2 = run(day1.state, results(ids(10, 10)), { today: '2026-10-31', completesLesson: true })
   expect(day2.state.streak.count).toBe(2)
   expect(currentStreak(day2.state, '2026-11-01')).toBe(2)
   expect(currentStreak(day2.state, '2026-11-02')).toBe(0)
 })
 
-test('a session that misses the goal leaves the streak unchanged', () => {
-  const out = run(emptyProgress(), results(ids(5)))
+test('a session that is not a lesson never changes the streak, however many answers are correct', () => {
+  const out = run(emptyProgress(), results(ids(30)))
   expect(out.state.streak).toEqual({ count: 0, lastDate: null })
+})
+
+test('a second lesson the same day does not extend the streak again', () => {
+  const first = run(emptyProgress(), results(ids(3)), { completesLesson: true })
+  const second = run(first.state, results(ids(3, 3)), { completesLesson: true })
+  expect(second.state.streak.count).toBe(1)
 })
 
 test('level follows the XP formula', () => {

@@ -1,0 +1,77 @@
+{
+  "id": "to-be",
+  "title": "Động từ to be: am / is / are",
+  "order": 1,
+  "sessions": 2,
+  "explain": [
+    {
+      "vi": "To be nghĩa là \"là\", \"thì\", \"ở\". Ta dùng am với I, is với he, she, it hoặc một người/vật, và are với you, we, they hoặc nhiều người/vật.",
+      "examples": [
+        {
+          "en": "I am a child.",
+          "vi": "Tôi là một đứa trẻ."
+        },
+        {
+          "en": "She is my sister.",
+          "vi": "Cô ấy là chị gái của tôi."
+        },
+        {
+          "en": "They are my parents.",
+          "vi": "Họ là bố mẹ của tôi."
+        }
+      ]
+    },
+    {
+      "vi": "Để nói \"không phải\", ta thêm not sau to be. Có thể viết gọn: is not = isn't, are not = aren't.",
+      "examples": [
+        {
+          "en": "He is not my brother.",
+          "vi": "Anh ấy không phải là anh trai của tôi."
+        },
+        {
+          "en": "We aren't tired.",
+          "vi": "Chúng tôi không mệt."
+        }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta đảo to be lên đầu câu, trước chủ ngữ. Trả lời bằng Yes hoặc No.",
+      "examples": [
+        {
+          "en": "Is she your sister?",
+          "vi": "Cô ấy có phải là chị của bạn không?"
+        },
+        {
+          "en": "Are you hungry?",
+          "vi": "Bạn có đói không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"to-be-001","en":"I am a child.","vi":"Tôi là một đứa trẻ.","uses":["child"],"blank":{"answer":"am","options":["am","is","are"]},"wrong":["I is a child.","I are a child."],"extra":["is","be"],"session":1},
+    {"id":"to-be-002","en":"She is my sister.","vi":"Cô ấy là chị gái của tôi.","uses":["sister"],"blank":{"answer":"is","options":["is","am","are"]},"wrong":["She am my sister.","She are my sister."],"extra":["are","be"],"session":1},
+    {"id":"to-be-003","en":"He is my brother.","vi":"Anh ấy là anh trai của tôi.","uses":["brother"],"blank":{"answer":"is","options":["is","am","are"]},"wrong":["He am my brother.","He are my brother."],"extra":["am","be"],"session":1},
+    {"id":"to-be-004","en":"They are my parents.","vi":"Họ là bố mẹ của tôi.","uses":["parent"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["They is my parents.","They am my parents."],"extra":["is","be"],"session":1},
+    {"id":"to-be-005","en":"My mother is here.","vi":"Mẹ tôi ở đây.","uses":["mother"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["My mother are here.","My mother am here."],"extra":["are","there"],"session":1},
+    {"id":"to-be-006","en":"My father is not here.","vi":"Bố tôi không ở đây.","uses":["father"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["My father are not here.","My father am not here."],"extra":["are","there"],"session":1},
+    {"id":"to-be-007","en":"We are a family.","vi":"Chúng tôi là một gia đình.","uses":["family"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["We is a family.","We am a family."],"extra":["is","an"],"session":1},
+    {"id":"to-be-008","en":"The baby is here.","vi":"Em bé ở đây.","uses":["baby"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["The baby are here.","The baby am here."],"extra":["are","there"],"session":1},
+    {"id":"to-be-009","en":"Is she your sister?","vi":"Cô ấy có phải là chị của bạn không?","uses":["sister"],"blank":{"answer":"Is","options":["Is","Are","Am"]},"wrong":["Are she your sister?","Am she your sister?"],"extra":["Are","my"],"session":1},
+    {"id":"to-be-010","en":"Are they your parents?","vi":"Họ có phải là bố mẹ của bạn không?","uses":["parent"],"blank":{"answer":"Are","options":["Are","Is","Am"]},"wrong":["Is they your parents?","Am they your parents?"],"extra":["Is","my"],"session":1},
+    {"id":"to-be-011","en":"Is my grandmother here?","vi":"Bà tôi có ở đây không?","uses":["grandmother"],"blank":{"answer":"Is","options":["Is","Are","Am"]},"wrong":["Are my grandmother here?","Am my grandmother here?"],"extra":["Are","there"],"session":1},
+    {"id":"to-be-012","en":"I am not a baby.","vi":"Tôi không phải là em bé.","uses":["baby"],"blank":{"answer":"am","options":["am","is","are"]},"wrong":["I is not a baby.","I are not a baby."],"extra":["is","be"],"session":1},
+    {"id":"to-be-013","en":"I am happy.","vi":"Tôi vui.","uses":["happy"],"blank":{"answer":"am","options":["am","is","are"]},"wrong":["I is happy.","I are happy."],"extra":["is","be"],"session":2},
+    {"id":"to-be-014","en":"My mother is tired.","vi":"Mẹ tôi mệt.","uses":["mother","tired"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["My mother are tired.","My mother am tired."],"extra":["are","very"],"session":2},
+    {"id":"to-be-015","en":"The baby is sleepy.","vi":"Em bé buồn ngủ.","uses":["baby","sleepy"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["The baby are sleepy.","The baby am sleepy."],"extra":["are","very"],"session":2},
+    {"id":"to-be-016","en":"We are hungry.","vi":"Chúng tôi đói.","uses":["hungry"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["We is hungry.","We am hungry."],"extra":["is","too"],"session":2},
+    {"id":"to-be-017","en":"My father is not angry.","vi":"Bố tôi không giận.","uses":["father","angry"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["My father are not angry.","My father am not angry."],"extra":["are","very"],"session":2},
+    {"id":"to-be-018","en":"They are kind.","vi":"Họ tốt bụng.","uses":["kind"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["They is kind.","They am kind."],"extra":["is","very"],"session":2},
+    {"id":"to-be-019","en":"She is not sad.","vi":"Cô ấy không buồn.","uses":["sad"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["She are not sad.","She am not sad."],"extra":["are","very"],"session":2},
+    {"id":"to-be-020","en":"Are you happy?","vi":"Bạn có vui không?","uses":["happy"],"blank":{"answer":"Are","options":["Are","Is","Am"]},"wrong":["Is you happy?","Am you happy?"],"extra":["Is","very"],"session":2},
+    {"id":"to-be-021","en":"Is your brother funny?","vi":"Anh trai của bạn có hài hước không?","uses":["brother","funny"],"blank":{"answer":"Is","options":["Is","Are","Am"]},"wrong":["Are your brother funny?","Am your brother funny?"],"extra":["Are","very"],"session":2},
+    {"id":"to-be-022","en":"My sister is afraid.","vi":"Chị gái tôi sợ.","uses":["sister","afraid"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["My sister are afraid.","My sister am afraid."],"extra":["are","very"],"session":2},
+    {"id":"to-be-023","en":"He is not scared.","vi":"Anh ấy không sợ hãi.","uses":["scared"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["He are not scared.","He am not scared."],"extra":["are","very"],"session":2},
+    {"id":"to-be-024","en":"My grandfather is funny.","vi":"Ông tôi hài hước.","uses":["grandfather","funny"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["My grandfather are funny.","My grandfather am funny."],"extra":["are","very"],"session":2}
+  ]
+}

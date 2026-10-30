@@ -79,6 +79,20 @@ export function createStorage(source = () => globalThis.localStorage) {
         return false
       }
     },
+    keys() {
+      const found = new Set(memory.keys())
+      if (backend && typeof backend.length === 'number' && typeof backend.key === 'function') {
+        try {
+          for (let i = 0; i < backend.length; i++) {
+            const key = backend.key(i)
+            if (key !== null) found.add(key)
+          }
+        } catch {
+          persistent = false
+        }
+      }
+      return [...found]
+    },
     isPersistent: () => persistent,
   }
 }

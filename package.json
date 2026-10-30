@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run validate:vocab && vite build",
+    "build": "npm run validate:vocab && npm run validate:grammar && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "validate:vocab": "node scripts/validateVocab.js"
+    "validate:vocab": "node scripts/validateVocab.js",
+    "validate:grammar": "node scripts/validateGrammar.js"
   },
   "dependencies": {
     "react": "^18.3.1",
