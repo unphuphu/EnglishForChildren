@@ -19,6 +19,13 @@ test('every topic uses all three levels', () => {
   }
 })
 
-test('dataset has at least 400 words', () => {
-  expect(words.length).toBeGreaterThanOrEqual(400)
+test('dataset has at least 800 words', () => {
+  expect(words.length).toBeGreaterThanOrEqual(800)
+})
+
+test('no word is repeated within a topic', () => {
+  for (const [topic, list] of Object.entries(byTopic)) {
+    const texts = list.map((w) => w.word.toLowerCase())
+    expect(texts.filter((t, i) => texts.indexOf(t) !== i), topic).toEqual([])
+  }
 })
