@@ -2,6 +2,8 @@ import { render } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { AppProvider } from '../context/AppContext.jsx'
 import { createStorage } from '../core/storage.js'
+import { createProfiles, AVATARS } from '../core/profiles.js'
+import { createProgressStore } from '../core/progress.js'
 
 export function memoryBackend() {
   const map = new Map()
@@ -33,4 +35,17 @@ export function renderApp(ui, { route = '/', storage = createStorage(memoryBacke
     </MemoryRouter>,
   )
   return { ...result, storage }
+}
+
+export function seededStorage({ name = 'Bin', dailyGoal = 10, progress } = {}) {
+  const storage = createStorage(memoryBackend())
+  const profiles = createProfiles(storage)
+  const profile = profiles.add({ name, avatar: AVATARS[0], dailyGoal })
+  profiles.setCurrentId(profile.id)
+  if (progress) createProgressStore(storage, profile.id).save(progress)
+  return { storage, profile }
+}
+
+export function savedProgress(storage, profileId) {
+  return createProgressStore(storage, profileId).load()
 }
