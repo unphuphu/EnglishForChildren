@@ -16,5 +16,11 @@
   { "topic": "adjectives", "lesson": "comparatives", "part": 1 },
   { "topic": "weather", "lesson": "past-to-be", "part": 1 },
   { "topic": "sports", "lesson": "past-simple", "part": 1 },
-  { "topic": "clothes", "lesson": "imperatives", "part": 1 }
+  { "topic": "clothes", "lesson": "imperatives", "part": 1 },
+  { "topic": "daily-actions", "lesson": "want-need", "part": 1 },
+  { "topic": "connectors", "lesson": "frequency-adverbs", "part": 1 },
+  { "topic": "seasons", "lesson": "time-prepositions", "part": 1 },
+  { "topic": "transport", "lesson": "going-to", "part": 1 },
+  { "topic": "food", "lesson": "irregular-past", "part": 1 },
+  { "topic": "health", "lesson": "should-must", "part": 1 }
 ]

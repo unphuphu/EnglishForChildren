@@ -1,0 +1,73 @@
+{
+  "id": "frequency-adverbs",
+  "title": "Trạng từ chỉ tần suất: always, often, never",
+  "order": 16,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Trạng từ chỉ tần suất cho biết việc xảy ra thường xuyên thế nào: always (luôn luôn), usually (thường thường), often (hay), sometimes (thỉnh thoảng), never (không bao giờ).",
+      "examples": [
+        {
+          "en": "I always drink milk.",
+          "vi": "Tôi luôn uống sữa."
+        },
+        {
+          "en": "She never drinks coffee.",
+          "vi": "Cô ấy không bao giờ uống cà phê."
+        }
+      ]
+    },
+    {
+      "vi": "Với động từ thường, trạng từ đứng trước động từ: She often sings. Động từ vẫn chia như hiện tại đơn (he, she, it thêm s). Với never, ta không dùng thêm not.",
+      "examples": [
+        {
+          "en": "He often sings a song.",
+          "vi": "Anh ấy hay hát một bài hát."
+        },
+        {
+          "en": "We usually drink tea.",
+          "vi": "Chúng tôi thường uống trà."
+        }
+      ]
+    },
+    {
+      "vi": "Với am / is / are, trạng từ đứng sau động từ to be: She is always happy. Trong câu hỏi, trạng từ đứng sau chủ ngữ: Do you always drink milk?",
+      "examples": [
+        {
+          "en": "She is always happy.",
+          "vi": "Cô ấy luôn vui vẻ."
+        },
+        {
+          "en": "Do you always drink milk?",
+          "vi": "Bạn có luôn uống sữa không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"frequency-adverbs-001","en":"I always drink milk.","vi":"Tôi luôn uống sữa.","uses":["always","drink","milk"],"blank":{"answer":"always","options":["always","drinks","are"]},"wrong":["I drink always milk.","I always drinks milk."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-002","en":"She never drinks coffee.","vi":"Cô ấy không bao giờ uống cà phê.","uses":["never","drink","coffee"],"blank":{"answer":"drinks","options":["drink","drinks","drinking"]},"wrong":["She never drink coffee.","She drinks never coffee."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-003","en":"He often sings a song.","vi":"Anh ấy hay hát một bài hát.","uses":["often","sing","song"],"blank":{"answer":"often","options":["often","sings","is"]},"wrong":["He often sing a song.","He often singing a song."],"extra":["are","of"],"session":1},
+    {"id":"frequency-adverbs-004","en":"We usually drink tea.","vi":"Chúng tôi thường uống trà.","uses":["usually","drink","tea"],"blank":{"answer":"drink","options":["drink","drinks","drinking"]},"wrong":["We usually drinks tea.","We usually drinking tea."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-005","en":"They sometimes paint the house.","vi":"Thỉnh thoảng họ sơn ngôi nhà.","uses":["sometimes","paint","house"],"blank":{"answer":"sometimes","options":["sometimes","paints","is"]},"wrong":["They sometimes paints the house.","They sometimes painting the house."],"extra":["are","of"],"session":1},
+    {"id":"frequency-adverbs-006","en":"My mother always works.","vi":"Mẹ tôi luôn làm việc.","uses":["mother","always","work"],"blank":{"answer":"works","options":["work","works","working"]},"wrong":["My mother always work.","My mother works always."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-007","en":"My father never sings.","vi":"Bố tôi không bao giờ hát.","uses":["father","never","sing"],"blank":{"answer":"never","options":["never","sings","is"]},"wrong":["My father sings never.","My father never sing."],"extra":["are","of"],"session":1},
+    {"id":"frequency-adverbs-008","en":"The baby often sleeps.","vi":"Em bé hay ngủ.","uses":["baby","often","sleep"],"blank":{"answer":"often","options":["often","sleeps","is"]},"wrong":["The baby often sleep.","The baby often sleeping."],"extra":["are","of"],"session":1},
+    {"id":"frequency-adverbs-009","en":"My sister usually dances.","vi":"Chị gái tôi thường nhảy.","uses":["sister","usually","dance"],"blank":{"answer":"usually","options":["usually","dances","is"]},"wrong":["My sister usually dance.","My sister usually dancing."],"extra":["are","of"],"session":1},
+    {"id":"frequency-adverbs-010","en":"I sometimes help my mother.","vi":"Thỉnh thoảng tôi giúp mẹ.","uses":["sometimes","help","mother"],"blank":{"answer":"help","options":["help","helps","helping"]},"wrong":["I sometimes helps my mother.","I sometimes helping my mother."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-011","en":"You always drink water.","vi":"Bạn luôn uống nước.","uses":["always","drink","water"],"blank":{"answer":"always","options":["always","drinks","are"]},"wrong":["You drink always water.","You always drinks water."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-012","en":"The dog never drinks milk.","vi":"Con chó không bao giờ uống sữa.","uses":["dog","never","drink","milk"],"blank":{"answer":"drinks","options":["drink","drinks","drinking"]},"wrong":["The dog never drink milk.","The dog drinks never milk."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-013","en":"They usually work in the hospital.","vi":"Họ thường làm việc ở bệnh viện.","uses":["usually","work","hospital"],"blank":{"answer":"work","options":["work","works","working"]},"wrong":["They usually works in the hospital.","They usually working in the hospital."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-014","en":"My father often drinks coffee.","vi":"Bố tôi hay uống cà phê.","uses":["father","often","drink","coffee"],"blank":{"answer":"drinks","options":["drink","drinks","drinking"]},"wrong":["My father often drink coffee.","My father often drinking coffee."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-015","en":"She always helps the doctor.","vi":"Cô ấy luôn giúp bác sĩ.","uses":["always","help","doctor"],"blank":{"answer":"helps","options":["help","helps","helping"]},"wrong":["She always help the doctor.","She helps always the doctor."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-016","en":"We never sing in the bedroom.","vi":"Chúng tôi không bao giờ hát trong phòng ngủ.","uses":["never","sing","bedroom"],"blank":{"answer":"never","options":["never","sings","is"]},"wrong":["We sing never in the bedroom.","We never sings in the bedroom."],"extra":["are","of"],"session":1},
+    {"id":"frequency-adverbs-017","en":"He sometimes sits on the sofa.","vi":"Thỉnh thoảng anh ấy ngồi trên ghế sofa.","uses":["sometimes","sit","sofa"],"blank":{"answer":"sits","options":["sit","sits","siting"]},"wrong":["He sometimes sit on the sofa.","He sometimes sitting on the sofa."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-018","en":"The students usually sit on the chair.","vi":"Các học sinh thường ngồi trên ghế.","uses":["student","usually","sit","chair"],"blank":{"answer":"usually","options":["usually","sits","is"]},"wrong":["The students usually sits on the chair.","The students usually sitting on the chair."],"extra":["are","of"],"session":1},
+    {"id":"frequency-adverbs-019","en":"I always sleep in the bedroom.","vi":"Tôi luôn ngủ trong phòng ngủ.","uses":["always","sleep","bedroom"],"blank":{"answer":"sleep","options":["sleep","sleeps","sleeping"]},"wrong":["I always sleeps in the bedroom.","I always sleeping in the bedroom."],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-020","en":"Do you always drink milk?","vi":"Bạn có luôn uống sữa không?","uses":["always","drink","milk"],"blank":{"answer":"Do","options":["Do","Does","Are"]},"wrong":["Does you always drink milk?","Do you always drinks milk?"],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-021","en":"Does she often dance?","vi":"Cô ấy có hay nhảy không?","uses":["often","dance"],"blank":{"answer":"Does","options":["Does","Do","Are"]},"wrong":["Do she often dance?","Does she often dances?"],"extra":["is","of"],"session":1},
+    {"id":"frequency-adverbs-022","en":"She is always happy.","vi":"Cô ấy luôn vui vẻ.","uses":["always","happy"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["She are always happy.","She am always happy."],"extra":["of","do"],"session":1},
+    {"id":"frequency-adverbs-023","en":"He is never sad.","vi":"Anh ấy không bao giờ buồn.","uses":["never","sad"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["He are never sad.","He am never sad."],"extra":["of","do"],"session":1},
+    {"id":"frequency-adverbs-024","en":"I am sometimes angry.","vi":"Thỉnh thoảng tôi tức giận.","uses":["sometimes","angry"],"blank":{"answer":"am","options":["am","is","are"]},"wrong":["I is sometimes angry.","I are sometimes angry."],"extra":["of","do"],"session":1}
+  ]
+}

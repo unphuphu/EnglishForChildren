@@ -1,0 +1,73 @@
+{
+  "id": "irregular-past",
+  "title": "Quá khứ đơn với động từ bất quy tắc",
+  "order": 19,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Nhiều động từ thông dụng không thêm ed ở quá khứ mà đổi hẳn dạng: eat → ate, drink → drank, sing → sang, see → saw, have → had, sleep → slept, sit → sat, go → went. Ta phải học thuộc các dạng này.",
+      "examples": [
+        {
+          "en": "I ate pizza yesterday.",
+          "vi": "Hôm qua tôi đã ăn pizza."
+        },
+        {
+          "en": "We went to the park yesterday.",
+          "vi": "Hôm qua chúng tôi đã đi công viên."
+        }
+      ]
+    },
+    {
+      "vi": "Dạng quá khứ dùng cho mọi chủ ngữ, không thêm s: He drank milk, They drank tea. Đừng thêm ed vào dạng đã đổi (không nói eated, goed).",
+      "examples": [
+        {
+          "en": "He drank milk yesterday.",
+          "vi": "Hôm qua anh ấy đã uống sữa."
+        },
+        {
+          "en": "My sister sang a song yesterday.",
+          "vi": "Hôm qua chị gái tôi đã hát một bài hát."
+        }
+      ]
+    },
+    {
+      "vi": "Với didn't và Did, động từ trở về nguyên mẫu: I didn't eat pizza. Did you eat soup? Where did you go?",
+      "examples": [
+        {
+          "en": "I didn't eat pizza yesterday.",
+          "vi": "Hôm qua tôi đã không ăn pizza."
+        },
+        {
+          "en": "Where did you go yesterday?",
+          "vi": "Hôm qua bạn đã đi đâu?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"irregular-past-001","en":"I ate pizza yesterday.","vi":"Hôm qua tôi đã ăn pizza.","uses":["pizza"],"blank":{"answer":"ate","options":["ate","eat","eated"]},"wrong":["I eated pizza yesterday.","I eat pizza yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-002","en":"She ate noodles yesterday.","vi":"Hôm qua cô ấy đã ăn mì sợi.","uses":["noodles"],"blank":{"answer":"ate","options":["ate","eat","eated"]},"wrong":["She eated noodles yesterday.","She eat noodles yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-003","en":"We ate soup yesterday.","vi":"Hôm qua chúng tôi đã ăn súp.","uses":["soup"],"blank":{"answer":"ate","options":["ate","eat","eated"]},"wrong":["We eated soup yesterday.","We eat soup yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-004","en":"He drank milk yesterday.","vi":"Hôm qua anh ấy đã uống sữa.","uses":["milk"],"blank":{"answer":"drank","options":["drank","drink","drinked"]},"wrong":["He drinked milk yesterday.","He drink milk yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-005","en":"They drank tea yesterday.","vi":"Hôm qua họ đã uống trà.","uses":["tea"],"blank":{"answer":"drank","options":["drank","drink","drinked"]},"wrong":["They drinked tea yesterday.","They drink tea yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-006","en":"My mother drank coffee yesterday.","vi":"Hôm qua mẹ tôi đã uống cà phê.","uses":["mother","coffee"],"blank":{"answer":"drank","options":["drank","drink","drinked"]},"wrong":["My mother drinked coffee yesterday.","My mother drink coffee yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-007","en":"I sang a song yesterday.","vi":"Hôm qua tôi đã hát một bài hát.","uses":["song"],"blank":{"answer":"sang","options":["sang","sing","singed"]},"wrong":["I singed a song yesterday.","I sing a song yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-008","en":"My sister sang a song yesterday.","vi":"Hôm qua chị gái tôi đã hát một bài hát.","uses":["sister","song"],"blank":{"answer":"sang","options":["sang","sing","singed"]},"wrong":["My sister singed a song yesterday.","My sister sing a song yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-009","en":"We saw a bird yesterday.","vi":"Hôm qua chúng tôi đã thấy một con chim.","uses":["bird"],"blank":{"answer":"saw","options":["saw","see","seed"]},"wrong":["We seed a bird yesterday.","We see a bird yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-010","en":"She saw my dog yesterday.","vi":"Hôm qua cô ấy đã thấy con chó của tôi.","uses":["dog"],"blank":{"answer":"saw","options":["saw","see","seed"]},"wrong":["She seed my dog yesterday.","She see my dog yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-011","en":"I had an egg yesterday.","vi":"Hôm qua tôi đã ăn một quả trứng.","uses":["egg"],"blank":{"answer":"had","options":["had","have","haved"]},"wrong":["I haved an egg yesterday.","I have an egg yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-012","en":"He had soup yesterday.","vi":"Hôm qua anh ấy đã ăn súp.","uses":["soup"],"blank":{"answer":"had","options":["had","have","haved"]},"wrong":["He haved soup yesterday.","He has soup yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-013","en":"The baby slept in the bedroom yesterday.","vi":"Hôm qua em bé đã ngủ trong phòng ngủ.","uses":["baby","bedroom"],"blank":{"answer":"slept","options":["slept","sleep","sleeped"]},"wrong":["The baby sleeped in the bedroom yesterday.","The baby sleep in the bedroom yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-014","en":"My father slept on the sofa yesterday.","vi":"Hôm qua bố tôi đã ngủ trên ghế sofa.","uses":["father","sofa"],"blank":{"answer":"slept","options":["slept","sleep","sleeped"]},"wrong":["My father sleeped on the sofa yesterday.","My father sleep on the sofa yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-015","en":"I sat on the chair yesterday.","vi":"Hôm qua tôi đã ngồi trên ghế.","uses":["chair"],"blank":{"answer":"sat","options":["sat","sit","sitted"]},"wrong":["I sitted on the chair yesterday.","I sit on the chair yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-016","en":"She sat near the window yesterday.","vi":"Hôm qua cô ấy đã ngồi gần cửa sổ.","uses":["window"],"blank":{"answer":"sat","options":["sat","sit","sitted"]},"wrong":["She sitted near the window yesterday.","She sit near the window yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-017","en":"I went to school yesterday.","vi":"Hôm qua tôi đã đi học.","uses":["school"],"blank":{"answer":"went","options":["went","go","goed"]},"wrong":["I goed to school yesterday.","I go to school yesterday."],"extra":["did","for"],"session":1},
+    {"id":"irregular-past-018","en":"We went to the park yesterday.","vi":"Hôm qua chúng tôi đã đi công viên.","uses":["park"],"blank":{"answer":"went","options":["went","go","goed"]},"wrong":["We goed to the park yesterday.","We go to the park yesterday."],"extra":["did","for"],"session":1},
+    {"id":"irregular-past-019","en":"They went to the hospital yesterday.","vi":"Hôm qua họ đã đi bệnh viện.","uses":["hospital"],"blank":{"answer":"went","options":["went","go","goed"]},"wrong":["They goed to the hospital yesterday.","They go to the hospital yesterday."],"extra":["did","for"],"session":1},
+    {"id":"irregular-past-020","en":"I didn't eat pizza yesterday.","vi":"Hôm qua tôi đã không ăn pizza.","uses":["eat","pizza"],"blank":{"answer":"eat","options":["eat","ate","eats"]},"wrong":["I didn't ate pizza yesterday.","I didn't eats pizza yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-021","en":"She didn't drink milk yesterday.","vi":"Hôm qua cô ấy đã không uống sữa.","uses":["drink","milk"],"blank":{"answer":"drink","options":["drink","drank","drinks"]},"wrong":["She didn't drank milk yesterday.","She didn't drinks milk yesterday."],"extra":["did","to"],"session":1},
+    {"id":"irregular-past-022","en":"Did you eat soup yesterday?","vi":"Hôm qua bạn có ăn súp không?","uses":["eat","soup"],"blank":{"answer":"eat","options":["eat","ate","eats"]},"wrong":["Did you ate soup yesterday?","Did you eats soup yesterday?"],"extra":["to","didn't"],"session":1},
+    {"id":"irregular-past-023","en":"Did your mother go to the park yesterday?","vi":"Hôm qua mẹ bạn có đi công viên không?","uses":["mother","go","park"],"blank":{"answer":"go","options":["go","went","goes"]},"wrong":["Did your mother went to the park yesterday?","Did your mother goes to the park yesterday?"],"extra":["to","didn't"],"session":1},
+    {"id":"irregular-past-024","en":"Where did you go yesterday?","vi":"Hôm qua bạn đã đi đâu?","uses":["go"],"blank":{"answer":"did","options":["did","do","does"]},"wrong":["Where do you go yesterday?","Where did you went yesterday?"],"extra":["to","are"],"session":1}
+  ]
+}

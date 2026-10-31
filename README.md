@@ -6,8 +6,9 @@
 
 - **Buổi học hằng ngày**, gồm 4 bước: từ mới của một chủ đề, giải thích ngữ pháp, luyện đặt câu, ôn từ.
   Mở app là thấy sẵn "Hôm nay: chủ đề … + bài …" và có thể bấm **Đổi chủ đề**.
-- **8 bài ngữ pháp** (to be, this/that, there is/are, have/has, can, hiện tại đơn, hiện tại tiếp diễn,
-  câu hỏi what/where/who), bài khó chia thành vài buổi. Bài tập chỉ dùng từ bé đã học nên làm ngữ pháp cũng là ôn từ.
+- **20 bài ngữ pháp** (to be, this/that, there is/are, have/has, can, hiện tại đơn, hiện tại tiếp diễn, câu hỏi
+  what/where/who, giới từ nơi chốn, some/any và how many/much, so sánh hơn, was/were, quá khứ đơn, mệnh lệnh và let's,
+  want/need to, trạng từ tần suất, giới từ thời gian, going to, quá khứ bất quy tắc, should/must), bài khó chia thành vài buổi. Bài tập chỉ dùng từ bé đã học nên làm ngữ pháp cũng là ôn từ.
 - **4 dạng bài đặt câu:** sắp xếp từ thành câu, điền từ vào chỗ trống, chọn câu đúng, dịch sang tiếng Anh.
 - **Màn Ngữ pháp:** xem lại bài, luyện thêm, kiểm tra cuối mỗi nhóm 5 bài, kiểm tra tổng hợp (có điểm, nhận xét và phần còn yếu).
 - ~1350 từ vựng thông dụng, 27 chủ đề, 5 chế độ chơi lẻ (flashcard, trắc nghiệm, nghe rồi chọn, ghép chữ, ghép cặp) và **Ôn nhanh**.

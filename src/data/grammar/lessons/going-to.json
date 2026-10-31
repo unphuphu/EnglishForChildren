@@ -1,0 +1,73 @@
+{
+  "id": "going-to",
+  "title": "Tương lai gần: am / is / are going to",
+  "order": 18,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Để nói việc sẽ làm trong tương lai gần (tomorrow = ngày mai), ta dùng am / is / are + going to + động từ nguyên mẫu. Dùng am với I, is với he, she, it và một người, are với you, we, they.",
+      "examples": [
+        {
+          "en": "I am going to paint the house tomorrow.",
+          "vi": "Ngày mai tôi sẽ sơn ngôi nhà."
+        },
+        {
+          "en": "She is going to dance tomorrow.",
+          "vi": "Ngày mai cô ấy sẽ nhảy."
+        }
+      ]
+    },
+    {
+      "vi": "Để nói \"sẽ không\", ta thêm not sau am / is / are: I am not going to work. Sau going to, động từ luôn ở dạng nguyên mẫu, không thêm s hay ing.",
+      "examples": [
+        {
+          "en": "He is not going to sing tomorrow.",
+          "vi": "Ngày mai anh ấy sẽ không hát."
+        },
+        {
+          "en": "We are not going to paint the house tomorrow.",
+          "vi": "Ngày mai chúng tôi sẽ không sơn ngôi nhà."
+        }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta đưa am / is / are lên đầu câu: Are you going to dance tomorrow? Với từ để hỏi, đặt chúng lên đầu: What are you going to drink?",
+      "examples": [
+        {
+          "en": "Are you going to dance tomorrow?",
+          "vi": "Ngày mai bạn sẽ nhảy phải không?"
+        },
+        {
+          "en": "What are you going to drink tomorrow?",
+          "vi": "Ngày mai bạn sẽ uống gì?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"going-to-001","en":"I am going to paint the house tomorrow.","vi":"Ngày mai tôi sẽ sơn ngôi nhà.","uses":["paint","house"],"blank":{"answer":"am","options":["am","is","are"]},"wrong":["I is going to paint the house tomorrow.","I am going paint the house tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-002","en":"She is going to dance tomorrow.","vi":"Ngày mai cô ấy sẽ nhảy.","uses":["dance"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["She are going to dance tomorrow.","She is going dance tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-003","en":"He is going to sing a song tomorrow.","vi":"Ngày mai anh ấy sẽ hát một bài hát.","uses":["sing","song"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["He is going sing a song tomorrow.","He is going for sing a song tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-004","en":"We are going to help my mother tomorrow.","vi":"Ngày mai chúng tôi sẽ giúp mẹ tôi.","uses":["help","mother"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["We is going to help my mother tomorrow.","We are going help my mother tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-005","en":"They are going to work tomorrow.","vi":"Ngày mai họ sẽ làm việc.","uses":["work"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["They is going to work tomorrow.","They are going work tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-006","en":"My father is going to ride a bike tomorrow.","vi":"Ngày mai bố tôi sẽ đạp xe.","uses":["father","ride","bike"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["My father are going to ride a bike tomorrow.","My father is going ride a bike tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-007","en":"My sister is going to ride a bike tomorrow.","vi":"Ngày mai chị gái tôi sẽ đạp xe.","uses":["sister","ride","bike"],"blank":{"answer":"going","options":["going","go","goes"]},"wrong":["My sister is go to ride a bike tomorrow.","My sister is goes to ride a bike tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-008","en":"I am going to drive a car tomorrow.","vi":"Ngày mai tôi sẽ lái xe ô tô.","uses":["drive","car"],"blank":{"answer":"am","options":["am","is","are"]},"wrong":["I is going to drive a car tomorrow.","I am going drive a car tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-009","en":"The baby is going to sleep tomorrow.","vi":"Ngày mai em bé sẽ ngủ.","uses":["baby","sleep"],"blank":{"answer":"going","options":["going","go","goes"]},"wrong":["The baby is go to sleep tomorrow.","The baby is goes to sleep tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-010","en":"The doctor is going to drive a car tomorrow.","vi":"Ngày mai bác sĩ sẽ lái xe ô tô.","uses":["doctor","drive","car"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["The doctor are going to drive a car tomorrow.","The doctor is going drive a car tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-011","en":"We are going to play football tomorrow.","vi":"Ngày mai chúng tôi sẽ chơi bóng đá.","uses":["play","football"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["We are going play football tomorrow.","We are going for play football tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-012","en":"They are going to paint the chair tomorrow.","vi":"Ngày mai họ sẽ sơn cái ghế.","uses":["paint","chair"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["They is going to paint the chair tomorrow.","They are going paint the chair tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-013","en":"I am going to drink some milk tomorrow.","vi":"Ngày mai tôi sẽ uống một ít sữa.","uses":["drink","milk"],"blank":{"answer":"am","options":["am","is","are"]},"wrong":["I is going to drink some milk tomorrow.","I am going drink some milk tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-014","en":"She is going to work in the hospital tomorrow.","vi":"Ngày mai cô ấy sẽ làm việc ở bệnh viện.","uses":["work","hospital"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["She are going to work in the hospital tomorrow.","She is going work in the hospital tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-015","en":"I am not going to work tomorrow.","vi":"Ngày mai tôi sẽ không làm việc.","uses":["work"],"blank":{"answer":"not","options":["not","to","go"]},"wrong":["I not am going to work tomorrow.","I am not go to work tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-016","en":"He is not going to sing tomorrow.","vi":"Ngày mai anh ấy sẽ không hát.","uses":["sing"],"blank":{"answer":"going","options":["going","go","goes"]},"wrong":["He not is going to sing tomorrow.","He is not go to sing tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-017","en":"We are not going to paint the house tomorrow.","vi":"Ngày mai chúng tôi sẽ không sơn ngôi nhà.","uses":["paint","house"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["We not are going to paint the house tomorrow.","We is not going to paint the house tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-018","en":"They are not going to ride a bike tomorrow.","vi":"Ngày mai họ sẽ không đạp xe.","uses":["ride","bike"],"blank":{"answer":"going","options":["going","go","goes"]},"wrong":["They not are going to ride a bike tomorrow.","They are not go to ride a bike tomorrow."],"extra":["of","for"],"session":1},
+    {"id":"going-to-019","en":"Are you going to dance tomorrow?","vi":"Ngày mai bạn sẽ nhảy phải không?","uses":["dance"],"blank":{"answer":"Are","options":["Are","Is","go"]},"wrong":["Is you going to dance tomorrow?","Are you go to dance tomorrow?"],"extra":["of","for"],"session":1},
+    {"id":"going-to-020","en":"Is she going to sing tomorrow?","vi":"Ngày mai cô ấy sẽ hát phải không?","uses":["sing"],"blank":{"answer":"Is","options":["Is","Are","go"]},"wrong":["Are she going to sing tomorrow?","Is she go to sing tomorrow?"],"extra":["of","for"],"session":1},
+    {"id":"going-to-021","en":"Is your father going to drive a car tomorrow?","vi":"Ngày mai bố bạn sẽ lái xe ô tô phải không?","uses":["father","drive","car"],"blank":{"answer":"Is","options":["Is","Are","go"]},"wrong":["Are your father going to drive a car tomorrow?","Is your father go to drive a car tomorrow?"],"extra":["of","for"],"session":1},
+    {"id":"going-to-022","en":"Are they going to play football tomorrow?","vi":"Ngày mai họ sẽ chơi bóng đá phải không?","uses":["play","football"],"blank":{"answer":"Are","options":["Are","Is","go"]},"wrong":["Is they going to play football tomorrow?","Are they go to play football tomorrow?"],"extra":["of","for"],"session":1},
+    {"id":"going-to-023","en":"Is the baby going to sleep tomorrow?","vi":"Ngày mai em bé sẽ ngủ phải không?","uses":["baby","sleep"],"blank":{"answer":"Is","options":["Is","Are","go"]},"wrong":["Are the baby going to sleep tomorrow?","Is the baby go to sleep tomorrow?"],"extra":["of","for"],"session":1},
+    {"id":"going-to-024","en":"What are you going to drink tomorrow?","vi":"Ngày mai bạn sẽ uống gì?","uses":["drink"],"blank":{"answer":"going","options":["going","go","goes"]},"wrong":["What do you going to drink tomorrow?","What are you go to drink tomorrow?"],"extra":["of","for"],"session":1}
+  ]
+}

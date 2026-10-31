@@ -1,0 +1,73 @@
+{
+  "id": "want-need",
+  "title": "Want to / need to + động từ",
+  "order": 15,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Want to nghĩa là \"muốn\", need to nghĩa là \"cần\". Sau want / need ta dùng to rồi động từ nguyên mẫu. Với he, she, it (một người) ta thêm s: wants, needs.",
+      "examples": [
+        {
+          "en": "I want to paint the house.",
+          "vi": "Tôi muốn sơn ngôi nhà."
+        },
+        {
+          "en": "She needs to sleep.",
+          "vi": "Cô ấy cần ngủ."
+        }
+      ]
+    },
+    {
+      "vi": "Để nói \"không\", ta dùng don't / doesn't + want / need. Sau doesn't, want và need không thêm s.",
+      "examples": [
+        {
+          "en": "I don't want to work.",
+          "vi": "Tôi không muốn làm việc."
+        },
+        {
+          "en": "She doesn't want to dance.",
+          "vi": "Cô ấy không muốn nhảy."
+        }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta dùng Do (I, you, we, they) hoặc Does (he, she, it) ở đầu câu: Do you want to sing? Does the baby need to sleep?",
+      "examples": [
+        {
+          "en": "Do you want to sing a song?",
+          "vi": "Bạn có muốn hát một bài hát không?"
+        },
+        {
+          "en": "Does the baby need to sleep?",
+          "vi": "Em bé có cần ngủ không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"want-need-001","en":"I want to paint the house.","vi":"Tôi muốn sơn ngôi nhà.","uses":["want","paint","house"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["I want paint the house.","I wants to paint the house."],"extra":["of","for"],"session":1},
+    {"id":"want-need-002","en":"She wants to dance.","vi":"Cô ấy muốn nhảy.","uses":["want","dance"],"blank":{"answer":"wants","options":["want","wants","wanting"]},"wrong":["She want to dance.","She wants dance."],"extra":["of","for"],"session":1},
+    {"id":"want-need-003","en":"He wants to sing a song.","vi":"Anh ấy muốn hát một bài hát.","uses":["want","sing","song"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["He wants sing a song.","He want to sing a song."],"extra":["of","for"],"session":1},
+    {"id":"want-need-004","en":"We want to help my mother.","vi":"Chúng tôi muốn giúp mẹ tôi.","uses":["want","help","mother"],"blank":{"answer":"want","options":["want","wants","wanting"]},"wrong":["We wants to help my mother.","We want help my mother."],"extra":["of","for"],"session":1},
+    {"id":"want-need-005","en":"They want to work in the hospital.","vi":"Họ muốn làm việc ở bệnh viện.","uses":["want","work","hospital"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["They want work in the hospital.","They wants to work in the hospital."],"extra":["of","for"],"session":1},
+    {"id":"want-need-006","en":"My sister wants to paint a bird.","vi":"Chị gái tôi muốn vẽ một con chim.","uses":["want","sister","paint","bird"],"blank":{"answer":"wants","options":["want","wants","wanting"]},"wrong":["My sister want to paint a bird.","My sister wants paint a bird."],"extra":["of","for"],"session":1},
+    {"id":"want-need-007","en":"The baby wants to drink milk.","vi":"Em bé muốn uống sữa.","uses":["want","baby","drink","milk"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["The baby wants drink milk.","The baby want to drink milk."],"extra":["of","for"],"session":1},
+    {"id":"want-need-008","en":"I want to drink some water.","vi":"Tôi muốn uống một ít nước.","uses":["want","drink","water"],"blank":{"answer":"want","options":["want","wants","wanting"]},"wrong":["I wants to drink some water.","I want drink some water."],"extra":["of","for"],"session":1},
+    {"id":"want-need-009","en":"My father wants to sit on the sofa.","vi":"Bố tôi muốn ngồi trên ghế sofa.","uses":["want","father","sit","sofa"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["My father wants sit on the sofa.","My father want to sit on the sofa."],"extra":["of","for"],"session":1},
+    {"id":"want-need-010","en":"The doctor wants to sleep.","vi":"Bác sĩ muốn ngủ.","uses":["want","doctor","sleep"],"blank":{"answer":"wants","options":["want","wants","wanting"]},"wrong":["The doctor want to sleep.","The doctor wants sleep."],"extra":["of","for"],"session":1},
+    {"id":"want-need-011","en":"I don't want to work.","vi":"Tôi không muốn làm việc.","uses":["want","work"],"blank":{"answer":"want","options":["want","wants","wanted"]},"wrong":["I don't wants to work.","I don't want work."],"extra":["of","for"],"session":1},
+    {"id":"want-need-012","en":"She doesn't want to dance.","vi":"Cô ấy không muốn nhảy.","uses":["want","dance"],"blank":{"answer":"want","options":["want","wants","wanted"]},"wrong":["She doesn't wants to dance.","She doesn't want dance."],"extra":["of","for"],"session":1},
+    {"id":"want-need-013","en":"He doesn't want to help the baby.","vi":"Anh ấy không muốn giúp em bé.","uses":["want","help","baby"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["He doesn't want help the baby.","He doesn't wants to help the baby."],"extra":["of","for"],"session":1},
+    {"id":"want-need-014","en":"Do you want to sing a song?","vi":"Bạn có muốn hát một bài hát không?","uses":["want","sing","song"],"blank":{"answer":"Do","options":["Do","Does","Are"]},"wrong":["Does you want to sing a song?","Do you wants to sing a song?"],"extra":["of","for"],"session":1},
+    {"id":"want-need-015","en":"Does your sister want to paint?","vi":"Chị gái bạn có muốn vẽ không?","uses":["sister","want","paint"],"blank":{"answer":"Does","options":["Does","Do","Are"]},"wrong":["Do your sister want to paint?","Does your sister wants to paint?"],"extra":["of","for"],"session":1},
+    {"id":"want-need-016","en":"Do they want to dance?","vi":"Họ có muốn nhảy không?","uses":["want","dance"],"blank":{"answer":"Do","options":["Do","Does","Are"]},"wrong":["Does they want to dance?","Do they wants to dance?"],"extra":["of","for"],"session":1},
+    {"id":"want-need-017","en":"I need to work.","vi":"Tôi cần làm việc.","uses":["need","work"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["I need work.","I needs to work."],"extra":["of","for"],"session":1},
+    {"id":"want-need-018","en":"She needs to sleep.","vi":"Cô ấy cần ngủ.","uses":["need","sleep"],"blank":{"answer":"needs","options":["need","needs","needing"]},"wrong":["She need to sleep.","She needs to sleeping."],"extra":["of","for"],"session":1},
+    {"id":"want-need-019","en":"We need to help the baby.","vi":"Chúng tôi cần giúp em bé.","uses":["need","help","baby"],"blank":{"answer":"need","options":["need","needs","needing"]},"wrong":["We needs to help the baby.","We need help the baby."],"extra":["of","for"],"session":1},
+    {"id":"want-need-020","en":"He needs to drink water.","vi":"Anh ấy cần uống nước.","uses":["need","drink","water"],"blank":{"answer":"to","options":["to","of","for"]},"wrong":["He needs drink water.","He need to drink water."],"extra":["of","for"],"session":1},
+    {"id":"want-need-021","en":"The students need to sit on the chair.","vi":"Các học sinh cần ngồi trên ghế.","uses":["student","need","sit","chair"],"blank":{"answer":"need","options":["need","needs","needing"]},"wrong":["The students needs to sit on the chair.","The students need sit on the chair."],"extra":["of","for"],"session":1},
+    {"id":"want-need-022","en":"My mother needs to sleep.","vi":"Mẹ tôi cần ngủ.","uses":["mother","need","sleep"],"blank":{"answer":"needs","options":["need","needs","needing"]},"wrong":["My mother need to sleep.","My mother needs to sleeping."],"extra":["of","for"],"session":1},
+    {"id":"want-need-023","en":"Do you need to work?","vi":"Bạn có cần làm việc không?","uses":["need","work"],"blank":{"answer":"Do","options":["Do","Does","Are"]},"wrong":["Does you need to work?","Do you needs to work?"],"extra":["of","for"],"session":1},
+    {"id":"want-need-024","en":"Does the baby need to sleep?","vi":"Em bé có cần ngủ không?","uses":["baby","need","sleep"],"blank":{"answer":"Does","options":["Does","Do","Are"]},"wrong":["Do the baby need to sleep?","Does the baby needs to sleep?"],"extra":["of","for"],"session":1}
+  ]
+}

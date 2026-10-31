@@ -1,0 +1,73 @@
+{
+  "id": "time-prepositions",
+  "title": "Giới từ chỉ thời gian: on / in",
+  "order": 17,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Dùng on với các thứ trong tuần: on Monday, on Sunday, on Saturday. Dùng in với mùa và tháng: in summer, in winter, in January.",
+      "examples": [
+        {
+          "en": "I play football on Sunday.",
+          "vi": "Tôi chơi bóng đá vào Chủ nhật."
+        },
+        {
+          "en": "We play football in summer.",
+          "vi": "Chúng tôi chơi bóng đá vào mùa hè."
+        }
+      ]
+    },
+    {
+      "vi": "Các giới từ này đứng trước từ chỉ thời gian và thường nằm ở cuối câu. Không dùng at hay in với thứ trong tuần, không dùng on với mùa.",
+      "examples": [
+        {
+          "en": "She works on Monday.",
+          "vi": "Cô ấy làm việc vào thứ Hai."
+        },
+        {
+          "en": "My sister dances in summer.",
+          "vi": "Chị gái tôi nhảy vào mùa hè."
+        }
+      ]
+    },
+    {
+      "vi": "Câu phủ định và câu hỏi giữ nguyên giới từ: She doesn't work on Sunday. Do you play football on Saturday?",
+      "examples": [
+        {
+          "en": "She doesn't work on Sunday.",
+          "vi": "Cô ấy không làm việc vào Chủ nhật."
+        },
+        {
+          "en": "Do you play football on Saturday?",
+          "vi": "Bạn có chơi bóng đá vào thứ Bảy không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"time-prepositions-001","en":"I play football on Sunday.","vi":"Tôi chơi bóng đá vào Chủ nhật.","uses":["play","football","Sunday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["I play football in Sunday.","I play football at Sunday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-002","en":"We paint the house on Saturday.","vi":"Chúng tôi sơn ngôi nhà vào thứ Bảy.","uses":["paint","house","Saturday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["We paint the house in Saturday.","We paint the house at Saturday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-003","en":"She works on Monday.","vi":"Cô ấy làm việc vào thứ Hai.","uses":["work","Monday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["She works in Monday.","She works at Monday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-004","en":"My father sings on Sunday.","vi":"Bố tôi hát vào Chủ nhật.","uses":["father","sing","Sunday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["My father sings in Sunday.","My father sings at Sunday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-005","en":"They dance on Saturday.","vi":"Họ nhảy vào thứ Bảy.","uses":["dance","Saturday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["They dance in Saturday.","They dance at Saturday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-006","en":"I drink tea on Monday.","vi":"Tôi uống trà vào thứ Hai.","uses":["drink","tea","Monday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["I drink tea in Monday.","I drink tea at Monday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-007","en":"My mother helps the baby on Sunday.","vi":"Mẹ tôi giúp em bé vào Chủ nhật.","uses":["mother","help","baby","Sunday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["My mother helps the baby in Sunday.","My mother helps the baby at Sunday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-008","en":"We play football in summer.","vi":"Chúng tôi chơi bóng đá vào mùa hè.","uses":["play","football","summer"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["We play football on summer.","We play football at summer."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-009","en":"The dog sleeps in winter.","vi":"Con chó ngủ vào mùa đông.","uses":["dog","sleep","winter"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["The dog sleeps on winter.","The dog sleeps at winter."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-010","en":"I drink tea in winter.","vi":"Tôi uống trà vào mùa đông.","uses":["drink","tea","winter"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["I drink tea on winter.","I drink tea at winter."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-011","en":"She paints in spring.","vi":"Cô ấy vẽ vào mùa xuân.","uses":["paint","spring"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["She paints on spring.","She paints at spring."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-012","en":"They work in autumn.","vi":"Họ làm việc vào mùa thu.","uses":["work","autumn"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["They work on autumn.","They work at autumn."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-013","en":"My sister dances in summer.","vi":"Chị gái tôi nhảy vào mùa hè.","uses":["sister","dance","summer"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["My sister dances on summer.","My sister dances at summer."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-014","en":"My birthday is in January.","vi":"Sinh nhật tôi vào tháng Một.","uses":["birthday","January"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["My birthday is on January.","My birthday is at January."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-015","en":"We sing a song on Monday.","vi":"Chúng tôi hát một bài hát vào thứ Hai.","uses":["sing","song","Monday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["We sing a song in Monday.","We sing a song at Monday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-016","en":"I help my mother on Saturday.","vi":"Tôi giúp mẹ vào thứ Bảy.","uses":["help","mother","Saturday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["I help my mother in Saturday.","I help my mother at Saturday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-017","en":"He plays football on Saturday.","vi":"Anh ấy chơi bóng đá vào thứ Bảy.","uses":["play","football","Saturday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["He plays football in Saturday.","He plays football at Saturday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-018","en":"The doctor works on Sunday.","vi":"Bác sĩ làm việc vào Chủ nhật.","uses":["doctor","work","Sunday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["The doctor works in Sunday.","The doctor works at Sunday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-019","en":"The nurse works in winter.","vi":"Cô y tá làm việc vào mùa đông.","uses":["nurse","work","winter"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["The nurse works on winter.","The nurse works at winter."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-020","en":"My father works on Monday.","vi":"Bố tôi làm việc vào thứ Hai.","uses":["father","work","Monday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["My father works in Monday.","My father works at Monday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-021","en":"She doesn't work on Sunday.","vi":"Cô ấy không làm việc vào Chủ nhật.","uses":["work","Sunday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["She doesn't work in Sunday.","She doesn't work at Sunday."],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-022","en":"Do you play football on Saturday?","vi":"Bạn có chơi bóng đá vào thứ Bảy không?","uses":["play","football","Saturday"],"blank":{"answer":"on","options":["in","on","at"]},"wrong":["Do you play football in Saturday?","Do you play football at Saturday?"],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-023","en":"Does your sister dance in summer?","vi":"Chị gái bạn có nhảy vào mùa hè không?","uses":["sister","dance","summer"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["Does your sister dance on summer?","Does your sister dance at summer?"],"extra":["of","to"],"session":1},
+    {"id":"time-prepositions-024","en":"We don't paint the house in winter.","vi":"Chúng tôi không sơn nhà vào mùa đông.","uses":["paint","house","winter"],"blank":{"answer":"in","options":["in","on","at"]},"wrong":["We don't paint the house on winter.","We don't paint the house at winter."],"extra":["of","to"],"session":1}
+  ]
+}

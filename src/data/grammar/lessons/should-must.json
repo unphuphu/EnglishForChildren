@@ -1,0 +1,74 @@
+{
+  "id": "should-must",
+  "title": "Should / shouldn't và must / mustn't",
+  "order": 20,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Should nghĩa là \"nên\" (lời khuyên). Must nghĩa là \"phải\" (bắt buộc). Cả hai đứng trước động từ nguyên mẫu, không thêm s, không thêm to, và giữ nguyên với mọi chủ ngữ.",
+      "examples": [
+        {
+          "en": "You should drink water.",
+          "vi": "Bạn nên uống nước."
+        },
+        {
+          "en": "The baby must sleep.",
+          "vi": "Em bé phải ngủ."
+        }
+      ]
+    },
+    {
+      "vi": "Để nói \"không nên\" ta dùng shouldn't, để nói \"cấm / không được\" ta dùng mustn't. Mustn't mạnh hơn shouldn't.",
+      "examples": [
+        {
+          "en": "You shouldn't drink coffee.",
+          "vi": "Bạn không nên uống cà phê."
+        },
+        {
+          "en": "You mustn't sit on the table.",
+          "vi": "Bạn không được ngồi lên bàn."
+        }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta đưa should hoặc must lên đầu câu: Should I help my mother? Must I work?",
+      "examples": [
+        {
+          "en": "Should I help my mother?",
+          "vi": "Tôi có nên giúp mẹ không?"
+        },
+        {
+          "en": "Should she sleep?",
+          "vi": "Cô ấy có nên ngủ không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"should-must-001","en":"You should drink water.","vi":"Bạn nên uống nước.","uses":["drink","water"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["You should drinks water.","You should to drink water."],"extra":["to","of"],"session":1},
+    {"id":"should-must-002","en":"She should sleep.","vi":"Cô ấy nên ngủ.","uses":["sleep"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["She should sleeps.","She should sleeping."],"extra":["to","of"],"session":1},
+    {"id":"should-must-003","en":"He should help my mother.","vi":"Anh ấy nên giúp mẹ tôi.","uses":["help","mother"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["He should helps my mother.","He should to help my mother."],"extra":["to","of"],"session":1},
+    {"id":"should-must-004","en":"We should eat soup.","vi":"Chúng ta nên ăn súp.","uses":["eat","soup"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["We should eats soup.","We should to eat soup."],"extra":["to","of"],"session":1},
+    {"id":"should-must-005","en":"The baby should drink milk.","vi":"Em bé nên uống sữa.","uses":["baby","drink","milk"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["The baby should drinks milk.","The baby should to drink milk."],"extra":["to","of"],"session":1},
+    {"id":"should-must-006","en":"You should sit on the chair.","vi":"Bạn nên ngồi trên ghế.","uses":["sit","chair"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["You should sits on the chair.","You should to sit on the chair."],"extra":["to","of"],"session":1},
+    {"id":"should-must-007","en":"They should work in the garden.","vi":"Họ nên làm việc trong vườn.","uses":["work","garden"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["They should works in the garden.","They should to work in the garden."],"extra":["to","of"],"session":1},
+    {"id":"should-must-008","en":"I should paint the table.","vi":"Tôi nên sơn cái bàn.","uses":["paint","table"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["I should paints the table.","I should to paint the table."],"extra":["to","of"],"session":1},
+    {"id":"should-must-009","en":"You shouldn't drink coffee.","vi":"Bạn không nên uống cà phê.","uses":["drink","coffee"],"blank":{"answer":"shouldn't","options":["shouldn't","are","is"]},"wrong":["You shouldn't drinks coffee.","You shouldn't to drink coffee."],"extra":["to","of"],"session":1},
+    {"id":"should-must-010","en":"He shouldn't sit on the table.","vi":"Anh ấy không nên ngồi lên bàn.","uses":["sit","table"],"blank":{"answer":"shouldn't","options":["shouldn't","are","is"]},"wrong":["He shouldn't sits on the table.","He shouldn't to sit on the table."],"extra":["to","of"],"session":1},
+    {"id":"should-must-011","en":"She shouldn't sing in the bedroom.","vi":"Cô ấy không nên hát trong phòng ngủ.","uses":["sing","bedroom"],"blank":{"answer":"shouldn't","options":["shouldn't","are","is"]},"wrong":["She shouldn't sings in the bedroom.","She shouldn't to sing in the bedroom."],"extra":["to","of"],"session":1},
+    {"id":"should-must-012","en":"We shouldn't eat pizza.","vi":"Chúng ta không nên ăn pizza.","uses":["eat","pizza"],"blank":{"answer":"shouldn't","options":["shouldn't","are","is"]},"wrong":["We shouldn't eats pizza.","We shouldn't to eat pizza."],"extra":["to","of"],"session":1},
+    {"id":"should-must-013","en":"The baby shouldn't drink coffee.","vi":"Em bé không nên uống cà phê.","uses":["baby","drink","coffee"],"blank":{"answer":"shouldn't","options":["shouldn't","are","is"]},"wrong":["The baby shouldn't drinks coffee.","The baby shouldn't to drink coffee."],"extra":["to","of"],"session":1},
+    {"id":"should-must-014","en":"The students shouldn't sleep at school.","vi":"Các học sinh không nên ngủ ở trường.","uses":["student","sleep","school"],"blank":{"answer":"shouldn't","options":["shouldn't","are","is"]},"wrong":["The students shouldn't sleeps at school.","The students shouldn't to sleep at school."],"extra":["to","of"],"session":1},
+    {"id":"should-must-015","en":"You must sit near the window.","vi":"Bạn phải ngồi gần cửa sổ.","uses":["sit","window"],"blank":{"answer":"must","options":["must","are","is"]},"wrong":["You must sits near the window.","You must to sit near the window."],"extra":["to","of"],"session":1},
+    {"id":"should-must-016","en":"The nurse must help the doctor.","vi":"Cô y tá phải giúp bác sĩ.","uses":["nurse","help","doctor"],"blank":{"answer":"must","options":["must","are","is"]},"wrong":["The nurse must helps the doctor.","The nurse must to help the doctor."],"extra":["to","of"],"session":1},
+    {"id":"should-must-017","en":"I must work.","vi":"Tôi phải làm việc.","uses":["work"],"blank":{"answer":"must","options":["must","are","is"]},"wrong":["I must works.","I must to work."],"extra":["to","of"],"session":1},
+    {"id":"should-must-018","en":"We must drink water.","vi":"Chúng ta phải uống nước.","uses":["drink","water"],"blank":{"answer":"must","options":["must","are","is"]},"wrong":["We must drinks water.","We must to drink water."],"extra":["to","of"],"session":1},
+    {"id":"should-must-019","en":"The baby must sleep.","vi":"Em bé phải ngủ.","uses":["baby","sleep"],"blank":{"answer":"must","options":["must","are","is"]},"wrong":["The baby must sleeps.","The baby must to sleep."],"extra":["to","of"],"session":1},
+    {"id":"should-must-020","en":"You mustn't sit on the table.","vi":"Bạn không được ngồi lên bàn.","uses":["sit","table"],"blank":{"answer":"mustn't","options":["mustn't","are","is"]},"wrong":["You mustn't sits on the table.","You mustn't to sit on the table."],"extra":["to","of"],"session":1},
+    {"id":"should-must-021","en":"He mustn't drink the water.","vi":"Anh ấy không được uống nước này.","uses":["drink","water"],"blank":{"answer":"mustn't","options":["mustn't","are","is"]},"wrong":["He mustn't drinks the water.","He mustn't to drink the water."],"extra":["to","of"],"session":1},
+    {"id":"should-must-022","en":"Should I help my mother?","vi":"Tôi có nên giúp mẹ không?","uses":["help","mother"],"blank":{"answer":"Should","options":["Should","Are","Is"]},"wrong":["Should I helps my mother?","Should I to help my mother?"],"extra":["to","of"],"session":1},
+    {"id":"should-must-023","en":"Should she sleep?","vi":"Cô ấy có nên ngủ không?","uses":["sleep"],"blank":{"answer":"Should","options":["Should","Are","Is"]},"wrong":["Should she sleeps?","Should she to sleep?"],"extra":["to","of"],"session":1},
+    {"id":"should-must-024","en":"Must I work?","vi":"Tôi có phải làm việc không?","uses":["work"],"blank":{"answer":"Must","options":["Must","Are","Is"]},"wrong":["Must I works?","Must I to work?"],"extra":["to","of"],"session":1},
+    {"id":"should-must-025","en":"She is sick, so she should sleep.","vi":"Cô ấy bị ốm, nên cô ấy nên ngủ.","uses":["sick","sleep"],"blank":{"answer":"should","options":["should","are","is"]},"wrong":["She is sick, so she should sleeps.","She is sick, so she should to sleep."],"extra":["to","of"],"session":1}
+  ]
+}
