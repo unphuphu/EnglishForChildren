@@ -8,7 +8,7 @@ import { pickNewWords } from '../../core/newWords.js'
 import { eligibleSentences } from '../../core/sentences.js'
 import { LESSON } from '../../core/config.js'
 
-test('the ten lessons exist in order with the specified sessions', () => {
+test('the fourteen lessons exist in order with the specified sessions', () => {
   expect(lessons.map((l) => [l.id, l.order, l.sessions])).toEqual([
     ['to-be', 1, 2],
     ['this-that', 2, 1],
@@ -20,11 +20,15 @@ test('the ten lessons exist in order with the specified sessions', () => {
     ['wh-questions', 8, 1],
     ['place-prepositions', 9, 1],
     ['some-any', 10, 1],
+    ['comparatives', 11, 1],
+    ['past-to-be', 12, 1],
+    ['past-simple', 13, 1],
+    ['imperatives', 14, 1],
   ])
 })
 
-test('the roadmap has 14 steps that cover every lesson part exactly once', () => {
-  expect(roadmap).toHaveLength(14)
+test('the roadmap has 18 steps that cover every lesson part exactly once', () => {
+  expect(roadmap).toHaveLength(18)
   const expected = lessons.flatMap((l) => Array.from({ length: l.sessions }, (_, i) => `${l.id}:${i + 1}`))
   expect(roadmap.map((s) => `${s.lesson}:${s.part}`)).toEqual(expected)
 })
@@ -33,14 +37,14 @@ test('all lessons and the whole roadmap are valid', () => {
   expect(validateGrammar({ lessons, roadmap, vocab, freeWords })).toEqual([])
 })
 
-test('each lesson has between 20 and 26 sentences and the total is between 160 and 260', () => {
+test('each lesson has between 20 and 26 sentences and the total is between 160 and 380', () => {
   for (const lesson of lessons) {
     expect(lesson.sentences.length, lesson.id).toBeGreaterThanOrEqual(20)
     expect(lesson.sentences.length, lesson.id).toBeLessThanOrEqual(26)
   }
   const total = lessons.reduce((n, l) => n + l.sentences.length, 0)
   expect(total).toBeGreaterThanOrEqual(160)
-  expect(total).toBeLessThanOrEqual(260)
+  expect(total).toBeLessThanOrEqual(380)
 })
 
 test('every session of a two-session lesson has at least 10 sentences', () => {

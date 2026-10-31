@@ -12,5 +12,9 @@
   { "topic": "vegetables", "lesson": "present-continuous", "part": 2 },
   { "topic": "town", "lesson": "wh-questions", "part": 1 },
   { "topic": "nature", "lesson": "place-prepositions", "part": 1 },
-  { "topic": "fruits", "lesson": "some-any", "part": 1 }
+  { "topic": "fruits", "lesson": "some-any", "part": 1 },
+  { "topic": "adjectives", "lesson": "comparatives", "part": 1 },
+  { "topic": "weather", "lesson": "past-to-be", "part": 1 },
+  { "topic": "sports", "lesson": "past-simple", "part": 1 },
+  { "topic": "clothes", "lesson": "imperatives", "part": 1 }
 ]

@@ -1,0 +1,73 @@
+{
+  "id": "comparatives",
+  "title": "So sánh hơn: bigger than, older than",
+  "order": 11,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Để so sánh hai vật, ta thêm er vào tính từ ngắn rồi dùng than (\"hơn\"): big → bigger, small → smaller, tall → taller, old → older. Cấu trúc: A + is + tính từ-er + than + B.",
+      "examples": [
+        {
+          "en": "The dog is bigger than the cat.",
+          "vi": "Con chó to hơn con mèo."
+        },
+        {
+          "en": "My father is taller than my mother.",
+          "vi": "Bố tôi cao hơn mẹ tôi."
+        }
+      ]
+    },
+    {
+      "vi": "Cách thêm er: tính từ tận cùng e chỉ thêm r (nice → nicer). Tận cùng một nguyên âm và một phụ âm thì gấp đôi phụ âm (big → bigger). Tận cùng y thì đổi y thành ier (happy → happier).",
+      "examples": [
+        {
+          "en": "The baby is younger than my sister.",
+          "vi": "Em bé nhỏ tuổi hơn chị gái tôi."
+        },
+        {
+          "en": "The room is smaller than the house.",
+          "vi": "Căn phòng nhỏ hơn ngôi nhà."
+        }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta đưa is lên đầu câu: Is + A + tính từ-er + than + B? Nhớ dùng than, không dùng that hay then.",
+      "examples": [
+        {
+          "en": "Is the cat smaller than the dog?",
+          "vi": "Con mèo có nhỏ hơn con chó không?"
+        },
+        {
+          "en": "Is your sister older than you?",
+          "vi": "Chị gái bạn có lớn tuổi hơn bạn không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"comparatives-001","en":"The dog is bigger than the cat.","vi":"Con chó to hơn con mèo.","uses":["dog","cat","big"],"blank":{"answer":"bigger","options":["bigger","big","biggest"]},"wrong":["The dog is big than the cat.","The dog is more big than the cat."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-002","en":"The cat is smaller than the dog.","vi":"Con mèo nhỏ hơn con chó.","uses":["cat","dog","small"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["The cat is smaller that the dog.","The cat is smaller then the dog."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-003","en":"My sister is older than me.","vi":"Chị gái tôi lớn tuổi hơn tôi.","uses":["sister","old"],"blank":{"answer":"older","options":["older","old","oldest"]},"wrong":["My sister is old than me.","My sister is more old than me."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-004","en":"The baby is younger than my sister.","vi":"Em bé nhỏ tuổi hơn chị gái tôi.","uses":["baby","sister","young"],"blank":{"answer":"younger","options":["younger","young","youngest"]},"wrong":["The baby is young than my sister.","The baby is more young than my sister."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-005","en":"My father is taller than my mother.","vi":"Bố tôi cao hơn mẹ tôi.","uses":["father","mother","tall"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["My father is taller that my mother.","My father is taller then my mother."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-006","en":"The bird is smaller than the cow.","vi":"Con chim nhỏ hơn con bò.","uses":["bird","cow","small"],"blank":{"answer":"smaller","options":["smaller","small","smallest"]},"wrong":["The bird is small than the cow.","The bird is more small than the cow."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-007","en":"The house is bigger than the room.","vi":"Ngôi nhà to hơn căn phòng.","uses":["house","room","big"],"blank":{"answer":"bigger","options":["bigger","big","biggest"]},"wrong":["The house is big than the room.","The house is more big than the room."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-008","en":"The room is smaller than the house.","vi":"Căn phòng nhỏ hơn ngôi nhà.","uses":["room","house","small"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["The room is smaller that the house.","The room is smaller then the house."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-009","en":"The table is bigger than the desk.","vi":"Cái bàn to hơn cái bàn học.","uses":["table","desk","big"],"blank":{"answer":"bigger","options":["bigger","big","biggest"]},"wrong":["The table is big than the desk.","The table is more big than the desk."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-010","en":"The desk is smaller than the table.","vi":"Cái bàn học nhỏ hơn cái bàn.","uses":["desk","table","small"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["The desk is smaller that the table.","The desk is smaller then the table."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-011","en":"The sofa is bigger than the chair.","vi":"Ghế sofa to hơn cái ghế.","uses":["sofa","chair","big"],"blank":{"answer":"bigger","options":["bigger","big","biggest"]},"wrong":["The sofa is big than the chair.","The sofa is more big than the chair."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-012","en":"The chair is older than the table.","vi":"Cái ghế cũ hơn cái bàn.","uses":["chair","table","old"],"blank":{"answer":"older","options":["older","old","oldest"]},"wrong":["The chair is old than the table.","The chair is more old than the table."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-013","en":"The city is bigger than the town.","vi":"Thành phố to hơn thị trấn.","uses":["city","town","big"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["The city is bigger that the town.","The city is bigger then the town."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-014","en":"The village is smaller than the town.","vi":"Ngôi làng nhỏ hơn thị trấn.","uses":["village","town","small"],"blank":{"answer":"smaller","options":["smaller","small","smallest"]},"wrong":["The village is small than the town.","The village is more small than the town."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-015","en":"The town is bigger than the village.","vi":"Thị trấn to hơn ngôi làng.","uses":["town","village","big"],"blank":{"answer":"bigger","options":["bigger","big","biggest"]},"wrong":["The town is big than the village.","The town is more big than the village."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-016","en":"My mother is older than my sister.","vi":"Mẹ tôi lớn tuổi hơn chị gái tôi.","uses":["mother","sister","old"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["My mother is older that my sister.","My mother is older then my sister."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-017","en":"The dog is older than the baby.","vi":"Con chó lớn tuổi hơn em bé.","uses":["dog","baby","old"],"blank":{"answer":"older","options":["older","old","oldest"]},"wrong":["The dog is old than the baby.","The dog is more old than the baby."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-018","en":"The tree is taller than the house.","vi":"Cái cây cao hơn ngôi nhà.","uses":["tree","house","tall"],"blank":{"answer":"taller","options":["taller","tall","tallest"]},"wrong":["The tree is tall than the house.","The tree is more tall than the house."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-019","en":"The tree is taller than my father.","vi":"Cái cây cao hơn bố tôi.","uses":["tree","father","tall"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["The tree is taller that my father.","The tree is taller then my father."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-020","en":"My father is older than my mother.","vi":"Bố tôi lớn tuổi hơn mẹ tôi.","uses":["father","mother","old"],"blank":{"answer":"older","options":["older","old","oldest"]},"wrong":["My father is old than my mother.","My father is more old than my mother."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-021","en":"The school is bigger than the house.","vi":"Ngôi trường to hơn ngôi nhà.","uses":["school","house","big"],"blank":{"answer":"bigger","options":["bigger","big","biggest"]},"wrong":["The school is big than the house.","The school is more big than the house."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-022","en":"The park is bigger than the garden.","vi":"Công viên to hơn khu vườn.","uses":["park","garden","big"],"blank":{"answer":"than","options":["than","then","that"]},"wrong":["The park is bigger that the garden.","The park is bigger then the garden."],"extra":["are","very"],"session":1},
+    {"id":"comparatives-023","en":"Is the dog bigger than the cat?","vi":"Con chó có to hơn con mèo không?","uses":["dog","cat","big"],"blank":{"answer":"Is","options":["Is","Are","Am"]},"wrong":["Are the dog bigger than the cat?","Is the dog big than the cat?"],"extra":["very","then"],"session":1},
+    {"id":"comparatives-024","en":"Is your sister older than you?","vi":"Chị gái bạn có lớn tuổi hơn bạn không?","uses":["sister","old"],"blank":{"answer":"older","options":["older","old","oldest"]},"wrong":["Is your sister old than you?","Is your sister older that you?"],"extra":["very","are"],"session":1}
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "imperatives",
+  "title": "Câu mệnh lệnh và Let's",
+  "order": 14,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Câu mệnh lệnh dùng để bảo ai làm gì. Ta chỉ dùng động từ nguyên mẫu, không có chủ ngữ và không thêm s hay ing. Thêm please để nói lịch sự hơn.",
+      "examples": [
+        {
+          "en": "Sit on the chair.",
+          "vi": "Hãy ngồi lên ghế."
+        },
+        {
+          "en": "Please help me.",
+          "vi": "Làm ơn giúp tôi."
+        }
+      ]
+    },
+    {
+      "vi": "Để bảo ai đừng làm gì, ta dùng Don't + động từ nguyên mẫu.",
+      "examples": [
+        {
+          "en": "Don't sit on the table.",
+          "vi": "Đừng ngồi lên bàn."
+        },
+        {
+          "en": "Don't drink the water.",
+          "vi": "Đừng uống nước này."
+        }
+      ]
+    },
+    {
+      "vi": "Let's + động từ nguyên mẫu dùng để rủ ai cùng làm gì (\"chúng ta hãy...\").",
+      "examples": [
+        {
+          "en": "Let's sing a song.",
+          "vi": "Chúng ta hãy hát một bài hát."
+        },
+        {
+          "en": "Let's paint the house.",
+          "vi": "Chúng ta hãy sơn ngôi nhà."
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"imperatives-001","en":"Sit on the chair.","vi":"Hãy ngồi lên ghế.","uses":["sit","chair"],"blank":{"answer":"Sit","options":["Sit","Sits","Siting"]},"wrong":["Sits on the chair.","Sit to the chair."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-002","en":"Sit on the sofa, please.","vi":"Làm ơn hãy ngồi lên ghế sofa.","uses":["sit","sofa"],"blank":{"answer":"Sit","options":["Sit","Sits","Siting"]},"wrong":["Sitting on the sofa, please.","Sits on the sofa, please."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-003","en":"Don't sit on the table.","vi":"Đừng ngồi lên bàn.","uses":["sit","table"],"blank":{"answer":"Don't","options":["Don't","Doesn't","Not"]},"wrong":["Doesn't sit on the table.","Not sit on the table."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-004","en":"Don't sit on the desk.","vi":"Đừng ngồi lên bàn học.","uses":["sit","desk"],"blank":{"answer":"Don't","options":["Don't","Doesn't","Not"]},"wrong":["Doesn't sit on the desk.","Not sit on the desk."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-005","en":"Sleep in the bed.","vi":"Hãy ngủ trên giường.","uses":["sleep","bed"],"blank":{"answer":"Sleep","options":["Sleep","Sleeps","Sleeping"]},"wrong":["Sleeps in the bed.","Sleeping in the bed."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-006","en":"Please help me.","vi":"Làm ơn giúp tôi.","uses":["help"],"blank":{"answer":"help","options":["help","helps","helping"]},"wrong":["Please helps me.","Please helping me."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-007","en":"Please help my mother.","vi":"Làm ơn hãy giúp mẹ tôi.","uses":["help","mother"],"blank":{"answer":"help","options":["help","helps","helping"]},"wrong":["Please helps my mother.","Please to help my mother."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-008","en":"Help the baby, please.","vi":"Làm ơn hãy giúp em bé.","uses":["help","baby"],"blank":{"answer":"Help","options":["Help","Helps","Helping"]},"wrong":["Helps the baby, please.","Helping the baby, please."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-009","en":"Don't drink the water.","vi":"Đừng uống nước này.","uses":["drink","water"],"blank":{"answer":"drink","options":["drink","drinks","drinking"]},"wrong":["Don't drinks the water.","Don't drinking the water."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-010","en":"Drink some water, please.","vi":"Làm ơn hãy uống chút nước.","uses":["drink","water"],"blank":{"answer":"Drink","options":["Drink","Drinks","Drinking"]},"wrong":["Drinks some water, please.","Drinking some water, please."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-011","en":"Drink your milk.","vi":"Hãy uống sữa của con đi.","uses":["drink","milk"],"blank":{"answer":"Drink","options":["Drink","Drinks","Drinking"]},"wrong":["Drinks your milk.","Drinking your milk."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-012","en":"Let's sing a song.","vi":"Chúng ta hãy hát một bài hát.","uses":["sing","song"],"blank":{"answer":"Let's","options":["Let's","Lets","Let"]},"wrong":["Lets sing a song.","Let sing a song."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-013","en":"Let's dance with my sister.","vi":"Chúng ta hãy nhảy cùng chị gái tôi.","uses":["dance","sister"],"blank":{"answer":"dance","options":["dance","dances","danceing"]},"wrong":["Let's dances with my sister.","Let's to dance with my sister."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-014","en":"Let's paint the house.","vi":"Chúng ta hãy sơn ngôi nhà.","uses":["paint","house"],"blank":{"answer":"paint","options":["paint","paints","painting"]},"wrong":["Let's paints the house.","Let's painting the house."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-015","en":"Let's work in the garden.","vi":"Chúng ta hãy làm việc trong vườn.","uses":["work","garden"],"blank":{"answer":"work","options":["work","works","working"]},"wrong":["Let's works in the garden.","Let's working in the garden."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-016","en":"Let's help my mother.","vi":"Chúng ta hãy giúp mẹ tôi.","uses":["help","mother"],"blank":{"answer":"Let's","options":["Let's","Lets","Let"]},"wrong":["Lets help my mother.","Let help my mother."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-017","en":"Let's sing with my sister.","vi":"Chúng ta hãy hát cùng chị gái tôi.","uses":["sing","sister"],"blank":{"answer":"sing","options":["sing","sings","singing"]},"wrong":["Let's sings with my sister.","Let's singing with my sister."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-018","en":"Don't paint the table.","vi":"Đừng sơn cái bàn.","uses":["paint","table"],"blank":{"answer":"Don't","options":["Don't","Doesn't","Not"]},"wrong":["Doesn't paint the table.","Not paint the table."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-019","en":"Don't dance on the sofa.","vi":"Đừng nhảy trên ghế sofa.","uses":["dance","sofa"],"blank":{"answer":"dance","options":["dance","dances","danceing"]},"wrong":["Don't dances on the sofa.","Don't dancing on the sofa."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-020","en":"Don't sing in the bedroom.","vi":"Đừng hát trong phòng ngủ.","uses":["sing","bedroom"],"blank":{"answer":"sing","options":["sing","sings","singing"]},"wrong":["Don't sings in the bedroom.","Don't singing in the bedroom."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-021","en":"Please sit near the window.","vi":"Làm ơn hãy ngồi gần cửa sổ.","uses":["sit","window"],"blank":{"answer":"sit","options":["sit","sits","siting"]},"wrong":["Please sits near the window.","Please sitting near the window."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-022","en":"Sit next to my sister, please.","vi":"Làm ơn hãy ngồi cạnh chị gái tôi.","uses":["sit","sister"],"blank":{"answer":"Sit","options":["Sit","Sits","Siting"]},"wrong":["Sits next to my sister, please.","Sitting next to my sister, please."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-023","en":"Let's drink some milk.","vi":"Chúng ta hãy uống một ít sữa.","uses":["drink","milk"],"blank":{"answer":"drink","options":["drink","drinks","drinking"]},"wrong":["Let's drinks some milk.","Let's drinking some milk."],"extra":["are","to"],"session":1},
+    {"id":"imperatives-024","en":"Please don't sleep on the sofa.","vi":"Làm ơn đừng ngủ trên ghế sofa.","uses":["sleep","sofa"],"blank":{"answer":"don't","options":["don't","doesn't","not"]},"wrong":["Please doesn't sleep on the sofa.","Please not sleep on the sofa."],"extra":["are","to"],"session":1}
+  ]
+}

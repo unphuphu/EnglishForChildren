@@ -1,0 +1,73 @@
+{
+  "id": "past-to-be",
+  "title": "Quá khứ của to be: was / were",
+  "order": 12,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Was và were là quá khứ của am / is / are. Dùng was với I, he, she, it và một người hay vật. Dùng were với you, we, they và nhiều người hay vật. Trong câu thường có yesterday (hôm qua).",
+      "examples": [
+        {
+          "en": "I was happy yesterday.",
+          "vi": "Hôm qua tôi vui."
+        },
+        {
+          "en": "They were sad yesterday.",
+          "vi": "Hôm qua họ buồn."
+        }
+      ]
+    },
+    {
+      "vi": "Để nói \"không\", ta thêm not: was not = wasn't, were not = weren't. Để hỏi, ta đưa was / were lên đầu câu.",
+      "examples": [
+        {
+          "en": "She wasn't sad yesterday.",
+          "vi": "Hôm qua cô ấy không buồn."
+        },
+        {
+          "en": "Were you sad yesterday?",
+          "vi": "Hôm qua bạn có buồn không?"
+        }
+      ]
+    },
+    {
+      "vi": "Hỏi nơi chốn trong quá khứ: Where was / Where were. Nhớ chỉ dùng was / were với từ chỉ ngày đã qua như yesterday, không dùng am / is / are.",
+      "examples": [
+        {
+          "en": "Where was the dog yesterday?",
+          "vi": "Hôm qua con chó ở đâu?"
+        },
+        {
+          "en": "It was sunny yesterday.",
+          "vi": "Hôm qua trời nắng."
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"past-to-be-001","en":"I was happy yesterday.","vi":"Hôm qua tôi vui.","uses":["happy"],"blank":{"answer":"was","options":["was","were","am"]},"wrong":["I were happy yesterday.","I am happy yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-002","en":"She was sad yesterday.","vi":"Hôm qua cô ấy buồn.","uses":["sad"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["She were sad yesterday.","She is sad yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-003","en":"He was angry yesterday.","vi":"Hôm qua anh ấy tức giận.","uses":["angry"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["He were angry yesterday.","He is angry yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-004","en":"We were happy yesterday.","vi":"Hôm qua chúng tôi vui.","uses":["happy"],"blank":{"answer":"were","options":["were","was","are"]},"wrong":["We was happy yesterday.","We are happy yesterday."],"extra":["was","am"],"session":1},
+    {"id":"past-to-be-005","en":"They were sad yesterday.","vi":"Hôm qua họ buồn.","uses":["sad"],"blank":{"answer":"were","options":["were","was","are"]},"wrong":["They was sad yesterday.","They are sad yesterday."],"extra":["was","am"],"session":1},
+    {"id":"past-to-be-006","en":"The baby was scared yesterday.","vi":"Hôm qua em bé sợ.","uses":["baby","scared"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["The baby were scared yesterday.","The baby is scared yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-007","en":"My mother was happy yesterday.","vi":"Hôm qua mẹ tôi vui.","uses":["mother","happy"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["My mother were happy yesterday.","My mother is happy yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-008","en":"My sister was angry yesterday.","vi":"Hôm qua chị gái tôi tức giận.","uses":["sister","angry"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["My sister were angry yesterday.","My sister is angry yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-009","en":"You were scared yesterday.","vi":"Hôm qua bạn sợ.","uses":["scared"],"blank":{"answer":"were","options":["were","was","are"]},"wrong":["You was scared yesterday.","You are scared yesterday."],"extra":["was","am"],"session":1},
+    {"id":"past-to-be-010","en":"The dogs were afraid yesterday.","vi":"Hôm qua những con chó sợ.","uses":["dog","afraid"],"blank":{"answer":"were","options":["were","was","are"]},"wrong":["The dogs was afraid yesterday.","The dogs are afraid yesterday."],"extra":["was","am"],"session":1},
+    {"id":"past-to-be-011","en":"I wasn't happy yesterday.","vi":"Hôm qua tôi không vui.","uses":["happy"],"blank":{"answer":"wasn't","options":["wasn't","weren't","isn't"]},"wrong":["I weren't happy yesterday.","I isn't happy yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-012","en":"She wasn't sad yesterday.","vi":"Hôm qua cô ấy không buồn.","uses":["sad"],"blank":{"answer":"wasn't","options":["wasn't","weren't","isn't"]},"wrong":["She weren't sad yesterday.","She isn't sad yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-013","en":"They weren't angry yesterday.","vi":"Hôm qua họ không tức giận.","uses":["angry"],"blank":{"answer":"weren't","options":["weren't","wasn't","aren't"]},"wrong":["They wasn't angry yesterday.","They aren't angry yesterday."],"extra":["was","am"],"session":1},
+    {"id":"past-to-be-014","en":"We weren't scared yesterday.","vi":"Hôm qua chúng tôi không sợ.","uses":["scared"],"blank":{"answer":"weren't","options":["weren't","wasn't","aren't"]},"wrong":["We wasn't scared yesterday.","We aren't scared yesterday."],"extra":["was","am"],"session":1},
+    {"id":"past-to-be-015","en":"Was he happy yesterday?","vi":"Hôm qua anh ấy có vui không?","uses":["happy"],"blank":{"answer":"Was","options":["Was","Were","Is"]},"wrong":["Were he happy yesterday?","Is he happy yesterday?"],"extra":["are","am"],"session":1},
+    {"id":"past-to-be-016","en":"Were you sad yesterday?","vi":"Hôm qua bạn có buồn không?","uses":["sad"],"blank":{"answer":"Were","options":["Were","Was","Are"]},"wrong":["Was you sad yesterday?","Are you sad yesterday?"],"extra":["is","am"],"session":1},
+    {"id":"past-to-be-017","en":"Was the baby scared yesterday?","vi":"Hôm qua em bé có sợ không?","uses":["baby","scared"],"blank":{"answer":"Was","options":["Was","Were","Is"]},"wrong":["Were the baby scared yesterday?","Is the baby scared yesterday?"],"extra":["are","am"],"session":1},
+    {"id":"past-to-be-018","en":"Were your parents happy yesterday?","vi":"Hôm qua bố mẹ bạn có vui không?","uses":["parent","happy"],"blank":{"answer":"Were","options":["Were","Was","Are"]},"wrong":["Was your parents happy yesterday?","Are your parents happy yesterday?"],"extra":["is","am"],"session":1},
+    {"id":"past-to-be-019","en":"My father was at school yesterday.","vi":"Hôm qua bố tôi ở trường.","uses":["father","school"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["My father were at school yesterday.","My father is at school yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-020","en":"The students were in the classroom yesterday.","vi":"Hôm qua các học sinh ở trong lớp học.","uses":["student","classroom"],"blank":{"answer":"were","options":["were","was","are"]},"wrong":["The students was in the classroom yesterday.","The students are in the classroom yesterday."],"extra":["was","am"],"session":1},
+    {"id":"past-to-be-021","en":"Where was the dog yesterday?","vi":"Hôm qua con chó ở đâu?","uses":["dog"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["Where were the dog yesterday?","Where is the dog yesterday?"],"extra":["are","am"],"session":1},
+    {"id":"past-to-be-022","en":"The cat was in the garden yesterday.","vi":"Hôm qua con mèo ở trong vườn.","uses":["cat","garden"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["The cat were in the garden yesterday.","The cat is in the garden yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-023","en":"It was sunny yesterday.","vi":"Hôm qua trời nắng.","uses":["sunny"],"blank":{"answer":"was","options":["was","were","is"]},"wrong":["It were sunny yesterday.","It is sunny yesterday."],"extra":["is","are"],"session":1},
+    {"id":"past-to-be-024","en":"Where were your parents yesterday?","vi":"Hôm qua bố mẹ bạn ở đâu?","uses":["parent"],"blank":{"answer":"were","options":["were","was","are"]},"wrong":["Where was your parents yesterday?","Where are your parents yesterday?"],"extra":["was","am"],"session":1}
+  ]
+}

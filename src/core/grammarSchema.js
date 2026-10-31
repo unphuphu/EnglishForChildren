@@ -8,19 +8,22 @@ export function tokenize(en) {
 }
 
 function inflections(word) {
-  const forms = new Set([word, `${word}s`, `${word}es`, `${word}ing`, `${word}ed`])
+  const forms = new Set([word, `${word}s`, `${word}es`, `${word}ing`, `${word}ed`, `${word}er`])
   if (word.endsWith('e')) {
     forms.add(`${word.slice(0, -1)}ing`)
     forms.add(`${word}d`)
+    forms.add(`${word}r`)
   }
   if (/[^aeiou]y$/.test(word)) {
     forms.add(`${word.slice(0, -1)}ies`)
     forms.add(`${word.slice(0, -1)}ied`)
+    forms.add(`${word.slice(0, -1)}ier`)
   }
   if (/[^aeiou][aeiou][^aeiouwxy]$/.test(word)) {
     const last = word.at(-1)
     forms.add(`${word}${last}ing`)
     forms.add(`${word}${last}ed`)
+    forms.add(`${word}${last}er`)
   }
   return forms
 }

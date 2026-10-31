@@ -54,6 +54,10 @@ describe('matchesUses', () => {
     ['liked', ['like']],
     ['studied', ['study']],
     ['sitting', ['sit']],
+    ['older', ['old']],
+    ['bigger', ['big']],
+    ['nicer', ['nice']],
+    ['happier', ['happy']],
   ])('%s matches %j', (token, uses) => {
     expect(matchesUses(token, uses)).toBe(true)
   })

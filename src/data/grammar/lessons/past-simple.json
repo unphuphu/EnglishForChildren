@@ -1,0 +1,73 @@
+{
+  "id": "past-simple",
+  "title": "Quá khứ đơn với động từ có quy tắc",
+  "order": 13,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Thì quá khứ đơn nói về việc đã xảy ra và đã xong, thường có yesterday. Với động từ có quy tắc, ta thêm ed vào động từ và dùng cho mọi chủ ngữ: paint → painted, help → helped, work → worked.",
+      "examples": [
+        {
+          "en": "I painted the house yesterday.",
+          "vi": "Hôm qua tôi đã sơn ngôi nhà."
+        },
+        {
+          "en": "She helped my mother yesterday.",
+          "vi": "Hôm qua cô ấy đã giúp mẹ tôi."
+        }
+      ]
+    },
+    {
+      "vi": "Động từ tận cùng e chỉ thêm d (dance → danced). Để nói \"không\", ta dùng didn't + động từ nguyên mẫu: didn't dance, không thêm ed lần nữa.",
+      "examples": [
+        {
+          "en": "My sister danced yesterday.",
+          "vi": "Hôm qua chị gái tôi đã nhảy."
+        },
+        {
+          "en": "She didn't dance yesterday.",
+          "vi": "Hôm qua cô ấy đã không nhảy."
+        }
+      ]
+    },
+    {
+      "vi": "Để hỏi, ta đặt Did ở đầu câu rồi dùng động từ nguyên mẫu: Did you paint the table? Trả lời ngắn: Yes, I did. / No, I didn't.",
+      "examples": [
+        {
+          "en": "Did you paint the table yesterday?",
+          "vi": "Hôm qua bạn có sơn cái bàn không?"
+        },
+        {
+          "en": "Did they work in the hospital yesterday?",
+          "vi": "Hôm qua họ có làm việc ở bệnh viện không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"past-simple-001","en":"I painted the house yesterday.","vi":"Hôm qua tôi đã sơn ngôi nhà.","uses":["paint","house"],"blank":{"answer":"painted","options":["paint","painted","paints"]},"wrong":["I paint the house yesterday.","I paints the house yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-002","en":"She danced with my sister yesterday.","vi":"Hôm qua cô ấy đã nhảy cùng chị gái tôi.","uses":["dance","sister"],"blank":{"answer":"danced","options":["dance","danced","dances"]},"wrong":["She dance with my sister yesterday.","She dances with my sister yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-003","en":"He helped my mother yesterday.","vi":"Hôm qua anh ấy đã giúp mẹ tôi.","uses":["help","mother"],"blank":{"answer":"helped","options":["help","helped","helps"]},"wrong":["He help my mother yesterday.","He helps my mother yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-004","en":"They worked in the hospital yesterday.","vi":"Hôm qua họ đã làm việc ở bệnh viện.","uses":["work","hospital"],"blank":{"answer":"worked","options":["work","worked","works"]},"wrong":["They work in the hospital yesterday.","They works in the hospital yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-005","en":"We painted the table yesterday.","vi":"Hôm qua chúng tôi đã sơn cái bàn.","uses":["paint","table"],"blank":{"answer":"painted","options":["paint","painted","paints"]},"wrong":["We paint the table yesterday.","We paints the table yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-006","en":"My father worked yesterday.","vi":"Hôm qua bố tôi đã làm việc.","uses":["father","work"],"blank":{"answer":"worked","options":["work","worked","works"]},"wrong":["My father work yesterday.","My father works yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-007","en":"The nurse helped the baby yesterday.","vi":"Hôm qua cô y tá đã giúp em bé.","uses":["nurse","help","baby"],"blank":{"answer":"helped","options":["help","helped","helps"]},"wrong":["The nurse help the baby yesterday.","The nurse helps the baby yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-008","en":"My sister danced yesterday.","vi":"Hôm qua chị gái tôi đã nhảy.","uses":["sister","dance"],"blank":{"answer":"danced","options":["dance","danced","dances"]},"wrong":["My sister dance yesterday.","My sister dances yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-009","en":"I helped my father yesterday.","vi":"Hôm qua tôi đã giúp bố.","uses":["help","father"],"blank":{"answer":"helped","options":["help","helped","helps"]},"wrong":["I help my father yesterday.","I helps my father yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-010","en":"The doctor worked at the hospital yesterday.","vi":"Hôm qua bác sĩ đã làm việc ở bệnh viện.","uses":["doctor","work","hospital"],"blank":{"answer":"worked","options":["work","worked","works"]},"wrong":["The doctor work at the hospital yesterday.","The doctor works at the hospital yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-011","en":"They painted the chair yesterday.","vi":"Hôm qua họ đã sơn cái ghế.","uses":["paint","chair"],"blank":{"answer":"painted","options":["paint","painted","paints"]},"wrong":["They paint the chair yesterday.","They paints the chair yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-012","en":"We danced yesterday.","vi":"Hôm qua chúng tôi đã nhảy.","uses":["dance"],"blank":{"answer":"danced","options":["dance","danced","dances"]},"wrong":["We dance yesterday.","We dances yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-013","en":"I didn't paint the house yesterday.","vi":"Hôm qua tôi đã không sơn ngôi nhà.","uses":["paint","house"],"blank":{"answer":"didn't","options":["didn't","don't","doesn't"]},"wrong":["I don't paint the house yesterday.","I doesn't paint the house yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-014","en":"She didn't dance yesterday.","vi":"Hôm qua cô ấy đã không nhảy.","uses":["dance"],"blank":{"answer":"dance","options":["dance","danced","dances"]},"wrong":["She didn't danced yesterday.","She didn't dances yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-015","en":"He didn't help my mother yesterday.","vi":"Hôm qua anh ấy đã không giúp mẹ tôi.","uses":["help","mother"],"blank":{"answer":"help","options":["help","helped","helps"]},"wrong":["He didn't helped my mother yesterday.","He didn't helps my mother yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-016","en":"They didn't work yesterday.","vi":"Hôm qua họ đã không làm việc.","uses":["work"],"blank":{"answer":"work","options":["work","worked","works"]},"wrong":["They didn't worked yesterday.","They didn't works yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-017","en":"Did you paint the table yesterday?","vi":"Hôm qua bạn có sơn cái bàn không?","uses":["paint","table"],"blank":{"answer":"Did","options":["Did","Do","Does"]},"wrong":["Do you paint the table yesterday?","Did you painted the table yesterday?"],"extra":["to","didn't"],"session":1},
+    {"id":"past-simple-018","en":"Did she help your mother yesterday?","vi":"Hôm qua cô ấy có giúp mẹ bạn không?","uses":["help","mother"],"blank":{"answer":"help","options":["help","helped","helps"]},"wrong":["Did she helped your mother yesterday?","Did she helps your mother yesterday?"],"extra":["to","does"],"session":1},
+    {"id":"past-simple-019","en":"Did they work in the hospital yesterday?","vi":"Hôm qua họ có làm việc ở bệnh viện không?","uses":["work","hospital"],"blank":{"answer":"Did","options":["Did","Do","Does"]},"wrong":["Do they work in the hospital yesterday?","Did they worked in the hospital yesterday?"],"extra":["to","didn't"],"session":1},
+    {"id":"past-simple-020","en":"Did your sister dance yesterday?","vi":"Hôm qua chị gái bạn có nhảy không?","uses":["sister","dance"],"blank":{"answer":"Did","options":["Did","Do","Does"]},"wrong":["Does your sister dance yesterday?","Did your sister danced yesterday?"],"extra":["to","didn't"],"session":1},
+    {"id":"past-simple-021","en":"I played football yesterday.","vi":"Hôm qua tôi đã chơi bóng đá.","uses":["play","football"],"blank":{"answer":"played","options":["play","played","plays"]},"wrong":["I play football yesterday.","I plays football yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-022","en":"My father played football yesterday.","vi":"Hôm qua bố tôi đã chơi bóng đá.","uses":["father","play","football"],"blank":{"answer":"played","options":["play","played","plays"]},"wrong":["My father play football yesterday.","My father plays football yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-023","en":"We didn't play football yesterday.","vi":"Hôm qua chúng tôi đã không chơi bóng đá.","uses":["play","football"],"blank":{"answer":"play","options":["play","played","plays"]},"wrong":["We didn't played football yesterday.","We didn't plays football yesterday."],"extra":["did","to"],"session":1},
+    {"id":"past-simple-024","en":"Did you play football yesterday?","vi":"Hôm qua bạn có chơi bóng đá không?","uses":["play","football"],"blank":{"answer":"Did","options":["Did","Do","Does"]},"wrong":["Do you play football yesterday?","Did you played football yesterday?"],"extra":["to","didn't"],"session":1}
+  ]
+}
