@@ -2,6 +2,8 @@ const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 const isText = (v) => typeof v === 'string' && v.trim() !== ''
 // Distractor tiles that could turn the sentence into a different but also correct sentence.
 const BANNED_EXTRA = new Set(['no', 'not', 'and', 'or'])
+// Deliberately wrong forms (cans, haves, more big, bigger then) that may appear in wrong sentences and extra tiles.
+const MISTAKE_WORDS = new Set(['cans', 'haves', 'more', 'then'])
 
 export function tokenize(en) {
   return en.toLowerCase().match(/[a-z]+(?:'[a-z]+)?/g) ?? []
@@ -30,6 +32,28 @@ function inflections(word) {
 
 export function matchesUses(token, uses) {
   return uses.some((use) => inflections(use.toLowerCase()).has(token))
+}
+
+// Wrong sentences and extra tiles are shown to the child too, so they may only contain words the
+// child can know: function words, the words the sentence uses, its own words and its blank options
+// (those carry the deliberate misspellings such as siting).
+function distractorErrors(sentence, { freeWords }, fail) {
+  const errors = []
+  if (!isText(sentence.en) || !Array.isArray(sentence.uses)) return errors
+  const own = new Set([...tokenize(sentence.en), ...(sentence.blank?.options ?? []).flatMap((o) => tokenize(String(o)))])
+  const singles = sentence.uses.filter((u) => !u.includes(' '))
+  const multi = sentence.uses.filter((u) => u.includes(' ')).map((u) => u.toLowerCase())
+  const allowed = (token) => freeWords.has(token) || MISTAKE_WORDS.has(token) || own.has(token) || matchesUses(token, singles)
+  const check = (label, text) => {
+    let rest = text.toLowerCase()
+    for (const phrase of multi) rest = rest.replaceAll(phrase, ' ')
+    for (const token of tokenize(rest)) {
+      if (!allowed(token)) fail(`${label} has a word the child cannot know: ${token}`)
+    }
+  }
+  for (const w of Array.isArray(sentence.wrong) ? sentence.wrong : []) if (isText(w)) check('wrong sentence', w)
+  for (const e of Array.isArray(sentence.extra) ? sentence.extra : []) if (isText(e)) check('extra tile', e)
+  return errors
 }
 
 function sentenceErrors(sentence, sessions, { vocabWords, freeWords }) {
@@ -87,6 +111,7 @@ function sentenceErrors(sentence, sessions, { vocabWords, freeWords }) {
   if (isText(sentence.en) && /\b(and|or)\b/i.test(sentence.en)) {
     fail('coordination (and/or) lets the parts swap places, so the word order is ambiguous: write it without and/or')
   }
+  errors.push(...distractorErrors(sentence, { vocabWords, freeWords }, fail))
   return errors
 }
 

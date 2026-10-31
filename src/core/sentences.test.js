@@ -264,6 +264,14 @@ describe('buildExercise', () => {
     expect([...ex.tokens].sort()).toEqual([...s.en.split(' '), ...s.extra].sort())
   })
 
+  test('translate tiles never start with the first two words of the sentence in order', () => {
+    const [first, second] = s.en.split(' ')
+    for (let seed = 1; seed <= 50; seed++) {
+      const tiles = buildExercise(s, 'l', 'translate', [], seeded(seed)).tokens
+      expect(tiles[0] === first && tiles[1] === second).toBe(false)
+    }
+  })
+
   test('an unknown type throws', () => {
     expect(() => build('essay')).toThrow()
   })

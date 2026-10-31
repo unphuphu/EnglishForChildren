@@ -3,7 +3,7 @@ import { assignTypes } from './sentences.js'
 
 const ctx = {
   vocabWords: new Set(['dog', 'cat', 'garden']),
-  freeWords: new Set(['there', 'is', 'a', 'in', 'the', 'and', 'are', 'what', 'it', 'this', 'no', 'not']),
+  freeWords: new Set(['there', 'is', 'a', 'in', 'the', 'and', 'are', 'what', 'it', 'this', 'no', 'not', 'has', 'am']),
 }
 
 const sentence = (over = {}) => ({

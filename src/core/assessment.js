@@ -88,7 +88,8 @@ export function recordAssessment(state, { kind, group, score, total, date }) {
   const grammar = { ...state.grammar, checkpoints: { ...state.grammar.checkpoints } }
   if (kind === 'checkpoint') {
     const previous = grammar.checkpoints[group]
-    const better = !previous || score / total > previous.best / previous.total
+    const ratio = (s, n) => (n > 0 ? s / n : 0)
+    const better = !previous || ratio(score, total) > ratio(previous.best, previous.total)
     grammar.checkpoints[group] = better ? { best: score, total } : previous
   } else {
     grammar.tests = [...grammar.tests, { date, score, total }].slice(-ASSESSMENT.TEST_HISTORY)

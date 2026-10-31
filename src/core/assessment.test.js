@@ -202,6 +202,13 @@ describe('weakAreas', () => {
 })
 
 describe('recordAssessment', () => {
+  test('an earlier checkpoint with total 0 is replaced instead of producing NaN', () => {
+    const state = emptyProgress()
+    state.grammar.checkpoints = { 1: { best: 0, total: 0 } }
+    const out = recordAssessment(state, { kind: 'checkpoint', group: 1, score: 3, total: 15, date: TODAY })
+    expect(out.state.grammar.checkpoints[1]).toEqual({ best: 3, total: 15 })
+  })
+
   const rec = (state, over) => recordAssessment(state, { kind: 'checkpoint', group: 1, score: 11, total: 15, date: TODAY, ...over })
 
   test('a checkpoint at 11/15 passes and awards the group badge', () => {

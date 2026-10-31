@@ -61,6 +61,14 @@ test('a second launch changes nothing and keeps data created after the first', (
   expect(storage.get('profiles').items[0].id).toBe('b')
 })
 
+test('if the marker cannot be saved nothing is removed', () => {
+  const { storage } = v1Storage()
+  const set = storage.set
+  storage.set = (key, value) => (key === 'appDataVersion' ? false : set(key, value))
+  expect(cleanOldData(storage)).toBe(false)
+  expect(storage.get('profiles')).not.toBeNull()
+})
+
 test('a brand new browser just gets the marker', () => {
   const storage = createStorage(backendWithMap())
   expect(cleanOldData(storage)).toBe(false)

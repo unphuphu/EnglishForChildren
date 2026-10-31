@@ -57,7 +57,7 @@ export default function AddProfile() {
           ))}
         </div>
         <fieldset className="goal-chooser">
-          <legend>Mỗi ngày học bao nhiêu từ?</legend>
+          <legend>Mỗi ngày học bao nhiêu từ mới?</legend>
           {GOAL_OPTIONS.map((goal) => (
             <label key={goal} className="goal-option">
               <input type="radio" name="goal" value={goal} checked={dailyGoal === goal} onChange={() => setDailyGoal(goal)} />

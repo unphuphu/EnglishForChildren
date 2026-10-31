@@ -97,6 +97,17 @@ function shuffledDifferent(tokens, rng) {
   return [...tokens.slice(1), tokens[0]]
 }
 
+// Tiles for the translate exercise: the correct words plus distractors, mixed so that the tiles do
+// not already begin with the first words of the sentence in the right order.
+function translateTiles(words, extra, rng) {
+  const startsInOrder = (tiles) => tiles[0] === words[0] && (words.length < 2 || tiles[1] === words[1])
+  for (let attempt = 0; attempt < 20; attempt++) {
+    const candidate = shuffle([...words, ...extra], rng)
+    if (!startsInOrder(candidate)) return candidate
+  }
+  return [...words.slice().reverse(), ...extra]
+}
+
 export function buildExercise(sentence, lessonId, type, wordIds, rng = Math.random) {
   const base = { type, sentenceId: sentence.id, lessonId, en: sentence.en, vi: sentence.vi, wordIds }
   switch (type) {
@@ -112,7 +123,7 @@ export function buildExercise(sentence, lessonId, type, wordIds, rng = Math.rand
       return { ...base, answer: sentence.en, options: shuffle([sentence.en, ...wrongs], rng) }
     }
     case 'translate':
-      return { ...base, prompt: sentence.vi, tokens: shuffle([...sentence.en.split(' '), ...sentence.extra], rng) }
+      return { ...base, prompt: sentence.vi, tokens: translateTiles(sentence.en.split(' '), sentence.extra, rng) }
     default:
       throw new Error('UNKNOWN_EXERCISE_TYPE')
   }

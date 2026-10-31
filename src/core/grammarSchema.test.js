@@ -8,7 +8,7 @@ const vocab = [
   { id: 'f-002', word: 'eat', topic: 'food' },
 ]
 const vocabWords = new Set(vocab.map((w) => w.word))
-const freeWords = new Set(['there', 'is', 'a', 'in', 'the', 'i', 'she', 'to', 'school', 'likes', 'are', 'am'])
+const freeWords = new Set(['there', 'is', 'a', 'in', 'the', 'i', 'she', 'to', 'school', 'likes', 'are', 'am', 'has'])
 const ctx = { vocabWords, freeWords: new Set([...freeWords, "there's", "isn't", 'it']) }
 
 const sentence = (over = {}) => ({
@@ -119,6 +119,11 @@ describe('validateLesson', () => {
 
   test('reports duplicate blank options', () => {
     expect(run(withSentence({ blank: { answer: 'is', options: ['is', 'is', 'are'] } })).join(' ')).toMatch(/blank/)
+  })
+
+  test('reports a wrong sentence or extra tile with a word the child cannot know', () => {
+    expect(run(withSentence({ wrong: ['There is a elephant in the garden.', 'There am a dog in the garden.'] })).join(' ')).toMatch(/wrong sentence.*elephant/)
+    expect(run(withSentence({ extra: ['giraffe', 'has'] })).join(' ')).toMatch(/extra tile.*giraffe/)
   })
 
   test('reports a wrong sentence equal to the correct one', () => {
