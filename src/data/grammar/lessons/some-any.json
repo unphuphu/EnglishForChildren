@@ -1,0 +1,81 @@
+{
+  "id": "some-any",
+  "title": "Some / any và How many / How much",
+  "order": 10,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "Some nghĩa là \"một vài / một ít\", dùng trong câu khẳng định. Any dùng trong câu phủ định và câu hỏi. Some và any đi được với cả danh từ đếm được (eggs) lẫn không đếm được (milk).",
+      "examples": [
+        {
+          "en": "I have some milk.",
+          "vi": "Tôi có một ít sữa."
+        },
+        {
+          "en": "I don't have any eggs.",
+          "vi": "Tôi không có quả trứng nào."
+        },
+        {
+          "en": "Do you have any milk?",
+          "vi": "Bạn có chút sữa nào không?"
+        }
+      ]
+    },
+    {
+      "vi": "Với danh từ đếm được (số nhiều) ta dùng many: How many eggs? Với danh từ không đếm được ta dùng much: How much milk? Trong câu khẳng định, \"rất nhiều\" thường nói là a lot of.",
+      "examples": [
+        {
+          "en": "How many cats do you have?",
+          "vi": "Bạn có bao nhiêu con mèo?"
+        },
+        {
+          "en": "How much water do you drink?",
+          "vi": "Bạn uống bao nhiêu nước?"
+        },
+        {
+          "en": "I have a lot of milk.",
+          "vi": "Tôi có rất nhiều sữa."
+        }
+      ]
+    },
+    {
+      "vi": "Với There is / There are: danh từ không đếm được dùng is (There is some soup), danh từ số nhiều dùng are (There are some noodles).",
+      "examples": [
+        {
+          "en": "There is some soup.",
+          "vi": "Có một ít súp."
+        },
+        {
+          "en": "Are there any birds in the garden?",
+          "vi": "Có con chim nào trong vườn không?"
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"some-any-001","en":"I have some milk.","vi":"Tôi có một ít sữa.","uses":["milk"],"blank":{"answer":"some","options":["some","many","much"]},"wrong":["I have many milk.","I some have milk."],"extra":["any","are"],"session":1},
+    {"id":"some-any-002","en":"She has some eggs.","vi":"Cô ấy có vài quả trứng.","uses":["egg"],"blank":{"answer":"some","options":["some","much","is"]},"wrong":["She has much eggs.","She some has eggs."],"extra":["any","are"],"session":1},
+    {"id":"some-any-003","en":"We have some water.","vi":"Chúng tôi có một ít nước.","uses":["water"],"blank":{"answer":"some","options":["some","many","are"]},"wrong":["We have many water.","We have water some."],"extra":["any","is"],"session":1},
+    {"id":"some-any-004","en":"Do you have any milk?","vi":"Bạn có chút sữa nào không?","uses":["milk"],"blank":{"answer":"any","options":["any","are","is"]},"wrong":["Do you have are milk?","Do you any have milk?"],"extra":["some","many"],"session":1},
+    {"id":"some-any-005","en":"I don't have any eggs.","vi":"Tôi không có quả trứng nào.","uses":["egg"],"blank":{"answer":"any","options":["any","is","are"]},"wrong":["I don't have is eggs.","I don't any have eggs."],"extra":["some","much"],"session":1},
+    {"id":"some-any-006","en":"He doesn't have any cheese.","vi":"Anh ấy không có chút phô mai nào.","uses":["cheese"],"blank":{"answer":"any","options":["any","is","are"]},"wrong":["He doesn't have are cheese.","He doesn't any have cheese."],"extra":["some","many"],"session":1},
+    {"id":"some-any-007","en":"There is some soup.","vi":"Có một ít súp.","uses":["soup"],"blank":{"answer":"is","options":["is","are","am"]},"wrong":["There are some soup.","There am some soup."],"extra":["any","many"],"session":1},
+    {"id":"some-any-008","en":"There are some noodles.","vi":"Có một ít mì sợi.","uses":["noodles"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["There is some noodles.","There am some noodles."],"extra":["any","much"],"session":1},
+    {"id":"some-any-009","en":"Is there any water?","vi":"Có chút nước nào không?","uses":["water"],"blank":{"answer":"Is","options":["Is","Are","Am"]},"wrong":["Are there any water?","Am there any water?"],"extra":["some","much"],"session":1},
+    {"id":"some-any-010","en":"Are there any birds in the garden?","vi":"Có con chim nào trong vườn không?","uses":["bird","garden"],"blank":{"answer":"Are","options":["Are","Is","Am"]},"wrong":["Is there any birds in the garden?","Am there any birds in the garden?"],"extra":["some","many"],"session":1},
+    {"id":"some-any-011","en":"How many cats do you have?","vi":"Bạn có bao nhiêu con mèo?","uses":["cat"],"blank":{"answer":"many","options":["many","much","some"]},"wrong":["How much cats do you have?","How some cats do you have?"],"extra":["any","are"],"session":1},
+    {"id":"some-any-012","en":"How many dogs do you have?","vi":"Bạn có bao nhiêu con chó?","uses":["dog"],"blank":{"answer":"many","options":["many","much","some"]},"wrong":["How much dogs do you have?","How some dogs do you have?"],"extra":["any","are"],"session":1},
+    {"id":"some-any-013","en":"How many eggs do you have?","vi":"Bạn có bao nhiêu quả trứng?","uses":["egg"],"blank":{"answer":"many","options":["many","much","some"]},"wrong":["How much eggs do you have?","How some eggs do you have?"],"extra":["any","are"],"session":1},
+    {"id":"some-any-014","en":"How much milk do you drink?","vi":"Bạn uống bao nhiêu sữa?","uses":["milk","drink"],"blank":{"answer":"much","options":["much","many","some"]},"wrong":["How many milk do you drink?","How some milk do you drink?"],"extra":["any","are"],"session":1},
+    {"id":"some-any-015","en":"How much water do you drink?","vi":"Bạn uống bao nhiêu nước?","uses":["water","drink"],"blank":{"answer":"much","options":["much","many","some"]},"wrong":["How many water do you drink?","How some water do you drink?"],"extra":["any","are"],"session":1},
+    {"id":"some-any-016","en":"How much tea do you have?","vi":"Bạn có bao nhiêu trà?","uses":["tea"],"blank":{"answer":"much","options":["much","many","some"]},"wrong":["How many tea do you have?","How some tea do you have?"],"extra":["any","are"],"session":1},
+    {"id":"some-any-017","en":"I have a lot of milk.","vi":"Tôi có rất nhiều sữa.","uses":["milk"],"blank":{"answer":"lot","options":["lot","much","some"]},"wrong":["I have a much of milk.","I have a some of milk."],"extra":["many","any"],"session":1},
+    {"id":"some-any-018","en":"She has a lot of eggs.","vi":"Cô ấy có rất nhiều trứng.","uses":["egg"],"blank":{"answer":"lot","options":["lot","much","some"]},"wrong":["She has a much of eggs.","She has a some of eggs."],"extra":["many","any"],"session":1},
+    {"id":"some-any-019","en":"My sister has many birds.","vi":"Chị gái tôi có nhiều chim.","uses":["sister","bird"],"blank":{"answer":"many","options":["many","much","is"]},"wrong":["My sister has much birds.","My sister has is birds."],"extra":["any","some"],"session":1},
+    {"id":"some-any-020","en":"There are many cows in the village.","vi":"Có nhiều bò trong làng.","uses":["cow","village"],"blank":{"answer":"many","options":["many","much","is"]},"wrong":["There are much cows in the village.","There are is cows in the village."],"extra":["any","some"],"session":1},
+    {"id":"some-any-021","en":"I don't drink much coffee.","vi":"Tôi không uống nhiều cà phê.","uses":["drink","coffee"],"blank":{"answer":"much","options":["much","many","are"]},"wrong":["I don't drink many coffee.","I don't drink are coffee."],"extra":["any","some"],"session":1},
+    {"id":"some-any-022","en":"We don't have many chairs.","vi":"Chúng tôi không có nhiều ghế.","uses":["chair"],"blank":{"answer":"many","options":["many","much","is"]},"wrong":["We don't have much chairs.","We don't have is chairs."],"extra":["any","some"],"session":1},
+    {"id":"some-any-023","en":"Does your mother have any tea?","vi":"Mẹ bạn có chút trà nào không?","uses":["mother","tea"],"blank":{"answer":"any","options":["any","are","is"]},"wrong":["Does your mother have are tea?","Does your mother any have tea?"],"extra":["some","many"],"session":1},
+    {"id":"some-any-024","en":"The baby drinks some milk.","vi":"Em bé uống một ít sữa.","uses":["baby","drink","milk"],"blank":{"answer":"some","options":["some","many","are"]},"wrong":["The baby drinks many milk.","The baby some drinks milk."],"extra":["any","much"],"session":1}
+  ]
+}

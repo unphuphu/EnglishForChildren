@@ -10,5 +10,7 @@
   { "topic": "drinks", "lesson": "present-simple", "part": 2 },
   { "topic": "furniture", "lesson": "present-continuous", "part": 1 },
   { "topic": "vegetables", "lesson": "present-continuous", "part": 2 },
-  { "topic": "town", "lesson": "wh-questions", "part": 1 }
+  { "topic": "town", "lesson": "wh-questions", "part": 1 },
+  { "topic": "nature", "lesson": "place-prepositions", "part": 1 },
+  { "topic": "fruits", "lesson": "some-any", "part": 1 }
 ]

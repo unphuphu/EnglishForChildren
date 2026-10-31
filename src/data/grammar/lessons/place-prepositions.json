@@ -1,0 +1,80 @@
+{
+  "id": "place-prepositions",
+  "title": "Giới từ chỉ nơi chốn: in / on / under / next to / behind",
+  "order": 9,
+  "sessions": 1,
+  "explain": [
+    {
+      "vi": "In nghĩa là \"ở trong\" (trong nhà, trong phòng, trong vườn). On nghĩa là \"ở trên\" một bề mặt (trên bàn, trên giường). At dùng cho nơi quen thuộc như at school.",
+      "examples": [
+        {
+          "en": "The dog is in the house.",
+          "vi": "Con chó ở trong nhà."
+        },
+        {
+          "en": "The cat is on the table.",
+          "vi": "Con mèo ở trên bàn."
+        },
+        {
+          "en": "The student is at school.",
+          "vi": "Học sinh đang ở trường."
+        }
+      ]
+    },
+    {
+      "vi": "Under là \"bên dưới\", behind là \"phía sau\", next to là \"ngay bên cạnh\", near là \"gần\". Các từ này đứng sau is / are và trước danh từ chỉ nơi chốn.",
+      "examples": [
+        {
+          "en": "The cat is under the bed.",
+          "vi": "Con mèo ở dưới giường."
+        },
+        {
+          "en": "The dog is behind the chair.",
+          "vi": "Con chó ở phía sau cái ghế."
+        },
+        {
+          "en": "The desk is near the window.",
+          "vi": "Cái bàn học ở gần cửa sổ."
+        }
+      ]
+    },
+    {
+      "vi": "Muốn hỏi một vật ở đâu, ta dùng Where is / Where are rồi trả lời bằng giới từ. Giữa hai vật ta dùng between: between the bed and the sofa.",
+      "examples": [
+        {
+          "en": "Where is the cat? It is on the sofa.",
+          "vi": "Con mèo ở đâu? Nó ở trên ghế sofa."
+        },
+        {
+          "en": "The table is between the bed and the sofa.",
+          "vi": "Cái bàn ở giữa giường và ghế sofa."
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {"id":"place-prepositions-001","en":"The cat is on the table.","vi":"Con mèo ở trên bàn.","uses":["cat","table"],"blank":{"answer":"on","options":["on","to","of"]},"wrong":["The cat is to the table.","The cat on is the table."],"extra":["are","of"],"session":1},
+    {"id":"place-prepositions-002","en":"The dog is in the house.","vi":"Con chó ở trong nhà.","uses":["dog","house"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["The dog is of the house.","The dog in is the house."],"extra":["are","to"],"session":1},
+    {"id":"place-prepositions-003","en":"The bird is in the garden.","vi":"Con chim ở trong vườn.","uses":["bird","garden"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["The bird is to the garden.","The bird is the in garden."],"extra":["are","of"],"session":1},
+    {"id":"place-prepositions-004","en":"The fish is in the water.","vi":"Con cá ở trong nước.","uses":["fish","water"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["The fish is of the water.","The fish are in the water."],"extra":["to","am"],"session":1},
+    {"id":"place-prepositions-005","en":"The baby is on the bed.","vi":"Em bé ở trên giường.","uses":["baby","bed"],"blank":{"answer":"on","options":["on","to","of"]},"wrong":["The baby is to the bed.","The baby are on the bed."],"extra":["of","am"],"session":1},
+    {"id":"place-prepositions-006","en":"My mother is in the bedroom.","vi":"Mẹ tôi ở trong phòng ngủ.","uses":["mother","bedroom"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["My mother is of the bedroom.","My mother are in the bedroom."],"extra":["to","am"],"session":1},
+    {"id":"place-prepositions-007","en":"The student is at school.","vi":"Học sinh đang ở trường.","uses":["student","school"],"blank":{"answer":"at","options":["at","of","to"]},"wrong":["The student is to school.","The student are at school."],"extra":["of","am"],"session":1},
+    {"id":"place-prepositions-008","en":"The dog is under the table.","vi":"Con chó ở dưới cái bàn.","uses":["dog","table"],"blank":{"answer":"under","options":["under","are","a"]},"wrong":["The dog are under the table.","The dog is a the table."],"extra":["of","to"],"session":1},
+    {"id":"place-prepositions-009","en":"The cat is under the bed.","vi":"Con mèo ở dưới giường.","uses":["cat","bed"],"blank":{"answer":"under","options":["under","are","a"]},"wrong":["The cat are under the bed.","The cat under is bed the."],"extra":["of","to"],"session":1},
+    {"id":"place-prepositions-010","en":"The dog is behind the chair.","vi":"Con chó ở phía sau cái ghế.","uses":["dog","chair"],"blank":{"answer":"behind","options":["behind","are","a"]},"wrong":["The dog are behind the chair.","The dog behind is the chair."],"extra":["of","to"],"session":1},
+    {"id":"place-prepositions-011","en":"The dog is next to the chair.","vi":"Con chó ở ngay cạnh cái ghế.","uses":["dog","chair"],"blank":{"answer":"next","options":["next","are","a"]},"wrong":["The dog is next of the chair.","The dog is to next the chair."],"extra":["of","are"],"session":1},
+    {"id":"place-prepositions-012","en":"The desk is near the window.","vi":"Cái bàn học ở gần cửa sổ.","uses":["desk","window"],"blank":{"answer":"near","options":["near","are","a"]},"wrong":["The desk are near the window.","The desk is the near window."],"extra":["of","to"],"session":1},
+    {"id":"place-prepositions-013","en":"The sofa is in the room.","vi":"Cái ghế sofa ở trong phòng.","uses":["sofa","room"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["The sofa is of the room.","The sofa is the in room."],"extra":["are","am"],"session":1},
+    {"id":"place-prepositions-014","en":"My sister is on the sofa.","vi":"Chị gái tôi ở trên ghế sofa.","uses":["sister","sofa"],"blank":{"answer":"on","options":["on","to","of"]},"wrong":["My sister is to the sofa.","My sister are on the sofa."],"extra":["of","am"],"session":1},
+    {"id":"place-prepositions-015","en":"The chair is next to the desk.","vi":"Cái ghế ở ngay cạnh bàn học.","uses":["chair","desk"],"blank":{"answer":"to","options":["to","of","are"]},"wrong":["The chair is next of the desk.","The chair is next are the desk."],"extra":["of","are"],"session":1},
+    {"id":"place-prepositions-016","en":"The cows are in the garden.","vi":"Những con bò ở trong vườn.","uses":["cow","garden"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["The cows is in the garden.","The cows am in the garden."],"extra":["is","of"],"session":1},
+    {"id":"place-prepositions-017","en":"The birds are in the tree.","vi":"Những con chim ở trong cây.","uses":["bird","tree"],"blank":{"answer":"are","options":["are","is","am"]},"wrong":["The birds is in the tree.","The birds am in the tree."],"extra":["is","of"],"session":1},
+    {"id":"place-prepositions-018","en":"The flower is under the tree.","vi":"Bông hoa ở dưới gốc cây.","uses":["flower","tree"],"blank":{"answer":"under","options":["under","are","a"]},"wrong":["The flower are under the tree.","The flower is a the tree."],"extra":["of","to"],"session":1},
+    {"id":"place-prepositions-019","en":"The dog is behind the tree.","vi":"Con chó ở phía sau cái cây.","uses":["dog","tree"],"blank":{"answer":"behind","options":["behind","are","a"]},"wrong":["The dog are behind the tree.","The dog is a the tree."],"extra":["of","to"],"session":1},
+    {"id":"place-prepositions-020","en":"My father is in the garden.","vi":"Bố tôi ở trong vườn.","uses":["father","garden"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["My father is of the garden.","My father are in the garden."],"extra":["to","am"],"session":1},
+    {"id":"place-prepositions-021","en":"The baby is in the room.","vi":"Em bé ở trong phòng.","uses":["baby","room"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["The baby is to the room.","The baby are in the room."],"extra":["of","am"],"session":1},
+    {"id":"place-prepositions-022","en":"The school is in the town.","vi":"Ngôi trường ở trong thị trấn.","uses":["school","town"],"blank":{"answer":"in","options":["in","to","of"]},"wrong":["The school is to the town.","The school are in the town."],"extra":["of","am"],"session":1},
+    {"id":"place-prepositions-023","en":"The park is near the school.","vi":"Công viên ở gần trường học.","uses":["park","school"],"blank":{"answer":"near","options":["near","are","a"]},"wrong":["The park are near the school.","The park is the near school."],"extra":["of","to"],"session":1}
+  ]
+}
