@@ -528,5 +528,132 @@
   "exampleVi": "Tôi đọc sách mỗi ngày.",
   "topic": "seasons",
   "level": 1
+ },
+ {
+  "id": "seasons-048",
+  "word": "time",
+  "pos": "noun",
+  "vi": "thời gian",
+  "ipa": "/taɪm/",
+  "emoji": "⏰",
+  "example": "Time passes very quickly.",
+  "exampleVi": "Thời gian trôi rất nhanh.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-049",
+  "word": "hour",
+  "pos": "noun",
+  "vi": "giờ",
+  "ipa": "/ˈaʊə/",
+  "emoji": "🕐",
+  "example": "One hour has sixty minutes.",
+  "exampleVi": "Một giờ có sáu mươi phút.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-050",
+  "word": "minute",
+  "pos": "noun",
+  "vi": "phút",
+  "ipa": "/ˈmɪnɪt/",
+  "example": "One minute has sixty seconds.",
+  "exampleVi": "Một phút có sáu mươi giây.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-051",
+  "word": "morning",
+  "pos": "noun",
+  "vi": "buổi sáng",
+  "ipa": "/ˈmɔːnɪŋ/",
+  "emoji": "🌅",
+  "example": "I eat breakfast in the morning.",
+  "exampleVi": "Tôi ăn sáng vào buổi sáng.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-052",
+  "word": "afternoon",
+  "pos": "noun",
+  "vi": "buổi chiều",
+  "ipa": "/ˌɑːftəˈnuːn/",
+  "emoji": "🌤️",
+  "example": "We study at school in the afternoon.",
+  "exampleVi": "Chúng tôi học ở trường vào buổi chiều.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-053",
+  "word": "evening",
+  "pos": "noun",
+  "vi": "buổi tối",
+  "ipa": "/ˈiːvnɪŋ/",
+  "emoji": "🌆",
+  "example": "My family eats dinner in the evening.",
+  "exampleVi": "Gia đình tôi ăn tối vào buổi tối.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-054",
+  "word": "night",
+  "pos": "noun",
+  "vi": "ban đêm",
+  "ipa": "/naɪt/",
+  "emoji": "🌃",
+  "example": "The sky is dark at night.",
+  "exampleVi": "Bầu trời tối vào ban đêm.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-055",
+  "word": "early",
+  "pos": "adj",
+  "vi": "sớm",
+  "ipa": "/ˈɜːli/",
+  "example": "I wake up early every morning.",
+  "exampleVi": "Tôi thức dậy sớm mỗi buổi sáng.",
+  "topic": "seasons",
+  "level": 2
+ },
+ {
+  "id": "seasons-056",
+  "word": "late",
+  "pos": "adj",
+  "vi": "muộn",
+  "ipa": "/leɪt/",
+  "example": "He arrives late for school.",
+  "exampleVi": "Bạn ấy đến trường muộn.",
+  "topic": "seasons",
+  "level": 1
+ },
+ {
+  "id": "seasons-057",
+  "word": "later",
+  "pos": "adv",
+  "vi": "sau/Lát nữa",
+  "ipa": "/ˈleɪtə/",
+  "example": "We will play outside later.",
+  "exampleVi": "Chúng tôi sẽ ra ngoài chơi sau.",
+  "topic": "seasons",
+  "level": 2
+ },
+ {
+  "id": "seasons-058",
+  "word": "second",
+  "pos": "noun",
+  "vi": "giây",
+  "ipa": "/ˈsekənd/",
+  "example": "A second passes very quickly.",
+  "exampleVi": "Một giây trôi qua rất nhanh.",
+  "topic": "seasons",
+  "level": 2
  }
 ]

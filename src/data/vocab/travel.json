@@ -521,5 +521,85 @@
   "exampleVi": "Chúng tôi trở về nhà vào Chủ nhật.",
   "topic": "travel",
   "level": 3
+ },
+ {
+  "id": "travel-047",
+  "word": "dive",
+  "pos": "verb",
+  "vi": "lặn",
+  "ipa": "/daɪv/",
+  "emoji": "🤿",
+  "example": "He dives into the water.",
+  "exampleVi": "Anh ấy lặn xuống nước.",
+  "topic": "travel",
+  "level": 2
+ },
+ {
+  "id": "travel-048",
+  "word": "surf",
+  "pos": "verb",
+  "vi": "lướt sóng",
+  "ipa": "/sɜːf/",
+  "emoji": "🏄",
+  "example": "They surf every morning.",
+  "exampleVi": "Họ lướt sóng mỗi sáng.",
+  "topic": "travel",
+  "level": 2
+ },
+ {
+  "id": "travel-049",
+  "word": "sunbathe",
+  "pos": "verb",
+  "vi": "tắm nắng",
+  "ipa": "/ˈsʌnbeɪð/",
+  "example": "She sunbathes on the sand.",
+  "exampleVi": "Cô ấy tắm nắng trên cát.",
+  "topic": "travel",
+  "level": 3
+ },
+ {
+  "id": "travel-050",
+  "word": "splash",
+  "pos": "verb",
+  "vi": "té nước",
+  "ipa": "/splæʃ/",
+  "emoji": "💦",
+  "example": "The kids splash water happily.",
+  "exampleVi": "Những đứa trẻ té nước vui vẻ.",
+  "topic": "travel",
+  "level": 2
+ },
+ {
+  "id": "travel-051",
+  "word": "paddle",
+  "pos": "verb",
+  "vi": "chèo, quẫy nước",
+  "ipa": "/ˈpædl/",
+  "example": "She paddles in the shallow water.",
+  "exampleVi": "Cô ấy quẫy nước ở vùng nước nông.",
+  "topic": "travel",
+  "level": 3
+ },
+ {
+  "id": "travel-052",
+  "word": "float",
+  "pos": "verb",
+  "vi": "nổi",
+  "ipa": "/fləʊt/",
+  "example": "The ball floats on the water.",
+  "exampleVi": "Quả bóng nổi trên mặt nước.",
+  "topic": "travel",
+  "level": 2
+ },
+ {
+  "id": "travel-053",
+  "word": "snorkel",
+  "pos": "verb",
+  "vi": "lặn với ống thở",
+  "ipa": "/ˈsnɔːkl/",
+  "example": "They snorkel near the coral reef.",
+  "exampleVi": "Họ lặn với ống thở gần rạn san hô.",
+  "topic": "travel",
+  "level": 3
  }
 ]

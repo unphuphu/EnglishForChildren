@@ -571,5 +571,17 @@
   "exampleVi": "Anh ấy giữ dáng bằng cách chạy bộ.",
   "topic": "sports",
   "level": 3
+ },
+ {
+  "id": "sports-051",
+  "word": "winner",
+  "pos": "noun",
+  "vi": "người chiến thắng",
+  "ipa": "/ˈwɪnə/",
+  "emoji": "🏆",
+  "example": "She is the winner.",
+  "exampleVi": "Cô ấy là người chiến thắng.",
+  "topic": "sports",
+  "level": 2
  }
 ]

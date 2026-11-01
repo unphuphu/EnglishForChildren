@@ -580,5 +580,64 @@
   "exampleVi": "Anh ấy sẽ tốt nghiệp năm sau.",
   "topic": "school",
   "level": 3
+ },
+ {
+  "id": "school-052",
+  "word": "school bag",
+  "pos": "noun",
+  "vi": "cặp sách",
+  "ipa": "/skuːl bæɡ/",
+  "emoji": "🎒",
+  "example": "This is my school bag.",
+  "exampleVi": "Đây là cặp sách của em.",
+  "topic": "school",
+  "level": 1
+ },
+ {
+  "id": "school-053",
+  "word": "crayon",
+  "pos": "noun",
+  "vi": "bút sáp màu",
+  "ipa": "/ˈkreɪɒn/",
+  "emoji": "🖍️",
+  "example": "This is my crayon.",
+  "exampleVi": "Đây là bút sáp màu của em.",
+  "topic": "school",
+  "level": 2
+ },
+ {
+  "id": "school-054",
+  "word": "marker",
+  "pos": "noun",
+  "vi": "bút đánh dấu",
+  "ipa": "/ˈmɑːkə/",
+  "emoji": "🖊️",
+  "example": "This is my marker.",
+  "exampleVi": "Đây là bút đánh dấu của em.",
+  "topic": "school",
+  "level": 2
+ },
+ {
+  "id": "school-055",
+  "word": "chalk",
+  "pos": "noun",
+  "vi": "phấn",
+  "ipa": "/tʃɔːk/",
+  "example": "This is chalk.",
+  "exampleVi": "Đây là phấn.",
+  "topic": "school",
+  "level": 2
+ },
+ {
+  "id": "school-056",
+  "word": "projector",
+  "pos": "noun",
+  "vi": "máy chiếu",
+  "ipa": "/prəˈdʒektə/",
+  "emoji": "📽️",
+  "example": "The projector is on.",
+  "exampleVi": "Máy chiếu đang bật.",
+  "topic": "school",
+  "level": 3
  }
 ]

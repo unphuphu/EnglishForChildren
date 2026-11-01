@@ -585,5 +585,51 @@
   "exampleVi": "Xe buýt chậm.",
   "topic": "transport",
   "level": 1
+ },
+ {
+  "id": "transport-052",
+  "word": "bicycle",
+  "pos": "noun",
+  "vi": "xe đạp",
+  "ipa": "/ˈbaɪsɪkl/",
+  "emoji": "🚲",
+  "example": "My bicycle is outside.",
+  "exampleVi": "Xe đạp của tôi ở ngoài.",
+  "topic": "transport",
+  "level": 1
+ },
+ {
+  "id": "transport-053",
+  "word": "airplane",
+  "pos": "noun",
+  "vi": "máy bay",
+  "ipa": "/ˈeəpleɪn/",
+  "emoji": "✈️",
+  "example": "The airplane is landing.",
+  "exampleVi": "Máy bay đang hạ cánh.",
+  "topic": "transport",
+  "level": 1
+ },
+ {
+  "id": "transport-054",
+  "word": "get on",
+  "pos": "verb",
+  "vi": "lên xe",
+  "ipa": "/ɡet ɒn/",
+  "example": "Let's get on now.",
+  "exampleVi": "Chúng ta lên xe thôi.",
+  "topic": "transport",
+  "level": 2
+ },
+ {
+  "id": "transport-055",
+  "word": "get off",
+  "pos": "verb",
+  "vi": "xuống xe",
+  "ipa": "/ɡet ɒf/",
+  "example": "We get off here.",
+  "exampleVi": "Chúng ta xuống ở đây.",
+  "topic": "transport",
+  "level": 2
  }
 ]

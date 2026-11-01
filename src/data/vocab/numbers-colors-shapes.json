@@ -623,5 +623,29 @@
   "exampleVi": "Hình vuông có bốn góc.",
   "topic": "numbers-colors-shapes",
   "level": 3
+ },
+ {
+  "id": "numbers-colors-shapes-055",
+  "word": "light blue",
+  "pos": "adj",
+  "vi": "màu xanh dương nhạt",
+  "ipa": "/laɪt bluː/",
+  "emoji": "🩵",
+  "example": "I like the light blue shirt.",
+  "exampleVi": "Tôi thích chiếc áo sơ mi màu xanh dương nhạt.",
+  "topic": "numbers-colors-shapes",
+  "level": 2
+ },
+ {
+  "id": "numbers-colors-shapes-056",
+  "word": "dark green",
+  "pos": "adj",
+  "vi": "màu xanh lá cây đậm",
+  "ipa": "/dɑːk ɡriːn/",
+  "emoji": "🟢",
+  "example": "His jacket is dark green.",
+  "exampleVi": "Áo khoác của cậu ấy có màu xanh lá cây đậm.",
+  "topic": "numbers-colors-shapes",
+  "level": 2
  }
 ]

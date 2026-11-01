@@ -583,5 +583,109 @@
   "exampleVi": "Tôi ăn một quả trứng luộc.",
   "topic": "food",
   "level": 3
+ },
+ {
+  "id": "food-052",
+  "word": "waitress",
+  "pos": "noun",
+  "vi": "nhân viên phục vụ nữ",
+  "ipa": "/ˈweɪtrəs/",
+  "example": "Ask the waitress, please.",
+  "exampleVi": "Hãy hỏi nhân viên phục vụ.",
+  "topic": "food",
+  "level": 2
+ },
+ {
+  "id": "food-053",
+  "word": "napkin",
+  "pos": "noun",
+  "vi": "khăn ăn",
+  "ipa": "/ˈnæpkɪn/",
+  "example": "Here is your napkin.",
+  "exampleVi": "Khăn ăn của bạn đây.",
+  "topic": "food",
+  "level": 2
+ },
+ {
+  "id": "food-054",
+  "word": "order",
+  "pos": "verb",
+  "vi": "gọi món",
+  "ipa": "/ˈɔːdə/",
+  "example": "Are you ready to order?",
+  "exampleVi": "Bạn sẵn sàng gọi món chưa?",
+  "topic": "food",
+  "level": 2
+ },
+ {
+  "id": "food-055",
+  "word": "bill",
+  "pos": "noun",
+  "vi": "hóa đơn",
+  "ipa": "/bɪl/",
+  "emoji": "🧾",
+  "example": "Can we have the bill?",
+  "exampleVi": "Cho chúng tôi xin hóa đơn.",
+  "topic": "food",
+  "level": 2
+ },
+ {
+  "id": "food-056",
+  "word": "silverware",
+  "pos": "noun",
+  "vi": "bộ dao, nĩa và muỗng",
+  "ipa": "/ˈsɪlvəweə/",
+  "emoji": "🍴",
+  "example": "Can I have some silverware, please?",
+  "exampleVi": "Cho tôi xin bộ dao, nĩa và muỗng được không?",
+  "topic": "food",
+  "level": 3
+ },
+ {
+  "id": "food-057",
+  "word": "cutlery",
+  "pos": "noun",
+  "vi": "dao, nĩa và muỗng ăn",
+  "ipa": "/ˈkʌtləri/",
+  "emoji": "🍴",
+  "example": "Can I have some cutlery?",
+  "exampleVi": "Cho tôi xin dao, nĩa và muỗng được không?",
+  "topic": "food",
+  "level": 3
+ },
+ {
+  "id": "food-058",
+  "word": "noodle",
+  "pos": "noun",
+  "vi": "mì",
+  "ipa": "/ˈnuːdl/",
+  "emoji": "🍜",
+  "example": "I eat noodle.",
+  "exampleVi": "Em ăn mì.",
+  "topic": "food",
+  "level": 1
+ },
+ {
+  "id": "food-059",
+  "word": "sausage",
+  "pos": "noun",
+  "vi": "xúc xích",
+  "ipa": "/ˈsɒsɪdʒ/",
+  "emoji": "🌭",
+  "example": "I like sausage.",
+  "exampleVi": "Em thích ăn xúc xích.",
+  "topic": "food",
+  "level": 2
+ },
+ {
+  "id": "food-060",
+  "word": "yogurt",
+  "pos": "noun",
+  "vi": "sữa chua",
+  "ipa": "/ˈjɒɡət/",
+  "example": "I like yogurt.",
+  "exampleVi": "Em thích ăn sữa chua.",
+  "topic": "food",
+  "level": 1
  }
 ]

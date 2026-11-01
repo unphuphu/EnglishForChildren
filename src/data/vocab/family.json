@@ -571,5 +571,97 @@
   "exampleVi": "Tôi về nhà lúc năm giờ.",
   "topic": "family",
   "level": 1
+ },
+ {
+  "id": "family-051",
+  "word": "parents",
+  "pos": "noun",
+  "vi": "bố mẹ",
+  "ipa": "/ˈpeərənts/",
+  "emoji": "👨‍👩‍👧",
+  "example": "My parents take care of me.",
+  "exampleVi": "Bố mẹ chăm sóc tôi.",
+  "topic": "family",
+  "level": 1
+ },
+ {
+  "id": "family-052",
+  "word": "mom",
+  "pos": "noun",
+  "vi": "mẹ",
+  "ipa": "/mɒm/",
+  "emoji": "👩",
+  "example": "My mom cooks delicious food.",
+  "exampleVi": "Mẹ tôi nấu những món ăn ngon.",
+  "topic": "family",
+  "level": 1
+ },
+ {
+  "id": "family-053",
+  "word": "dad",
+  "pos": "noun",
+  "vi": "bố/Ba",
+  "ipa": "/dæd/",
+  "emoji": "👨",
+  "example": "My dad fixes things at home.",
+  "exampleVi": "Bố tôi sửa đồ trong nhà.",
+  "topic": "family",
+  "level": 1
+ },
+ {
+  "id": "family-054",
+  "word": "grandparents",
+  "pos": "noun",
+  "vi": "ông bà",
+  "ipa": "/ˈɡrænpeərənts/",
+  "emoji": "👴",
+  "example": "My grandparents live with us.",
+  "exampleVi": "Ông bà sống cùng gia đình tôi.",
+  "topic": "family",
+  "level": 1
+ },
+ {
+  "id": "family-055",
+  "word": "older brother",
+  "pos": "noun",
+  "vi": "anh trai",
+  "ipa": "/ˈəʊldə ˈbrʌðə/",
+  "example": "My older brother helps me with homework.",
+  "exampleVi": "Anh trai giúp tôi làm bài tập.",
+  "topic": "family",
+  "level": 2
+ },
+ {
+  "id": "family-056",
+  "word": "older sister",
+  "pos": "noun",
+  "vi": "chị gái",
+  "ipa": "/ˈəʊldə ˈsɪstə/",
+  "example": "My older sister reads many books.",
+  "exampleVi": "Chị gái tôi đọc rất nhiều sách.",
+  "topic": "family",
+  "level": 2
+ },
+ {
+  "id": "family-057",
+  "word": "younger brother",
+  "pos": "noun",
+  "vi": "em trai",
+  "ipa": "/ˈjʌŋɡə ˈbrʌðə/",
+  "example": "My younger brother is very funny.",
+  "exampleVi": "Em trai tôi rất vui tính.",
+  "topic": "family",
+  "level": 2
+ },
+ {
+  "id": "family-058",
+  "word": "younger sister",
+  "pos": "noun",
+  "vi": "em gái",
+  "ipa": "/ˈjʌŋɡə ˈsɪstə/",
+  "example": "My younger sister draws cute pictures.",
+  "exampleVi": "Em gái tôi vẽ những bức tranh dễ thương.",
+  "topic": "family",
+  "level": 2
  }
 ]

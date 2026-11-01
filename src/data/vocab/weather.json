@@ -565,5 +565,41 @@
   "exampleVi": "Hôm qua trời nắng.",
   "topic": "weather",
   "level": 1
+ },
+ {
+  "id": "weather-051",
+  "word": "snowflake",
+  "pos": "noun",
+  "vi": "bông tuyết",
+  "ipa": "/ˈsnəʊfleɪk/",
+  "emoji": "❄️",
+  "example": "A snowflake falls on my hand.",
+  "exampleVi": "Một bông tuyết rơi xuống tay tôi.",
+  "topic": "weather",
+  "level": 2
+ },
+ {
+  "id": "weather-052",
+  "word": "mist",
+  "pos": "noun",
+  "vi": "sương",
+  "ipa": "/mɪst/",
+  "emoji": "🌫️",
+  "example": "Light mist rises over the lake.",
+  "exampleVi": "Làn sương nhẹ bay lên trên mặt hồ.",
+  "topic": "weather",
+  "level": 3
+ },
+ {
+  "id": "weather-053",
+  "word": "ice",
+  "pos": "noun",
+  "vi": "băng",
+  "ipa": "/aɪs/",
+  "emoji": "🧊",
+  "example": "Ice forms on the water in winter.",
+  "exampleVi": "Băng hình thành trên mặt nước vào mùa đông.",
+  "topic": "weather",
+  "level": 2
  }
 ]

@@ -587,5 +587,111 @@
   "exampleVi": "Ngôi làng yên tĩnh.",
   "topic": "town",
   "level": 2
+ },
+ {
+  "id": "town-053",
+  "word": "wallet",
+  "pos": "noun",
+  "vi": "ví tiền",
+  "ipa": "/ˈwɒlɪt/",
+  "emoji": "👛",
+  "example": "My wallet is brown.",
+  "exampleVi": "Ví tiền của tôi màu nâu.",
+  "topic": "town",
+  "level": 2
+ },
+ {
+  "id": "town-054",
+  "word": "customer",
+  "pos": "noun",
+  "vi": "khách hàng",
+  "ipa": "/ˈkʌstəmə/",
+  "example": "The customer is happy.",
+  "exampleVi": "Khách hàng rất vui.",
+  "topic": "town",
+  "level": 2
+ },
+ {
+  "id": "town-055",
+  "word": "cashier",
+  "pos": "noun",
+  "vi": "thu ngân",
+  "ipa": "/kæˈʃɪə/",
+  "example": "The cashier smiles at me.",
+  "exampleVi": "Nhân viên thu ngân mỉm cười với tôi.",
+  "topic": "town",
+  "level": 2
+ },
+ {
+  "id": "town-056",
+  "word": "discount",
+  "pos": "noun",
+  "vi": "giảm giá",
+  "ipa": "/ˈdɪskaʊnt/",
+  "emoji": "🏷️",
+  "example": "The store has a discount.",
+  "exampleVi": "Cửa hàng có giảm giá.",
+  "topic": "town",
+  "level": 3
+ },
+ {
+  "id": "town-057",
+  "word": "receipt",
+  "pos": "noun",
+  "vi": "hóa đơn",
+  "ipa": "/rɪˈsiːt/",
+  "emoji": "🧾",
+  "example": "Keep the receipt carefully.",
+  "exampleVi": "Hãy giữ hóa đơn cẩn thận.",
+  "topic": "town",
+  "level": 3
+ },
+ {
+  "id": "town-058",
+  "word": "store",
+  "pos": "noun",
+  "vi": "cửa tiệm",
+  "ipa": "/stɔː/",
+  "emoji": "🏪",
+  "example": "I go to the store.",
+  "exampleVi": "Em đi đến cửa tiệm.",
+  "topic": "town",
+  "level": 1
+ },
+ {
+  "id": "town-059",
+  "word": "crosswalk",
+  "pos": "noun",
+  "vi": "vạch sang đường",
+  "ipa": "/ˈkrɒswɔːk/",
+  "emoji": "🚸",
+  "example": "I walk on the crosswalk.",
+  "exampleVi": "Em đi trên vạch sang đường.",
+  "topic": "town",
+  "level": 3
+ },
+ {
+  "id": "town-060",
+  "word": "sign",
+  "pos": "noun",
+  "vi": "biển báo",
+  "ipa": "/saɪn/",
+  "emoji": "🪧",
+  "example": "This is a sign.",
+  "exampleVi": "Đây là một biển báo.",
+  "topic": "town",
+  "level": 2
+ },
+ {
+  "id": "town-061",
+  "word": "post box",
+  "pos": "noun",
+  "vi": "hộp thư",
+  "ipa": "/pəʊst bɒks/",
+  "emoji": "📮",
+  "example": "This is a post box.",
+  "exampleVi": "Đây là một hộp thư.",
+  "topic": "town",
+  "level": 2
  }
 ]

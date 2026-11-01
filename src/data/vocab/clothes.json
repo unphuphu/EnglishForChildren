@@ -548,5 +548,29 @@
   "exampleVi": "Chiếc áo rộng.",
   "topic": "clothes",
   "level": 3
+ },
+ {
+  "id": "clothes-049",
+  "word": "socks",
+  "pos": "noun",
+  "vi": "tất, vớ",
+  "ipa": "/sɒks/",
+  "emoji": "🧦",
+  "example": "Where are my socks?",
+  "exampleVi": "Tất của tôi đâu rồi?",
+  "topic": "clothes",
+  "level": 1
+ },
+ {
+  "id": "clothes-050",
+  "word": "sandals",
+  "pos": "noun",
+  "vi": "dép quai",
+  "ipa": "/ˈsændlz/",
+  "emoji": "🩴",
+  "example": "These sandals are comfortable.",
+  "exampleVi": "Đôi dép này rất thoải mái.",
+  "topic": "clothes",
+  "level": 2
  }
 ]

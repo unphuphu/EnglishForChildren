@@ -557,5 +557,76 @@
   "exampleVi": "Bác sĩ giúp đỡ mọi người.",
   "topic": "jobs",
   "level": 1
+ },
+ {
+  "id": "jobs-050",
+  "word": "veterinarian",
+  "pos": "noun",
+  "vi": "bác sĩ thú y",
+  "ipa": "/ˌvetərɪˈneəriən/",
+  "example": "The veterinarian helps sick animals.",
+  "exampleVi": "Bác sĩ thú y chữa bệnh cho động vật.",
+  "topic": "jobs",
+  "level": 3
+ },
+ {
+  "id": "jobs-051",
+  "word": "security guard",
+  "pos": "noun",
+  "vi": "bảo vệ/Nhân viên bảo vệ",
+  "ipa": "/sɪˈkjʊərəti ɡɑːd/",
+  "emoji": "💂",
+  "example": "The security guard watches the gate carefully.",
+  "exampleVi": "Chú bảo vệ trông cổng rất cẩn thận.",
+  "topic": "jobs",
+  "level": 3
+ },
+ {
+  "id": "jobs-052",
+  "word": "baker",
+  "pos": "noun",
+  "vi": "thợ làm bánh",
+  "ipa": "/ˈbeɪkə/",
+  "emoji": "🥐",
+  "example": "The baker makes bread in the bakery.",
+  "exampleVi": "Bác thợ làm bánh làm bánh mì trong tiệm bánh.",
+  "topic": "jobs",
+  "level": 2
+ },
+ {
+  "id": "jobs-053",
+  "word": "mail carrier",
+  "pos": "noun",
+  "vi": "người đưa thư/Bưu tá",
+  "ipa": "/meɪl ˈkæriə/",
+  "emoji": "📬",
+  "example": "The mail carrier delivers letters every day.",
+  "exampleVi": "Chú đưa thư mang thư đến mỗi ngày.",
+  "topic": "jobs",
+  "level": 3
+ },
+ {
+  "id": "jobs-054",
+  "word": "cleaner",
+  "pos": "noun",
+  "vi": "lao công/Nhân viên vệ sinh",
+  "ipa": "/ˈkliːnə/",
+  "emoji": "🧹",
+  "example": "The cleaner cleans the room every morning.",
+  "exampleVi": "Cô lao công dọn phòng mỗi buổi sáng.",
+  "topic": "jobs",
+  "level": 2
+ },
+ {
+  "id": "jobs-055",
+  "word": "musician",
+  "pos": "noun",
+  "vi": "nhạc sĩ/Người chơi nhạc",
+  "ipa": "/mjuˈzɪʃn/",
+  "emoji": "🎵",
+  "example": "The musician plays music on stage.",
+  "exampleVi": "Chú nhạc sĩ chơi nhạc trên sân khấu.",
+  "topic": "jobs",
+  "level": 2
  }
 ]
