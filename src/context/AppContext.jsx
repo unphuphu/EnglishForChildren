@@ -83,3 +83,6 @@ export function useApp() {
   if (!value) throw new Error('useApp must be used inside AppProvider')
   return value
 }
+
+// For components that also render outside the provider (isolated tests, previews).
+export const useOptionalApp = () => useContext(AppContext)

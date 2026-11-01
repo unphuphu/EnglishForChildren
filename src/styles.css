@@ -307,3 +307,15 @@ main { max-width: 760px; margin: 0 auto; padding: 1rem 1.25rem 3rem 2.8rem; }
 .goal-custom input[aria-invalid='true'] { border-color: var(--pen-red); }
 .today-goal { margin: 0.4rem 0; }
 .today-goal summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+
+/* Luyện nói */
+.speak-practice { margin: 0.8rem 0; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.mic {
+  font-family: var(--font-head); font-size: 1.2rem; font-weight: 800; color: var(--ink); background: var(--marker-bg);
+  border: 2px solid var(--ink); border-radius: 999px; padding: 0.5rem 1.4rem; cursor: pointer; box-shadow: 3px 3px 0 var(--ink);
+}
+.mic:active:enabled { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.mic:disabled { opacity: 0.7; cursor: progress; }
+.skip { background: none; border: 0; color: var(--muted); font-weight: 700; cursor: pointer; text-decoration: underline; }
+.speak-result p { margin: 0.2rem 0; }
+.hint { color: var(--muted); font-size: 0.95rem; margin: 0.3rem 0 0; }

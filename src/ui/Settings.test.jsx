@@ -122,3 +122,15 @@ test('the profile screen shows level, mastered count and earned versus locked ba
   expect(screen.getByTestId('badge-first-perfect')).not.toHaveClass('locked')
   expect(screen.getByTestId('badge-streak-7')).toHaveClass('locked')
 })
+
+test('the microphone checkbox is on by default and is saved to the profile', async () => {
+  const user = userEvent.setup()
+  const { storage, profile } = seededStorage()
+  renderApp(<App />, { route: '/settings', storage })
+  const box = screen.getByRole('checkbox', { name: /dùng micro/i })
+  expect(box).toBeChecked()
+  await user.click(box)
+  expect(profileOf(storage, profile.id).micEnabled).toBe(false)
+  await user.click(screen.getByRole('checkbox', { name: /dùng micro/i }))
+  expect(profileOf(storage, profile.id).micEnabled).toBe(true)
+})

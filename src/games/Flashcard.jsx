@@ -2,12 +2,15 @@ import { useState } from 'react'
 import { speak } from '../core/speech.js'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
 import { useAutoSpeak } from './useAutoSpeak.js'
+import SpeakPractice from './SpeakPractice.jsx'
+import { useMic } from '../ui/useMic.js'
 
 export default function Flashcard({ words, onFinish, speechRate = 1, voiceName }) {
   const [index, setIndex] = useState(0)
   const [flipped, setFlipped] = useState(false)
   const [results, setResults] = useState([])
   const available = useSpeechAvailable()
+  const mic = useMic()
   const word = words[index]
   useAutoSpeak(word?.word, { rate: speechRate, voice: voiceName })
   if (!word) return null
@@ -43,6 +46,9 @@ export default function Flashcard({ words, onFinish, speechRate = 1, voiceName }
           </div>
         )}
       </div>
+      {flipped && mic && (
+        <SpeakPractice key={word.id} target={word.word} speechRate={speechRate} voiceName={voiceName} />
+      )}
       {!flipped ? (
         <button type="button" className="primary" onClick={() => setFlipped(true)}>Lật thẻ</button>
       ) : (

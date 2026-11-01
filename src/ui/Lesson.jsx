@@ -2,16 +2,22 @@ import { useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { buildLesson } from '../core/lesson.js'
-import { finishSession } from '../core/progress.js'
+import { addBonusXp, finishSession } from '../core/progress.js'
 import { todayISO } from '../core/date.js'
 import Flashcard from '../games/Flashcard.jsx'
 import Quiz from '../games/Quiz.jsx'
 import SentenceExercises from '../games/SentenceExercises.jsx'
 import GrammarExplain from './GrammarExplain.jsx'
+import SpeakStep from './SpeakStep.jsx'
+import { useMic } from './useMic.js'
 import Results from './Results.jsx'
 
-// The four steps of a daily lesson, in order. A step with nothing to do is skipped.
+// The steps of a daily lesson, in order. A step with nothing to do is skipped. The speaking step is
+// only part of the lesson when the browser can listen (and the profile has not switched it off).
 const STEPS = ['new', 'explain', 'exercises', 'review']
+const STEPS_WITH_SPEAKING = ['new', 'explain', 'exercises', 'speak', 'review']
+const SPEAK_SENTENCES = 3
+const XP_PER_SPOKEN_SENTENCE = 5
 
 export default function Lesson() {
   const [search] = useSearchParams()
@@ -25,12 +31,15 @@ function LessonRound({ topic, onAgain }) {
   const [lesson] = useState(() => buildLesson({
     roadmap, lessons, vocab: vocab.all(), progress, today, goal: currentProfile.dailyGoal, topic,
   }))
+  const mic = useMic()
+  const steps = mic ? STEPS_WITH_SPEAKING : STEPS
   const grammar = lesson.lesson ? lessons.find((l) => l.id === lesson.lesson.id) : null
 
-  const stages = STEPS.filter((step) => {
+  const stages = steps.filter((step) => {
     if (step === 'new') return lesson.newWords.length > 0
     if (step === 'explain') return grammar !== null
     if (step === 'exercises') return lesson.exercises.length > 0 || lesson.notice !== null
+    if (step === 'speak') return lesson.exercises.length > 0
     return lesson.reviewWords.length > 0
   })
   const [position, setPosition] = useState(0)
@@ -81,6 +90,13 @@ function LessonRound({ topic, onAgain }) {
     })
   }
 
+  function commitSpoken(correctCount) {
+    const bonus = correctCount * XP_PER_SPOKEN_SENTENCE
+    saved.current = addBonusXp(saved.current, bonus)
+    earned.current.xp += bonus
+    commit([], [])
+  }
+
   const stage = stages[position]
   const speech = { speechRate: currentProfile.speechRate ?? 1, voiceName: currentProfile.voice ?? undefined }
   let body
@@ -98,13 +114,15 @@ function LessonRound({ topic, onAgain }) {
         <button type="button" className="primary" onClick={() => commit([], [])}>Tiếp tục</button>
       </section>
     )
+  } else if (stage === 'speak') {
+    body = <SpeakStep sentences={lesson.exercises.slice(0, SPEAK_SENTENCES)} onFinish={commitSpoken} {...speech} />
   } else {
     body = <Quiz words={lesson.reviewWords} pool={vocab.all()} onFinish={(res) => commit(res, [])} {...speech} />
   }
 
   return (
     <main>
-      <p className="stage">Bước {STEPS.indexOf(stage) + 1}/4</p>
+      <p className="stage">Bước {steps.indexOf(stage) + 1}/{steps.length}</p>
       {body}
     </main>
   )

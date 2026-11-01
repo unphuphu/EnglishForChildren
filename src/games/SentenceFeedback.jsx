@@ -1,11 +1,14 @@
 import { speak } from '../core/speech.js'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
 import { useAutoSpeak } from './useAutoSpeak.js'
+import SpeakPractice from './SpeakPractice.jsx'
+import { useMic } from '../ui/useMic.js'
 
 // Shown after a sentence exercise is answered: the verdict, the correct sentence with its
 // translation, and the correct English sentence read aloud once (never before the answer).
 export default function SentenceFeedback({ correct, en, vi, speechRate = 1, voiceName }) {
   const available = useSpeechAvailable()
+  const mic = useMic()
   useAutoSpeak(en, { rate: speechRate, voice: voiceName })
   return (
     <div className="sentence-feedback">
@@ -18,6 +21,7 @@ export default function SentenceFeedback({ correct, en, vi, speechRate = 1, voic
           🔊
         </button>
       )}
+      {correct && mic && <SpeakPractice target={en} kind="sentence" speechRate={speechRate} voiceName={voiceName} />}
     </div>
   )
 }

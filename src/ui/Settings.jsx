@@ -7,6 +7,7 @@ import { useEnglishVoices } from '../core/useEnglishVoices.js'
 import { AVATARS } from '../core/profiles.js'
 import { exportProfile, importProfile } from '../core/exportImport.js'
 import GoalPicker from './GoalPicker.jsx'
+import { isRecognitionSupported } from '../core/speechRecognition.js'
 
 const IMPORT_ERRORS = {
   INVALID_FILE: 'Tệp không hợp lệ.',
@@ -91,6 +92,19 @@ export default function Settings() {
           <legend>Số từ mới mỗi buổi học</legend>
           <GoalPicker value={currentProfile.dailyGoal} onChange={(dailyGoal) => update({ dailyGoal })} />
         </fieldset>
+      </section>
+
+      <section>
+        <label className="goal-option">
+          <input type="checkbox" checked={currentProfile.micEnabled !== false}
+            onChange={(e) => update({ micEnabled: e.target.checked })} />
+          Dùng micro để luyện nói
+        </label>
+        <p className="hint">
+          {isRecognitionSupported()
+            ? 'Cần internet. Trình duyệt sẽ hỏi quyền dùng micro lần đầu.'
+            : 'Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy mở app bằng Chrome hoặc Edge.'}
+        </p>
       </section>
 
       {speechAvailable && (

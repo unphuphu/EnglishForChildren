@@ -82,6 +82,9 @@ export function normalizeProgress(data) {
 export const levelForXp = (xp) => Math.floor(Math.sqrt(xp / 50)) + 1
 export const xpForLevel = (level) => 50 * (level - 1) ** 2
 
+// XP for something that is not a scored answer (reading a sentence aloud, finishing a conversation).
+export const addBonusXp = (state, amount) => ({ ...state, xp: state.xp + Math.max(0, Math.floor(amount)) })
+
 export function currentStreak(state, today) {
   const { count, lastDate } = state.streak
   return lastDate === today || lastDate === addDays(today, -1) ? count : 0

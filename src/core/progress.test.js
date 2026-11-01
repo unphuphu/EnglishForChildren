@@ -1,6 +1,6 @@
 import { createStorage } from './storage.js'
 import {
-  emptyProgress, levelForXp, xpForLevel, currentStreak, dailyCount, finishSession, createProgressStore,
+  emptyProgress, addBonusXp, levelForXp, xpForLevel, currentStreak, dailyCount, finishSession, createProgressStore,
 } from './progress.js'
 
 const D = '2026-10-30'
@@ -157,4 +157,12 @@ test('xpForLevel is the first XP of a level and agrees with levelForXp', () => {
     expect(levelForXp(xpForLevel(level))).toBe(level)
     if (level > 1) expect(levelForXp(xpForLevel(level) - 1)).toBe(level - 1)
   }
+})
+
+test('addBonusXp adds whole XP without touching the rest and ignores negatives', () => {
+  const state = emptyProgress()
+  expect(addBonusXp(state, 15).xp).toBe(15)
+  expect(addBonusXp(state, 15)).toEqual({ ...state, xp: 15 })
+  expect(addBonusXp(state, -5).xp).toBe(0)
+  expect(state.xp).toBe(0)
 })
