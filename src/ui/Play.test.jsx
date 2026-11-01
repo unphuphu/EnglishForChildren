@@ -79,7 +79,7 @@ test('Topics shows 0/12 for a fresh profile and counts learned words, per topic 
   for (const w of fixtureWords.slice(0, 3)) progress.cards[w.id] = { box: 3, correct: 3, wrong: 0, due: '2030-01-01' }
   renderApp(<App />, { route: '/topics', storage: seededStorage({ progress }).storage })
   expect(screen.getByTitle(/đã học/i)).toHaveTextContent('3/12')
-  expect(screen.getByText(/đã học tổng cộng/i)).toHaveTextContent('3/12')
+  expect(screen.getByText(/^đã học:/i)).toHaveTextContent('3/12')
 })
 
 test('choosing a topic lists the five modes', () => {

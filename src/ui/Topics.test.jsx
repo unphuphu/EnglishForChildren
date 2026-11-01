@@ -10,7 +10,7 @@ import { renderApp, seededStorage } from '../test/utils.jsx'
 test('topic cards and a total line count the words already learned', () => {
   const { storage } = seededStorage()
   renderApp(<App />, { route: '/topics', storage })
-  const total = screen.getByText(/đã học tổng cộng/i)
+  const total = screen.getByText(/^đã học:/i)
   expect(total).toHaveTextContent(/0\/\d+ từ/)
 
   const cards = screen.getAllByRole('link').filter((a) => a.classList.contains('topic-card'))
