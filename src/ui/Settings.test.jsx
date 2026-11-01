@@ -134,3 +134,44 @@ test('the microphone checkbox is on by default and is saved to the profile', asy
   await user.click(screen.getByRole('checkbox', { name: /dùng micro/i }))
   expect(profileOf(storage, profile.id).micEnabled).toBe(true)
 })
+
+describe('AI conversation settings', () => {
+  test('AI is on by default and the switch is saved to the profile', async () => {
+    const user = userEvent.setup()
+    const { storage, profile } = seededStorage()
+    renderApp(<App />, { route: '/settings', storage })
+    const box = screen.getByRole('checkbox', { name: /dùng ai/i })
+    expect(box).toBeChecked()
+    await user.click(box)
+    expect(profileOf(storage, profile.id).aiEnabled).toBe(false)
+  })
+
+  test('the model name defaults to qwen2.5-3b-instruct and a new name is saved when leaving the field', async () => {
+    const user = userEvent.setup()
+    const { storage, profile } = seededStorage()
+    renderApp(<App />, { route: '/settings', storage })
+    const input = screen.getByLabelText(/model ai/i)
+    expect(input).toHaveValue('qwen2.5-3b-instruct')
+    await user.clear(input)
+    await user.type(input, 'llama-3.2-3b-instruct')
+    await user.tab()
+    expect(profileOf(storage, profile.id).aiModel).toBe('llama-3.2-3b-instruct')
+  })
+
+  test('Kiểm tra kết nối reports success and failure in Vietnamese', async () => {
+    const user = userEvent.setup()
+    const { storage } = seededStorage()
+    renderApp(<App />, { route: '/settings', storage })
+    const original = globalThis.fetch
+    try {
+      globalThis.fetch = vi.fn().mockResolvedValue({ ok: true, status: 200, json: async () => ({ data: [{ id: 'qwen2.5-3b-instruct' }] }) })
+      await user.click(screen.getByRole('button', { name: /kiểm tra kết nối/i }))
+      expect(await screen.findByText(/kết nối tốt/i)).toBeInTheDocument()
+      globalThis.fetch = vi.fn().mockRejectedValue(new TypeError('fetch failed'))
+      await user.click(screen.getByRole('button', { name: /kiểm tra kết nối/i }))
+      expect(await screen.findByText(/chưa kết nối được lm studio/i)).toBeInTheDocument()
+    } finally {
+      globalThis.fetch = original
+    }
+  })
+})

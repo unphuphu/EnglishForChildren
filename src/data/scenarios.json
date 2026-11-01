@@ -1,0 +1,92 @@
+[
+ {
+  "id": "restaurant",
+  "title": "Gọi món ở nhà hàng",
+  "emoji": "🍕",
+  "topic": "food",
+  "role": "Anna, a friendly waitress in a restaurant",
+  "setting": "The child is a customer who orders food and a drink.",
+  "opening": "Hello! Welcome to our restaurant. What would you like to eat?",
+  "script": [
+   { "options": ["I want a pizza, please.", "I would like some rice.", "I want a hamburger."], "reply": "Good choice! Would you like something to drink?" },
+   { "options": ["Yes, I want orange juice.", "Water, please.", "I want some milk."], "reply": "Okay! Do you want a salad too?" },
+   { "options": ["Yes, please.", "No, thank you.", "I want some fruit."], "reply": "Great! Your food is ready. Is it good?" },
+   { "options": ["Yes, it is delicious.", "It is very good, thank you.", "I like it a lot."], "reply": "I am happy you like it. Have a nice day!" }
+  ]
+ },
+ {
+  "id": "family",
+  "title": "Giới thiệu gia đình",
+  "emoji": "👨‍👩‍👧",
+  "topic": "family",
+  "role": "Tom, a friendly new classmate",
+  "setting": "The child tells a new classmate about their family.",
+  "opening": "Hi! My name is Tom. Tell me about your family. Who is in your family?",
+  "script": [
+   { "options": ["I have a mother and a father.", "There are four people in my family.", "I live with my parents."], "reply": "That is nice! Do you have a brother or a sister?" },
+   { "options": ["I have a brother.", "I have a sister.", "No, I do not have a brother or a sister."], "reply": "Cool! How old is he or she? Or tell me about your mother." },
+   { "options": ["My mother is kind.", "My mother cooks very well.", "She is a teacher."], "reply": "She sounds great! What do you do with your family on Sunday?" },
+   { "options": ["We eat lunch together.", "We go to the park.", "We watch TV at home."], "reply": "That sounds fun. I like your family! See you at school." }
+  ]
+ },
+ {
+  "id": "directions",
+  "title": "Hỏi đường",
+  "emoji": "🗺️",
+  "topic": "town",
+  "role": "Mr. Lee, a friendly person on the street",
+  "setting": "The child is lost in town and asks the way to the park.",
+  "opening": "Hello! You look lost. Can I help you?",
+  "script": [
+   { "options": ["Where is the park, please?", "Excuse me, where is the park?", "I want to go to the park."], "reply": "The park is near here. Go straight. Do you see the school?" },
+   { "options": ["Yes, I see the school.", "Yes, it is on my left.", "No, I do not see it."], "reply": "Good! Turn left at the school. Is that okay?" },
+   { "options": ["Yes, thank you.", "Turn left at the school. I understand.", "Is it far?"], "reply": "No, it is not far. It is next to the library. Can you find it?" },
+   { "options": ["Yes, I can. Thank you!", "I think so. Thank you very much.", "Yes, thank you for your help."], "reply": "You are welcome. Enjoy the park!" }
+  ]
+ },
+ {
+  "id": "shopping",
+  "title": "Mua sắm",
+  "emoji": "🛍️",
+  "topic": "town",
+  "role": "Lisa, a friendly shop assistant in a clothes shop",
+  "setting": "The child wants to buy a T-shirt.",
+  "opening": "Hello! Welcome to our shop. What do you want to buy today?",
+  "script": [
+   { "options": ["I want a T-shirt.", "I am looking for a T-shirt.", "I want some new shoes."], "reply": "We have many T-shirts. What color do you like?" },
+   { "options": ["I like blue.", "I want a red one.", "Do you have a green one?"], "reply": "Here it is. Do you like it?" },
+   { "options": ["Yes, I like it.", "It is nice. How much is it?", "It is too big."], "reply": "It is ten dollars. Do you want to buy it?" },
+   { "options": ["Yes, I will take it.", "Yes, here is the money.", "Thank you. I want it."], "reply": "Thank you! Here is your bag. Have a nice day!" }
+  ]
+ },
+ {
+  "id": "school",
+  "title": "Ở trường",
+  "emoji": "🏫",
+  "topic": "school",
+  "role": "Ms. Green, a kind English teacher",
+  "setting": "The child talks with the teacher at school before class.",
+  "opening": "Good morning! How are you today?",
+  "script": [
+   { "options": ["I am fine, thank you.", "I am happy today.", "I am a little tired."], "reply": "I am glad. What is your favorite subject at school?" },
+   { "options": ["I like English.", "My favorite subject is math.", "I like art."], "reply": "That is a good subject! Do you have your book and pencil?" },
+   { "options": ["Yes, I have them.", "I have my book, but I do not have a pencil.", "Yes, they are in my bag."], "reply": "Great! What do you do after school?" },
+   { "options": ["I play with my friends.", "I do my homework.", "I go home and eat dinner."], "reply": "That sounds good. Now, let us begin the class!" }
+  ]
+ },
+ {
+  "id": "weather",
+  "title": "Nói về thời tiết",
+  "emoji": "⛅",
+  "topic": "weather",
+  "role": "Ben, a friendly neighbor",
+  "setting": "The child and a neighbor talk about the weather and what to do today.",
+  "opening": "Hi! Nice to see you. How is the weather today?",
+  "script": [
+   { "options": ["It is sunny today.", "It is rainy today.", "It is cloudy and cool."], "reply": "I see. Do you like this weather?" },
+   { "options": ["Yes, I like it.", "No, I do not like it.", "I like sunny days."], "reply": "Me too. What is your favorite season?" },
+   { "options": ["I like summer.", "My favorite season is winter.", "I like spring because it is warm."], "reply": "Nice! What do you want to do today?" },
+   { "options": ["I want to play outside.", "I want to stay at home.", "I want to go to the park."], "reply": "That is a good idea. Have fun today!" }
+  ]
+ }
+]

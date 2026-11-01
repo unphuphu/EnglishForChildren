@@ -17,6 +17,7 @@ import Checkpoint from './ui/Checkpoint.jsx'
 import GeneralTest from './ui/GeneralTest.jsx'
 import ProfileScreen from './ui/ProfileScreen.jsx'
 import Settings from './ui/Settings.jsx'
+import Conversation from './ui/Conversation.jsx'
 import Recovery from './ui/Recovery.jsx'
 
 export default function App() {
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/lesson/topic" element={signedIn(<ChangeTopic />)} />
         <Route path="/games/:mode" element={signedIn(<GameTopics />)} />
         <Route path="/play/:mode" element={signedIn(<Play />)} />
+        <Route path="/chat" element={signedIn(<Conversation />)} />
         <Route path="/profile" element={signedIn(<ProfileScreen />)} />
         <Route path="/settings" element={signedIn(<Settings />)} />
         <Route path="*" element={<Navigate to="/" replace />} />

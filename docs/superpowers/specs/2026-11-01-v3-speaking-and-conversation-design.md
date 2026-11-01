@@ -68,8 +68,8 @@ Units:
   above 2 or below 0.5, or contains Vietnamese letters); otherwise `{ suggestion, parts: [{ text, changed }] }` where
   changed marks words not in the child's sentence.
 - `data/scenarios.json`: 6 scenarios (restaurant, family, directions, shopping, school, weather) with `id`, `title`,
-  `emoji`, `topic`, `role` (English description for the prompt), `opening` (first AI line) and `script`: 4 turns of
-  `{ ai, options: [3 English sentences] }` for scripted mode.
+  `emoji`, `topic`, `role` and `setting` (English, for the prompt), `opening` (first AI line) and `script`: 4 turns
+  of `{ options: [3 English sentences], reply }` for scripted mode (the child picks an option, the AI says `reply`).
 - `ui/Conversation.jsx` at route `/chat`: scenario list, then chat. On open, if `aiEnabled !== false` it calls
   `checkAi`; on failure it falls back to scripted mode and shows the reason in Vietnamese. Chat shows bubbles, a text box
   with send, a microphone button (when `useMic`) that fills the box, the AI reply read aloud plus a replay button, and

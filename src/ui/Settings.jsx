@@ -8,6 +8,7 @@ import { AVATARS } from '../core/profiles.js'
 import { exportProfile, importProfile } from '../core/exportImport.js'
 import GoalPicker from './GoalPicker.jsx'
 import { isRecognitionSupported } from '../core/speechRecognition.js'
+import { AI_PROBLEMS, checkAi, DEFAULT_MODEL } from '../core/aiChat.js'
 
 const IMPORT_ERRORS = {
   INVALID_FILE: 'Tệp không hợp lệ.',
@@ -23,6 +24,8 @@ export default function Settings() {
   const [importMessage, setImportMessage] = useState(null)
   const [importError, setImportError] = useState(null)
   const [nameError, setNameError] = useState(null)
+  const [model, setModel] = useState(currentProfile.aiModel ?? DEFAULT_MODEL)
+  const [aiStatus, setAiStatus] = useState(null)
   const takenByOthers = new Set(profileList.filter((p) => p.id !== currentProfile.id).map((p) => p.avatar))
   const rate = currentProfile.speechRate ?? 1
   const englishVoices = useEnglishVoices()
@@ -31,6 +34,18 @@ export default function Settings() {
   function update(patch) {
     profiles.update(currentProfile.id, patch)
     refresh()
+  }
+
+  async function testAi() {
+    setAiStatus('checking')
+    const result = await checkAi({ model: model.trim() || DEFAULT_MODEL })
+    setAiStatus(result.ok ? 'ok' : result.reason)
+  }
+
+  function saveModel() {
+    const value = model.trim() || DEFAULT_MODEL
+    setModel(value)
+    if (value !== (currentProfile.aiModel ?? DEFAULT_MODEL)) update({ aiModel: value })
   }
 
   function saveName() {
@@ -104,6 +119,25 @@ export default function Settings() {
           {isRecognitionSupported()
             ? 'Cần internet. Trình duyệt sẽ hỏi quyền dùng micro lần đầu.'
             : 'Trình duyệt này chưa hỗ trợ nhận dạng giọng nói. Hãy mở app bằng Chrome hoặc Edge.'}
+        </p>
+      </section>
+
+      <section>
+        <label className="goal-option">
+          <input type="checkbox" checked={currentProfile.aiEnabled !== false}
+            onChange={(e) => update({ aiEnabled: e.target.checked })} />
+          Dùng AI để trò chuyện
+        </label>
+        <p className="hint">Cần mở LM Studio và bật server. Tắt thì app dùng bài hội thoại soạn sẵn.</p>
+        <label className="field">
+          Model AI trong LM Studio
+          <input value={model} onChange={(e) => setModel(e.target.value)} onBlur={saveModel} />
+        </label>
+        <button type="button" className="primary" onClick={testAi}>Kiểm tra kết nối</button>
+        <p role="status" className="hint">
+          {aiStatus === 'checking' && 'Đang kiểm tra...'}
+          {aiStatus === 'ok' && 'Kết nối tốt: LM Studio đang chạy và có model này.'}
+          {aiStatus && aiStatus !== 'checking' && aiStatus !== 'ok' && (AI_PROBLEMS[aiStatus] ?? AI_PROBLEMS.unreachable)}
         </p>
       </section>
 

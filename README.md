@@ -88,6 +88,20 @@ Tiến độ lưu trong trình duyệt (`localStorage`), nên xóa dữ liệu d
 có dữ liệu riêng. Vào **Cài đặt → Xuất tiến độ** để tải file JSON sao lưu của hồ sơ đang dùng,
 và **Nhập tiến độ** để khôi phục (sẽ tạo thêm một hồ sơ mới).
 
+## Luyện nói và trò chuyện với AI
+
+- **Luyện nói:** nút **Nói** trên flashcard, sau bài tập đặt câu và một bước "Đọc to" trong buổi học hằng ngày
+  (mỗi câu đọc đúng +5 XP). Dùng nhận dạng giọng nói của trình duyệt, nên cần **Chrome hoặc Edge** và internet.
+  Đọc chưa đúng được thử tối đa 3 lần, có nút **Bỏ qua**, không bị trừ điểm. Tắt trong **Cài đặt → Dùng micro**.
+- **Trò chuyện:** link **Trò chuyện** ở Trang chủ, 6 tình huống, tối đa 8 lượt, hoàn thành (từ 3 lượt) được +20 XP.
+  Nội dung trò chuyện không được lưu.
+- **AI chạy trên máy (miễn phí):** cài [LM Studio](https://lmstudio.ai), tải model **qwen2.5-3b-instruct**
+  (bản Instruct, không phải bản coder), nạp model và bật server ở mục **Developer** (cổng 1234).
+  App gọi LM Studio qua proxy của Vite (`/lmstudio`), nên chạy app bằng `start.bat` (`npm run dev`).
+  Đổi tên model, bật/tắt AI và thử kết nối ở **Cài đặt**.
+- Khi tắt AI hoặc LM Studio chưa chạy, app tự dùng bài hội thoại soạn sẵn (chọn một trong 3 câu trả lời).
+  Nút **Gợi ý sửa** chỉ là gợi ý của model nhỏ, có thể chưa đúng.
+
 ## Cấu trúc mã nguồn
 
 | Thư mục | Nội dung |
