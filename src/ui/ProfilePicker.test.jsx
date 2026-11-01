@@ -48,10 +48,30 @@ test('creating a profile without choosing a goal stores 10 and opens Home', asyn
   expect(createProfiles(storage).list()[0]).toMatchObject({ name: 'Bin', avatar: AVATARS[0], dailyGoal: 10 })
 })
 
-test('the goal chooser offers 5, 10, 15 and 20 with 10 preselected', () => {
+test('the goal chooser offers 5, 10, 15, 20 and 30 with 10 preselected', () => {
   renderApp(<App />, { route: '/add-profile' })
   const radios = screen.getAllByRole('radio')
-  expect(radios.map((r) => r.value)).toEqual(['5', '10', '15', '20'])
+  expect(radios.map((r) => r.value)).toEqual(['5', '10', '15', '20', '30'])
+  expect(screen.getByRole('radio', { name: '10' })).toBeChecked()
+})
+
+test('a custom goal can be typed and is stored', async () => {
+  const user = userEvent.setup()
+  const { storage } = renderApp(<App />, { route: '/add-profile' })
+  await user.type(screen.getByLabelText(/tên/i), 'Bin')
+  await user.click(screen.getByRole('button', { name: AVATARS[0] }))
+  await user.type(screen.getByLabelText(/tự chọn/i), '25')
+  await user.click(screen.getByRole('button', { name: /tạo hồ sơ/i }))
+  expect(createProfiles(storage).list()[0].dailyGoal).toBe(25)
+})
+
+test('a custom goal outside 5 to 50 shows a message and is not applied', async () => {
+  const user = userEvent.setup()
+  renderApp(<App />, { route: '/add-profile' })
+  await user.type(screen.getByLabelText(/tự chọn/i), '80')
+  expect(screen.getByRole('alert')).toHaveTextContent(/5 đến 50/)
+  await user.tab()
+  expect(screen.getByLabelText(/tự chọn/i)).toHaveValue(null)
   expect(screen.getByRole('radio', { name: '10' })).toBeChecked()
 })
 

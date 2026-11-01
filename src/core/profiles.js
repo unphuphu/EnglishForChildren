@@ -5,6 +5,7 @@ export const AVATARS = [
 ]
 export const MAX_PROFILES = 4
 export const MIN_DAILY_GOAL = 5
+export const MAX_DAILY_GOAL = 50
 export const DEFAULT_DAILY_GOAL = 10
 
 const LIST_KEY = 'profiles'
@@ -25,8 +26,9 @@ export function createProfiles(storage) {
       if (!AVATARS.includes(fields.avatar)) throw new Error('INVALID_AVATAR')
       if (others.some((p) => p.avatar === fields.avatar)) throw new Error('AVATAR_TAKEN')
     }
-    if ('dailyGoal' in fields && !(Number.isInteger(fields.dailyGoal) && fields.dailyGoal >= MIN_DAILY_GOAL)) {
-      throw new Error('GOAL_TOO_LOW')
+    if ('dailyGoal' in fields) {
+      if (!(Number.isInteger(fields.dailyGoal) && fields.dailyGoal >= MIN_DAILY_GOAL)) throw new Error('GOAL_TOO_LOW')
+      if (fields.dailyGoal > MAX_DAILY_GOAL) throw new Error('GOAL_TOO_HIGH')
     }
   }
 

@@ -1,4 +1,4 @@
-import { AVATARS, createProfiles, DEFAULT_DAILY_GOAL, MIN_DAILY_GOAL } from './profiles.js'
+import { AVATARS, createProfiles, DEFAULT_DAILY_GOAL, MAX_DAILY_GOAL, MIN_DAILY_GOAL } from './profiles.js'
 import { createProgressStore, normalizeProgress } from './progress.js'
 
 const APP = 'english-for-children'
@@ -38,6 +38,7 @@ export function importProfile(storage, json) {
     ? profile.avatar
     : AVATARS.find((a) => !used.has(a))
   const dailyGoal = Number.isInteger(profile.dailyGoal) && profile.dailyGoal >= MIN_DAILY_GOAL
+    && profile.dailyGoal <= MAX_DAILY_GOAL
     ? profile.dailyGoal
     : DEFAULT_DAILY_GOAL
 

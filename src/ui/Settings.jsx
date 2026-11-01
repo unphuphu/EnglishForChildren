@@ -6,7 +6,7 @@ import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
 import { useEnglishVoices } from '../core/useEnglishVoices.js'
 import { AVATARS } from '../core/profiles.js'
 import { exportProfile, importProfile } from '../core/exportImport.js'
-import { GOAL_OPTIONS } from './AddProfile.jsx'
+import GoalPicker from './GoalPicker.jsx'
 
 const IMPORT_ERRORS = {
   INVALID_FILE: 'Tệp không hợp lệ.',
@@ -87,12 +87,10 @@ export default function Settings() {
       </section>
 
       <section>
-        <label className="field">
-          Số từ mới mỗi buổi học
-          <select value={currentProfile.dailyGoal} onChange={(e) => update({ dailyGoal: Number(e.target.value) })}>
-            {GOAL_OPTIONS.map((g) => <option key={g} value={g}>{g}</option>)}
-          </select>
-        </label>
+        <fieldset className="goal-chooser">
+          <legend>Số từ mới mỗi buổi học</legend>
+          <GoalPicker value={currentProfile.dailyGoal} onChange={(dailyGoal) => update({ dailyGoal })} />
+        </fieldset>
       </section>
 
       {speechAvailable && (

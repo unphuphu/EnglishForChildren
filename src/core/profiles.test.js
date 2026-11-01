@@ -32,6 +32,12 @@ test('a daily goal below 5 is rejected', () => {
   expect(() => profiles.add({ name: 'Bin', avatar: AVATARS[0], dailyGoal: 4 })).toThrow('GOAL_TOO_LOW')
 })
 
+test('a daily goal above 50 is rejected and 50 is accepted', () => {
+  const { profiles } = setup()
+  expect(() => profiles.add({ name: 'Bin', avatar: AVATARS[0], dailyGoal: 51 })).toThrow('GOAL_TOO_HIGH')
+  expect(profiles.add({ name: 'Bin', avatar: AVATARS[0], dailyGoal: 50 }).dailyGoal).toBe(50)
+})
+
 test('a fifth profile is rejected', () => {
   const { profiles } = setup()
   for (let i = 0; i < 4; i++) profiles.add({ name: `P${i}`, avatar: AVATARS[i] })

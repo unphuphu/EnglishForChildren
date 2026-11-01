@@ -2,16 +2,19 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { useSpeechAvailable } from '../core/useSpeechAvailable.js'
+import { useSpeechSettled } from '../core/useSpeechSettled.js'
 import { currentStreak, levelForXp, xpForLevel } from '../core/progress.js'
 import { suggestToday } from '../core/plan.js'
 import { todayISO } from '../core/date.js'
 import { MODE_LABELS, prettyTopic } from './modes.js'
+import GoalPicker from './GoalPicker.jsx'
 
 const GAME_ICONS = { flashcard: '🗂️', quiz: '❓', listen: '🎧', scramble: '🔤', match: '🃏' }
 
 export default function Home() {
-  const { currentProfile, progress, vocab, lessons, roadmap } = useApp()
+  const { currentProfile, profiles, refresh, progress, vocab, lessons, roadmap } = useApp()
   const speechAvailable = useSpeechAvailable()
+  const speechSettled = useSpeechSettled()
   const [noteDismissed, setNoteDismissed] = useState(false)
   const today = todayISO()
   const level = levelForXp(progress.xp)
@@ -22,7 +25,7 @@ export default function Home() {
 
   return (
     <main className="home">
-      {!speechAvailable && !noteDismissed && (
+      {speechSettled && !speechAvailable && !noteDismissed && (
         <p className="notice">
           Máy này chưa có giọng đọc tiếng Anh nên chưa nghe được phát âm. Bạn vẫn học được bằng chữ và hình.{' '}
           <button type="button" onClick={() => setNoteDismissed(true)}>Đóng</button>
@@ -50,6 +53,14 @@ export default function Home() {
             : 'Hôm nay chưa có chủ đề nào.'}
         </p>
         <p className="today-status">{doneToday ? 'Đã xong ✅' : 'Chưa làm'}</p>
+        <details className="today-goal">
+          <summary>Số từ mới mỗi buổi: {currentProfile.dailyGoal} (đổi)</summary>
+          <GoalPicker
+            name="today-goal"
+            value={currentProfile.dailyGoal}
+            onChange={(dailyGoal) => { profiles.update(currentProfile.id, { dailyGoal }); refresh() }}
+          />
+        </details>
         <Link to="/lesson" className="primary big">Bắt đầu</Link>
         <Link to="/lesson/topic" className="change-topic">Đổi chủ đề</Link>
       </section>

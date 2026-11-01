@@ -15,19 +15,28 @@ import { speak } from '../core/speech.js'
 
 const profileOf = (storage, id) => createProfiles(storage).list().find((p) => p.id === id)
 
-test('the goal control only offers 5, 10, 15 and 20', () => {
+test('the goal control offers 5, 10, 15, 20 and 30 plus a custom field', () => {
   const { storage } = seededStorage()
   renderApp(<App />, { route: '/settings', storage })
-  const select = screen.getByLabelText(/số từ mới mỗi buổi/i)
-  expect(within(select).getAllByRole('option').map((o) => o.value)).toEqual(['5', '10', '15', '20'])
+  const group = screen.getByRole('group', { name: /số từ mới mỗi buổi/i })
+  expect(within(group).getAllByRole('radio').map((r) => r.value)).toEqual(['5', '10', '15', '20', '30'])
+  expect(within(group).getByLabelText(/tự chọn/i)).toBeInTheDocument()
 })
 
 test('changing the goal is saved to the profile', async () => {
   const user = userEvent.setup()
   const { storage, profile } = seededStorage({ dailyGoal: 10 })
   renderApp(<App />, { route: '/settings', storage })
-  await user.selectOptions(screen.getByLabelText(/số từ mới mỗi buổi/i), '20')
+  await user.click(screen.getByRole('radio', { name: '20' }))
   expect(profileOf(storage, profile.id).dailyGoal).toBe(20)
+})
+
+test('a custom goal such as 35 is saved to the profile', async () => {
+  const user = userEvent.setup()
+  const { storage, profile } = seededStorage({ dailyGoal: 10 })
+  renderApp(<App />, { route: '/settings', storage })
+  await user.type(screen.getByLabelText(/tự chọn/i), '35{Enter}')
+  expect(profileOf(storage, profile.id).dailyGoal).toBe(35)
 })
 
 test('renaming a profile is saved', async () => {

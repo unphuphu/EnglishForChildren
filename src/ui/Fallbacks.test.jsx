@@ -44,7 +44,8 @@ test('the app still works in memory when storage fails', async () => {
 test('without speech Home shows a dismissible note', async () => {
   const user = userEvent.setup()
   renderApp(<App />, { storage: seededStorage().storage })
-  expect(screen.getByText(/chưa có giọng đọc tiếng anh/i)).toBeInTheDocument()
+  expect(screen.queryByText(/chưa có giọng đọc tiếng anh/i)).toBeNull()
+  expect(await screen.findByText(/chưa có giọng đọc tiếng anh/i, {}, { timeout: 4000 })).toBeInTheDocument()
   await user.click(screen.getByRole('button', { name: /đóng/i }))
   expect(screen.queryByText(/chưa có giọng đọc tiếng anh/i)).toBeNull()
 })

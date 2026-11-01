@@ -2,14 +2,14 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext.jsx'
 import { AVATARS, DEFAULT_DAILY_GOAL } from '../core/profiles.js'
-
-export const GOAL_OPTIONS = [5, 10, 15, 20]
+import GoalPicker from './GoalPicker.jsx'
 
 const ERRORS = {
   MAX_PROFILES: 'Đã đủ 4 hồ sơ rồi.',
   AVATAR_TAKEN: 'Ảnh này đã có người chọn.',
   NAME_REQUIRED: 'Hãy nhập tên của bạn.',
   GOAL_TOO_LOW: 'Mục tiêu mỗi ngày ít nhất là 5 từ.',
+  GOAL_TOO_HIGH: 'Mục tiêu mỗi ngày nhiều nhất là 50 từ.',
   INVALID_AVATAR: 'Hãy chọn một ảnh đại diện.',
 }
 
@@ -58,12 +58,7 @@ export default function AddProfile() {
         </div>
         <fieldset className="goal-chooser">
           <legend>Mỗi ngày học bao nhiêu từ mới?</legend>
-          {GOAL_OPTIONS.map((goal) => (
-            <label key={goal} className="goal-option">
-              <input type="radio" name="goal" value={goal} checked={dailyGoal === goal} onChange={() => setDailyGoal(goal)} />
-              {goal}
-            </label>
-          ))}
+          <GoalPicker value={dailyGoal} onChange={setDailyGoal} />
         </fieldset>
         {error && <p role="alert" className="error">{error}</p>}
         <button type="submit" className="primary">Tạo hồ sơ</button>
