@@ -263,6 +263,8 @@ main { max-width: 760px; margin: 0 auto; padding: 1rem 1.25rem 3rem 2.8rem; }
 .topic-card:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
 .topic-card.disabled { border-style: dashed; box-shadow: none; opacity: 0.6; background: transparent; }
 .topic-progress { display: block; color: var(--muted); font-size: 0.9rem; font-weight: 600; }
+.topic-total { font-size: 1.1rem; margin: 0 0 1rem; }
+.topic-total strong { background: var(--marker); padding: 0 0.35rem; }
 .settings section { background: var(--card); border: 2px solid var(--ink); padding: 1rem; border-radius: 10px; margin: 1rem 0; }
 
 .add-profile .back-link { display: inline-block; margin-bottom: 0.5rem; }

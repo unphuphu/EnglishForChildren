@@ -70,15 +70,16 @@ test('the daily session starts with flashcards for new words', () => {
   expect(screen.getByRole('button', { name: /lật thẻ/i })).toBeInTheDocument()
 })
 
-test('Topics shows 0/12 for a fresh profile and counts mastered words', () => {
+test('Topics shows 0/12 for a fresh profile and counts learned words, per topic and in total', () => {
   const { storage } = seededStorage()
   const { unmount } = renderApp(<App />, { route: '/topics', storage })
-  expect(screen.getByText('0/12')).toBeInTheDocument()
+  expect(screen.getByTitle(/đã học/i)).toHaveTextContent('0/12')
   unmount()
   const progress = emptyProgress()
   for (const w of fixtureWords.slice(0, 3)) progress.cards[w.id] = { box: 3, correct: 3, wrong: 0, due: '2030-01-01' }
   renderApp(<App />, { route: '/topics', storage: seededStorage({ progress }).storage })
-  expect(screen.getByText('3/12')).toBeInTheDocument()
+  expect(screen.getByTitle(/đã học/i)).toHaveTextContent('3/12')
+  expect(screen.getByText(/đã học tổng cộng/i)).toHaveTextContent('3/12')
 })
 
 test('choosing a topic lists the five modes', () => {
